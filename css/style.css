@@ -1,0 +1,86 @@
+:root {
+    --theme_color1: #F4B845;
+}
+
+
+.body {
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    width: 100%;
+    margin: 0px;
+}
+
+.col {
+    padding: 0;
+}
+
+
+.hero {
+    width: 100%;
+    height: max-content;
+}
+
+.header {
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+.hamburger {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+.hamburger_button {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    outline: none;
+}
+
+.hamburger_button i {
+    font-size: 200%;
+}
+
+.hamburger_mobile_menu{
+    width: 100%;
+    height: max-content;
+    background-color: var(--theme_color1);
+    padding: 2%;
+    display: none;
+}
+.hamburger_mobile_menu a{
+    color: #000;
+    text-decoration: none;
+    font-size: 150%;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+}
+
+
+
+
+
+
+* {
+    border: 1px solid red;
+}
