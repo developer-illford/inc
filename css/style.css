@@ -1,7 +1,8 @@
+/* GLOBALS */
 :root {
-    --theme_color1: #F4B845;
+    --inc_color1: #F4B845;
+    --brown_text: #312205;
 }
-
 
 .body {
     margin: 0;
@@ -18,14 +19,6 @@
 }
 
 
-.hero {
-    width: 100%;
-    height: max-content;
-}
-
-.header {
-    position: relative;
-}
 
 
 
@@ -36,6 +29,7 @@
 
 
 
+/* HAMBURGER MENU FOR MOBILE */
 .hamburger {
     position: absolute;
     width: 50px;
@@ -57,17 +51,26 @@
     font-size: 200%;
 }
 
-.hamburger_mobile_menu{
+.hamburger_mobile_menu {
     width: 100%;
     height: max-content;
-    background-color: var(--theme_color1);
+    background-image: url(../img/Rectangle\ 409.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
     padding: 2%;
     display: none;
 }
-.hamburger_mobile_menu a{
-    color: #000;
+
+.hamburger_mobile_menu a {
+    color: #ffffff;
     text-decoration: none;
     font-size: 150%;
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {
@@ -81,6 +84,476 @@
 
 
 
+
+
+
+
+
+
+
+
+/* HERO SECTION */
+.hero {
+    width: 100%;
+    height: max-content;
+
+}
+
+.header {
+    position: relative;
+}
+
+
+
+/* logo section */
+.nav_logo_col {}
+
+.nav_logo_col img {
+    width: 60%;
+    height: auto;
+    padding: 20px;
+    margin-left: 10px;
+}
+
+
+
+/* navigation bar */
+.nav_navbar_col {
+    padding: 0;
+}
+
+.navbar_container {
+    width: 100%;
+    height: 80%;
+    border-radius: 2rem;
+    margin-top: 20px;
+    padding: 10px;
+
+    background-image: url(../img/Rectangle\ 409.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 4px 10px 15px 0px #a7a7a7;
+    ;
+
+}
+
+.nav_item {
+    padding: 3% 4%;
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.nav_item a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.nav_active {
+    background-image: url(../img/Rectangle\ 430.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+    color: #000 !important;
+}
+
+.nav_active a {
+    text-decoration: none;
+    color: #000 !important;
+}
+
+
+
+/* social media icons */
+.nav_social_col {
+    position: relative;
+}
+
+.nav_social_container {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url(../img/Rectangle\ 409.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+
+    width: max-content;
+    height: 120px;
+    margin-top: 20px;
+    padding: 2%;
+    font-size: 150%;
+    color: #fff;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.nav_social_container a {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .nav_navbar_col {
+        display: none;
+    }
+
+    .nav_social_col {
+        display: none;
+    }
+
+    .nav_logo_col img {
+        width: 40%;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* HERO SECTION CONTENT*/
+.hero-content {
+    text-align: center;
+    z-index: 1;
+}
+
+.hero_content_wrap {
+    width: 50%;
+    padding-top: 25vh;
+    padding-left: 15vh;
+    text-align: left;
+    line-height: 150%;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--brown_text);
+    line-height: 150%;
+}
+
+.hero-content p {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--brown_text);
+    line-height: 150%;
+
+}
+
+.hero-content .quote-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: var(--inc_color1);
+    border: none;
+    border-radius: 0.8rem;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10vh;
+    box-shadow: 4px 10px 15px 0px #a7a7a7;
+    ;
+
+}
+
+.hero-content .quote-button:hover {
+    background-color: #d39b2c;
+}
+
+.container-image {
+    width: 50%;
+    position: absolute;
+    top: -100vh;
+    /* Start above the viewport */
+    right: 20px;
+    animation: drop 2s forwards, swing 2s 1s infinite alternate ease-in-out;
+    z-index: -1;
+}
+
+.container-image img {
+    width: 100%;
+    /* Adjust size as needed */
+    display: block;
+    margin: 0 auto;
+}
+
+@keyframes drop {
+    to {
+        top: -10vh;
+        /* Adjust based on the desired final position */
+    }
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(2deg);
+    }
+
+    100% {
+        transform: rotate(-2deg);
+    }
+}
+
+
+@media (max-width: 1500px) {
+    .hero_content_wrap {
+        padding-top: 15vh;
+        padding-left: 10vh;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    .hero_content_wrap {
+        padding-top: 10vh;
+        padding-left: 5vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-content .quote-button {
+        margin-top: 5VH;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero_content_wrap {
+        background-color: #ffffff9a;
+        width: 100%;
+        padding-top: 10vh;
+        padding-left: 5vh;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 2rem;
+    }
+
+    .container-image {
+        width: 100%;
+    }
+
+    .container-image img {
+        width: 80%;
+        /* Adjust size as needed */
+        display: block;
+        margin: 0 auto;
+    }
+
+    .hero-content .quote-button {
+        margin-top: 5vh;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .container-image {
+        width: 110%;
+    }
+
+    .hero-content .quote-button {
+        margin-top: 2vh;
+    }
+}
+
+@media (max-width: 350px) {
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .container-image {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ABOUT SECTION */
+.home_about {
+    width: 100%;
+    height: max-content;
+}
+
+.about_banner_wrap {
+    width: 90%;
+    height: max-content;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    background-color: var(--inc_color1);
+    border-radius: 5rem;
+    box-shadow: 4px 10px 15px 0px #a7a7a7;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+}
+
+.about_banner {
+    padding: 5%;
+    background-image: url(../img/Rectangle\ 409.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+    box-shadow: 4px 10px 15px 0px #000000;
+    border-radius: 5rem;
+}
+
+.about_banner h2 {
+    font-weight: 700;
+    color: #000;
+}
+
+.about_banner h3 {
+    font-weight: 600;
+    color: #000;
+}
+
+.about_banner p {
+    font-weight: 500;
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .about_banner {
+        padding: 10%;
+    }
+}
+
+.about_sticker {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: max-content;
+}
+
+.about_sticker img {
+    width: 10%;
+}
+
+.about_sticker_text {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: max-content;
+}
+
+.about_sticker_text_item {
+    width: 20%;
+    text-align: center;
+}
+
+.about_sticker_text_item h4 {
+    font-weight: bold;
+    color: #000;
+}
+
+.about_sticker_text_item p {
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 * {
     border: 1px solid red;
+    font-family: "Poppins", sans-serif;
+
 }
