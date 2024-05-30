@@ -503,6 +503,7 @@
 }
 
 .about_sticker_text {
+    padding-top: 0px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -522,6 +523,172 @@
 
 .about_sticker_text_item p {
     color: #000;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.about_bottom_banner {
+    width: 100%;
+    height: max-content;
+}
+
+.about_bottom_banner img {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .about_sticker {
+        display: none;
+    }
+
+    .about_sticker_text {
+        padding-top: 50px;
+    }
+}
+
+
+
+
+
+
+
+
+/* ACHIVEMENTS SECTION */
+.home_achivements {
+    width: 100%;
+    height: 400px;
+    position: relative;
+
+    background-image: url(../img/rectangle403.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.achivements_wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #c9c8c84b;
+    display: none;
+}
+
+.achivements_content {
+    width: 100%;
+    position: absolute;
+    right: 0px;
+    top: 30px;
+    text-align: center;
+}
+
+.achivements_content_counter {
+    padding-top: 7%;
+}
+
+.achivements_content h2 {
+    color: #ffffff;
+    font-size: 300%;
+    font-weight: 700;
+}
+
+.achivements_content p {
+    color: #ffffff;
+    font-size: 100%;
+    font-weight: 500;
+}
+
+
+@media (max-width: 576px) {
+    .home_achivements {
+        height: 650px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* SERVICES SECTION */
+.home_services {
+    background-image: url(../img/home_services_backgound_image.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+
+    width: 100%;
+    height: max-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home_services_heading {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3%;
+    padding-bottom: 0%;
+    font-size: 300%;
+    font-weight: 700;
+    color: #000;
+}
+
+.home_services_icons {
+    width: 100%;
+    height: max-content;
+    padding: 4%;
+}
+
+.home_services_item {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: 600;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+.home_services_item img {
+    margin-right: 3%;
+}
+
+.home_services button{
+    background-image: url(../img/Rectangle\ 409.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+
+    box-shadow: 4px 10px 15px 0px #a7a7a7;
+    padding: 1% 4%;
+    border-radius: 1rem;
+
+    font-size: 130%;
+    font-weight: 600;
+    border: none;
+    outline: none;
 }
 
 
@@ -539,21 +706,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     font-family: "Poppins", sans-serif;
 
 }
