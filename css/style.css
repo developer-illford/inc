@@ -18,6 +18,14 @@
     padding: 0;
 }
 
+.gradient-text {
+    background: linear-gradient(90deg, #EBA114, #A67923);
+    /* Adjust colors as needed */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 
 
 
@@ -671,7 +679,7 @@
     margin-right: 3%;
 }
 
-.home_services button{
+.home_services button {
     background-image: url(../img/Rectangle\ 409.png);
     background-size: cover;
     /* Ensures the image covers the entire div */
@@ -683,6 +691,7 @@
 
     box-shadow: 4px 10px 15px 0px #a7a7a7;
     padding: 1% 4%;
+    margin-bottom: 2%;
     border-radius: 1rem;
 
     font-size: 130%;
@@ -691,7 +700,109 @@
     outline: none;
 }
 
+.home_contact_head {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 
+.home_contact_head h2 {
+    margin-left: 5%;
+    font-size: 400%;
+}
+
+.home_contact_image {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home_contact_image img {
+    width: 70%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+
+.home_contact_col2 {
+    display: flex;
+    justify-content: center;
+
+}
+
+.home_contact_form_container {
+    width: 90%;
+}
+
+.contact_form{
+    width: 100%;
+    height: 100%;
+    background-color:#1A1A1A;
+    border-radius: 1.5rem;
+    padding: 8% 3%;
+    border: 5px solid var(--inc_color1);
+    clip-path: polygon(100% 25%, 100% 100%, 0% 100%, 0% 0%, 75% 0%);
+    
+}
+.contact_form h2{
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 2px 2px 0px #A67923;
+    margin-top: 6%;
+    margin-bottom: 8%;
+}
+.contact_form p{
+    color:#7A7A7A;
+    margin-bottom: 8%;
+}
+
+.cfif{
+    width: 100%;
+    height: max-content;
+    display: flex;
+}
+.cfif input{
+    width: 100%;
+    padding: 2%;
+    margin: 0.5%;
+    border: none;
+    outline: none;
+}
+
+.contact_form textarea{
+    width: 99%;
+    border: none;
+    outline: none;
+    margin: 0.5%;
+    padding: 2%;
+
+}
+.contact_form button{
+    width: 100%;
+    padding: 1%;
+    border-radius: 2rem;
+    background-color: var(--inc_color1);
+    border: none;
+    outline: none;
+    font-weight: 700;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .home_contact_head h2 {
+        font-size: 150%;
+    }
+}
+
+@media (max-width: 576px) {
+    .home_services_item img {
+        width: 40%;
+    }
+}
 
 
 
