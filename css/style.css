@@ -958,7 +958,6 @@ footer {
 }
 
 
-
 .footer_link_heading {
     color: #ffffff;
     width: 100%;
@@ -966,8 +965,52 @@ footer {
     padding-top: 15%;
 }
 
+.footer_links{
+    display: flex;
+    flex-direction: column;
+}
+.footer_links a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 200;
+    padding-bottom: 1%;
+}
 
+.footer_social_line{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.white_horizontal_line{
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+}
+
+.footer_sociall_icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #ffffff;
+}
+.footer_sociall_icons i{
+    color: #fff;
+}
+
+.footer_copyright{
+    color: #fff;
+    font-weight: 200;
+    font-size: 80%;
+    text-align: center;
+}
+.footer_copyright a{
+    text-decoration: none;
+    color: #fff;
+}
+.footer_copyright p{
+    padding: 0.5%;
+}
 
 
 
