@@ -27,11 +27,11 @@
         <header class="header">
             <div style="margin: 0;" class="row">
                 <div style="padding: 0;" class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 nav_logo_col">
-                    <img src="img/inc_nav_logo.png" alt="">
+                    <img onclick="window.location.href='index.html'" src="img/inc_nav_logo.png" alt="">
                 </div>
 
                 <!-- NAVBAR FOR DESKTOP -->
-                <div style="padding: 0;" class="col-xl-6 col-lg-6 col-md-6 col-sm-0 col-xs-0 nav_navbar_col">
+                <div style="padding: 0;" class="col-xl-6 col-lg-6 col-md-6 col-sm-0 col-xs-0 nav_navbar_col animate fadeInDown">
                     <div class="navbar_container">
                         <div class="nav_item nav_active">
                             <a href="index.html">Home</a>
@@ -52,9 +52,12 @@
                 </div>
                 <div style="padding: 0;" class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 nav_social_col">
                     <div class="nav_social_container">
-                        <a target="_blank" href="https://www.instagram.com/incexpressshipping/"><i class="fa-brands fa-instagram"></i></a>
-                        <a target="_blank" href="https://www.facebook.com/incshipping"><i class="fa-brands fa-facebook"></i></a>
-                        <a target="_blank" href="https://www.linkedin.com/company/inc-express-shipping-l-l-c/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/incexpressshipping/"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/incshipping"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/company/inc-express-shipping-l-l-c/"><i
+                                class="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -76,7 +79,7 @@
 
         <div class="hero-content">
             <div class="hero_content_wrap">
-                <h1>Welcome <br>To INC Shipping LLC</h1>
+                <h1 id="typed-text">Welcome <br>To INC Shipping LLC</h1>
                 <p>The International Freight Forwarders</p>
                 <button class="quote-button">Get a Free Quote</button>
             </div>
@@ -85,11 +88,10 @@
                 <img src="img/container.png" alt="Hanging Container">
             </div>
         </div>
-
     </section>
 
 
-    <section class="home_about">
+    <section class="home_about animate fadeInUp">
         <div class="about_banner_wrap">
             <div class="about_banner">
                 <h2>About Us</h2>
@@ -137,67 +139,70 @@
     <section class="home_achivements">
         <div class="achivements_wrapper"></div>
         <div class="achivements_content">
-            <h2>Our Achievements</h2>
+            <h2 class="animate fadeInUp">Our Achievements</h2>
             <div class="row achivements_content_counter">
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-xs-6">
                     <p>Suppliers</p>
-                    <h2>150+</h2>
+                    <h2 class="count" data-target="150">0+</h2>
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-xs-6">
                     <p>Clients</p>
-                    <h2>200+</h2>
+                    <h2 class="count" data-target="200">0+</h2>
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-xs-6">
                     <p>Countries</p>
-                    <h2>100+</h2>
+                    <h2 class="count" data-target="100">0+</h2>
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-xs-6">
                     <p>Satisfaction</p>
-                    <h2>100%</h2>
+                    <h2 class="count" data-target="100">0%</h2>
                 </div>
             </div>
         </div>
     </section>
 
+    
+
+
     <section class="home_services">
-        <div class="home_services_heading">
+        <div class="home_services_heading animate fadeInDown">
             Our Services
         </div>
         <div class="home_services_icons">
             <div class="row ">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item animate fadeInUp">
                     <img src="img/home_serv_icon1.png" alt="">
                     Air Freight
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item animate fadeInUp">
                     <img src="img/home_serv_icon2.png" alt="">
                     Sea Freight
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item animate fadeInUp">
                     <img src="img/home_serv_icon3.png" alt="">
                     Road Freight
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item animate fadeInUp">
                     <img src="img/home_serv_icon4.png" alt="">
                     Customs Clearance
                 </div>
             </div>
             <div class="row ">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item animate fadeInDown">
                     <img src="img/home_serv_icon5.png" alt="">
                     Temp. Controlled Cargo
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item animate fadeInDown">
                     <img src="img/home_serv_icon6.png" alt="">
                     Warehousing
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item animate fadeInDown">
                     <img src="img/home_serv_icon7.png" alt="">
                     Cross Trade
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 home_services_item animate fadeInDown">
                     <img src="img/home_serv_icon8.png" alt="">
                     Project Cargo
                 </div>
@@ -222,12 +227,12 @@
             <h2 class="gradient-text">Leave A Message For Us</h2>
         </div>
         <div style="padding-bottom: 50px;" class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-0 col-0 home_contact_col1">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-0 col-0 home_contact_col1 animate fadeLeft">
                 <div class="home_contact_image">
                     <img src="img/forklift.png" alt="">
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 home_contact_col2">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 home_contact_col2 animate fadeRight">
                 <div class="home_contact_form_container">
                     <div class="contact_form">
                         <h2>Get a Free Quote</h2>
@@ -257,7 +262,7 @@
                 <div class="contact_details_polygon">
                     <span class="contact_details_polygon_b">
                         <div class="row contact_detail_row">
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 contact_detail">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 contact_detail animate fadeInUp">
                                 <i class="fa-solid fa-headset"></i>
                                 <div class="contact_detail_content">
                                     <h4>Call Us</h4>
@@ -265,14 +270,14 @@
                                     <a href="tel:+971503524424">+971 503524424</a>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 contact_detail">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 contact_detail animate fadeInUp">
                                 <i class="fa-solid fa-envelope-open-text"></i>
                                 <div class="contact_detail_content">
                                     <h4>Mail Us</h4>
                                     <a href="mailto:sales@incshipping.com">sales@incshipping.com</a>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 contact_detail">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 contact_detail animate fadeInUp">
                                 <i class="fa-solid fa-map-location-dot"></i>
                                 <div class="contact_detail_content">
                                     <h4>Location</h4>
@@ -301,7 +306,7 @@
         <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                 <div class="footer_logo_container">
-                    <img src="img/inc_nav_logo.png" alt="">
+                    <img onclick="window.location.href='index.html'" src="img/inc_nav_logo.png" alt="">
                     <p>INC Express Shipping LLC, being one of the dedicated logistics, warehousing and shipping company
                         in Dubai</p>
                 </div>
@@ -368,10 +373,13 @@
                         href="">Terms of Service</a></p>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_copyright">
-                <p>Designed and Developed by: <a target="_blank" href="https://illforddigital.com/">Illford Digital</a></p>
+                <p>Designed and Developed by: <a target="_blank" href="https://illforddigital.com/">Illford Digital</a>
+                </p>
             </div>
         </div>
     </footer>
+
+
 
 
 
@@ -403,6 +411,7 @@
 
 
     <script src="js/main.js"></script>
+    <script src="js/animate.js"></script>
 </body>
 
 </html>

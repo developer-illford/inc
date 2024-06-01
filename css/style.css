@@ -28,6 +28,35 @@
 }
 
 
+/* animations */
+.animate {
+    opacity: 0;
+    transition: opacity 1s, transform 1s;
+}
+
+.fadeLeft.animate {
+    transform: translateX(-60px);
+}
+
+.fadeRight.animate {
+    transform: translateX(60px);
+}
+
+.fadeInUp.animate {
+    transform: translateY(60px);
+}
+
+.fadeInDown.animate {
+    transform: translateY(-60px);
+}
+
+.animate.fade-in {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+/* animations */
+
+
 
 
 
@@ -938,12 +967,14 @@
     .home_contact_head h2 {
         font-size: 150%;
     }
+
     .contact_details_polygon_b {
         width: 100%;
         height: 98%;
         clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
     }
-    .home_contact_col1{
+
+    .home_contact_col1 {
         display: none;
     }
 }
@@ -1005,7 +1036,7 @@ footer {
     text-align: justify;
 }
 
-.footer_quick_links{
+.footer_quick_links {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     padding-left: 0 !important;
@@ -1020,65 +1051,71 @@ footer {
     padding-top: 15%;
 }
 
-.footer_links{
+.footer_links {
     display: flex;
     flex-direction: column;
 }
-.footer_links a{
+
+.footer_links a {
     text-decoration: none;
     color: #fff;
     font-weight: 200;
     padding-bottom: 1%;
 }
 
-.footer_social_line{
+.footer_social_line {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.white_horizontal_line{
+.white_horizontal_line {
     width: 100%;
     height: 1px;
     background-color: #fff;
 }
 
-.footer_sociall_icons{
+.footer_sociall_icons {
     display: flex;
     align-items: center;
     justify-content: space-around;
     color: #ffffff;
 }
-.footer_sociall_icons i{
+
+.footer_sociall_icons i {
     color: #fff;
 }
 
-.footer_copyright{
+.footer_copyright {
     color: #fff;
     font-weight: 200;
     font-size: 80%;
     text-align: center;
 }
-.footer_copyright a{
+
+.footer_copyright a {
     text-decoration: none;
     color: #fff;
 }
-.footer_copyright p{
+
+.footer_copyright p {
     padding: 0.5%;
 }
 
 
 @media (max-width: 768px) {
-    .footer_quick_links{
+    .footer_quick_links {
         padding-top: 2% !important;
         padding-bottom: 0 !important;
         padding-left: 15% !important;
         padding-right: 15% !important;
     }
+
     .footer_link_heading {
         padding-top: 2%;
     }
-    .footer_sociall_icons{
+
+    .footer_sociall_icons {
         padding-top: 4%;
         padding-bottom: 4%;
     }
