@@ -540,6 +540,21 @@
     width: 10%;
 }
 
+.about_sticker img:hover {
+    animation: flip 2s;
+}
+@keyframes flip {
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(180deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
 .about_sticker_text {
     padding-top: 0px;
     display: flex;
@@ -720,12 +735,56 @@
 }
 
 .home_services_item {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: start;
     font-weight: 600;
     margin-bottom: 2%;
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: 0.7s ease;
+}
+
+.dot {
+    width: 10px;
+    aspect-ratio: 1;
+    position: absolute;
+    background-color: var(--inc_color1);
+    border-radius: 100px;
+    z-index: 2;
+    right: 10%;
+    top: 10%;
+    animation: moveDot 6s linear infinite;
+  }
+  
+  @keyframes moveDot {
+    0%,
+    100% {
+      top: 10%;
+      right: 10%;
+    }
+    25% {
+      top: 10%;
+      right: calc(100% - 35px);
+    }
+    50% {
+      top: calc(100% - 30px);
+      right: calc(100% - 35px);
+    }
+    75% {
+      top: calc(100% - 30px);
+      right: 10%;
+    }
+  }
+  
+  
+.home_services_item:hover{
+    box-shadow: 0px 0px 20px 0px black;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #ffcb482f;
 }
 
 .home_services_item img {
