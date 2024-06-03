@@ -54,21 +54,23 @@
     opacity: 1;
     transform: translate(0, 0);
 }
+
 /* animations */
 
 
 
 
-
+/* preloader */
 .loader {
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .truckWrapper {
+    z-index: 9999;
+}
+
+.truckWrapper {
     width: 200px;
     height: 100px;
     display: flex;
@@ -77,28 +79,33 @@
     align-items: center;
     justify-content: flex-end;
     overflow-x: hidden;
-  }
-  /* truck upper body */
-  .truckBody {
+}
+
+/* truck upper body */
+.truckBody {
     width: 130px;
     height: fit-content;
     margin-bottom: 6px;
     animation: motion 1s linear infinite;
-  }
-  /* truck suspension animation*/
-  @keyframes motion {
+}
+
+/* truck suspension animation*/
+@keyframes motion {
     0% {
-      transform: translateY(0px);
+        transform: translateY(0px);
     }
+
     50% {
-      transform: translateY(3px);
+        transform: translateY(3px);
     }
+
     100% {
-      transform: translateY(0px);
+        transform: translateY(0px);
     }
-  }
-  /* truck's tires */
-  .truckTires {
+}
+
+/* truck's tires */
+.truckTires {
     width: 130px;
     height: fit-content;
     display: flex;
@@ -107,12 +114,13 @@
     padding: 0px 10px 0px 15px;
     position: absolute;
     bottom: 0;
-  }
-  .truckTires svg {
+}
+
+.truckTires svg {
     width: 24px;
-  }
-  
-  .road {
+}
+
+.road {
     width: 100%;
     height: 1.5px;
     background-color: #282828;
@@ -120,8 +128,9 @@
     bottom: 0;
     align-self: flex-end;
     border-radius: 3px;
-  }
-  .road::before {
+}
+
+.road::before {
     content: "";
     position: absolute;
     width: 20px;
@@ -131,8 +140,9 @@
     border-radius: 3px;
     animation: roadAnimation 1.4s linear infinite;
     border-left: 10px solid white;
-  }
-  .road::after {
+}
+
+.road::after {
     content: "";
     position: absolute;
     width: 10px;
@@ -142,25 +152,27 @@
     border-radius: 3px;
     animation: roadAnimation 1.4s linear infinite;
     border-left: 4px solid white;
-  }
-  
-  .lampPost {
+}
+
+.lampPost {
     position: absolute;
     bottom: 0;
     right: -90%;
     height: 90px;
     animation: roadAnimation 1.4s linear infinite;
-  }
-  
-  @keyframes roadAnimation {
+}
+
+@keyframes roadAnimation {
     0% {
-      transform: translateX(0px);
+        transform: translateX(0px);
     }
+
     100% {
-      transform: translateX(-350px);
+        transform: translateX(-350px);
     }
-  }
-  
+}
+
+/* preloader */
 
 
 
@@ -647,17 +659,20 @@
 .about_sticker img:hover {
     animation: flip 2s;
 }
+
 @keyframes flip {
     0% {
-      transform: rotateY(0deg);
+        transform: rotateY(0deg);
     }
+
     50% {
-      transform: rotateY(180deg);
+        transform: rotateY(180deg);
     }
+
     100% {
-      transform: rotateY(360deg);
+        transform: rotateY(360deg);
     }
-  }
+}
 
 .about_sticker_text {
     padding-top: 0px;
@@ -861,30 +876,34 @@
     right: 10%;
     top: 10%;
     animation: moveDot 6s linear infinite;
-  }
-  
-  @keyframes moveDot {
+}
+
+@keyframes moveDot {
+
     0%,
     100% {
-      top: 10%;
-      right: 10%;
+        top: 10%;
+        right: 10%;
     }
+
     25% {
-      top: 10%;
-      right: calc(100% - 35px);
+        top: 10%;
+        right: calc(100% - 35px);
     }
+
     50% {
-      top: calc(100% - 30px);
-      right: calc(100% - 35px);
+        top: calc(100% - 30px);
+        right: calc(100% - 35px);
     }
+
     75% {
-      top: calc(100% - 30px);
-      right: 10%;
+        top: calc(100% - 30px);
+        right: 10%;
     }
-  }
-  
-  
-.home_services_item:hover{
+}
+
+
+.home_services_item:hover {
     box-shadow: 0px 0px 20px 0px black;
     border-radius: 20px;
     cursor: pointer;
@@ -1290,8 +1309,283 @@ footer {
 
 
 
+
+
+
+
+
+
+
+
+/* *****************************ABOUT PAGE CSS */
+.about_hero-content {
+    position: relative;
+}
+
+.about_hero_wrap {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/Rectangle\ 429.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+    padding-bottom: 10vh;
+}
+
+.about_hero_content_wrap {
+    width: 100%;
+    padding-top: 20vh;
+    padding-bottom: 25vh;
+    padding-left: 15vh;
+    text-align: left;
+    line-height: 150%;
+}
+
+.about_hero_content_wrap h1 {
+    font-size: 500%;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--brown_text);
+    line-height: 150%;
+}
+
+.about_hero_content_wrap p {
+    margin-bottom: 20px;
+    color: var(--brown_text);
+    line-height: 150%;
+
+}
+
+.about_hero_bottom_strip {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 60%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about_strip_item {
+    width: max-content;
+    height: max-content;
+}
+
+.about_strip_item img {
+    width: 15%;
+}
+
+.about_stripline {
+    width: 30%;
+    height: 2px;
+    background-color: var(--inc_color2);
+}
+
+.about_strip_item h6 {
+    font-weight: bold;
+    font-size: 100%;
+}
+
+@media (max-width: 1000px) {
+    .about_hero_wrap {
+        padding-bottom: 0vh;
+    }
+
+    .about_hero_bottom_strip {
+        width: 90%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .about_hero_content_wrap p {
+        padding-bottom: 5%;
+
+    }
+
+    .about_hero_bottom_strip {
+        width: 90%;
+    }
+
+    .about_hero_wrap {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about_hero_content_wrap {
+        width: 100%;
+        padding-top: 0vh;
+        padding-bottom: 5vh;
+        padding-left: 0;
+        text-align: left;
+        line-height: 150%;
+        text-align: center;
+        background-color: #ffffff86;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.about_sec1 {
+    padding-top: 6%;
+    padding-bottom: 4%;
+}
+
+.about_sec1_col1 {
+    text-align: center;
+}
+
+.about_sec1_col1 img {
+    width: 80%;
+    height: auto;
+}
+
+.about_sec1_col2 {}
+
+.about_sec1_col2_txt {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.about_sec1_col2_txt h2 {
+    width: 100%;
+    height: max-content;
+    font-weight: bold;
+    font-size: 300%;
+}
+
+.about_sec1_col2_txt p {
+    text-align: justify;
+    line-height: 200%;
+}
+
+
+
+
+
+
+.about_sec2 {
+    padding: 5%;
+}
+
+.about_sec2_col {
+    margin-bottom: 20px;
+}
+
+.about_sec2_card {
+    text-align: center;
+    border-radius: 2rem;
+    padding: 3%;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/Rectangle\ 410.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.about_sec2_card h4 {
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+.affiliations {
+    width: 100%;
+    height: max-content;
+}
+
+.affiliations_wrap {
+    width: 100%;
+    height: max-content;
+}
+
+.affiliations_col1 h2,
+p {
+    padding-left: 8%;
+    padding-top: 2%;
+}
+
+.affiliations_col1 h2 {
+    font-weight: bold
+}
+
+.affiliations_col2 {
+    padding: 0%;
+}
+
+.affiliations_logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.affiliations_logos img {
+    width: 40%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.why_us {
+    width: 100%;
+    height: max-content;
+}
+
+.why_us_wraper {
+    padding: 3%;
+    width: 100%;
+    height: max-content;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 * {
-    /* border: 1px solid red; */
+    border: 1px solid red;
     font-family: "Poppins", sans-serif;
 
 }
