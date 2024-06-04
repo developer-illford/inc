@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INC-Contact Us</title>
+
+    <link rel="shortcut icon" type="image/jpg" href="favicon.jpeg">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Jomhuria&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section class="contact_hero">
+        <header class="header">
+            <div style="margin: 0;" class="row">
+                <div style="padding: 0;" class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 nav_logo_col">
+                    <img onclick="window.location.href='index.html'" src="img/inc_nav_logo.png" alt="">
+                </div>
+
+                <!-- NAVBAR FOR DESKTOP -->
+                <div style="padding: 0;"
+                    class="col-xl-6 col-lg-6 col-md-6 col-sm-0 col-xs-0 nav_navbar_col animate fadeInDown">
+                    <div class="navbar_container">
+                        <div class="nav_item">
+                            <a href="index.html">Home</a>
+                        </div>
+                        <div class="nav_item ">
+                            <a href="about.html">About Us</a>
+                        </div>
+                        <div class="nav_item ">
+                            <a href="services.html ">Services</a>
+                        </div>
+                        <div class="nav_item ">
+                            <a href="">Blogs</a>
+                        </div>
+                        <div class="nav_item nav_active">
+                            <a href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding: 0;" class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 nav_social_col">
+                    <div class="nav_social_container">
+                        <a target="_blank" href="https://www.instagram.com/incexpressshipping/"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/incshipping"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/company/inc-express-shipping-l-l-c/"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <button onclick="hamburgerToggle()" class="hamburger_button">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- MOBILE MENU -->
+            <div class="hamburger_mobile_menu" id="hamburger_mobile_menu">
+                <a href="index.html">Home</a> <br>
+                <a href="about.html">About Us</a> <br>
+                <a href="services.html">Services</a> <br>
+                <a href="">Blogs</a> <br>
+                <a href="contact.html">Contact Us</a> <br>
+            </div>
+        </header>
+
+        <div class="about_hero-content">
+            <div class="about_hero_content_wrap">
+                <h1 style="color: #fff;">Contact Us</h1>
+                <p style="color: #fff;">Home > Contact Us</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="contact_text">
+        <p>We are dedicated to providing you with exceptional logistics solutions and customer service. Whether you have
+            a question about our services, need assistance with a shipment, or want to discuss a customized logistics
+            plan, our team is here to assist you.
+        </p>
+    </section>
+
+
+    <section class="home_contact">
+        <div style="padding-bottom: 50px;" class="contact_bg row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-0 col-0 home_contact_col1 animate fadeRight">
+                <div class="home_contact_image">
+                    <img src="img/forklift.png" alt="">
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 home_contact_col2 animate fadeLeft">
+                <div class="contact_contact_form_container">
+                    <div class="c_contact_form">
+                        <h6>We'll be glad to help</h6>
+                        <h3>Leave a message</h3>
+
+                        <form action="">
+                            <div class="cpif">
+                                <input type="text" id="name" name="name" placeholder="Your Name">
+                                <input type="text" id="companyName" name="companyName" placeholder="Company Name">
+                            </div>
+                            <div class="cpif">
+                                <input type="text" id="email" name="email" placeholder="Email">
+                            </div>
+                            
+                            <textarea rows="4" name="message" id="message" placeholder="Your Message"></textarea>
+                            <button>SEND</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row contact_details_bar">
+            <div style="padding: 0;" class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
+                <div class="contact_details_polygon">
+                    <span class="contact_details_polygon_b">
+                        <div class="row contact_detail_row">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 contact_detail animate fadeInUp">
+                                <i class="fa-solid fa-headset"></i>
+                                <div class="contact_detail_content">
+                                    <h4>Call Us</h4>
+                                    <a href="tel:+97143233480">+971 43233480</a>
+                                    <a href="tel:+971503524424">+971 503524424</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 contact_detail animate fadeInUp">
+                                <i class="fa-solid fa-envelope-open-text"></i>
+                                <div class="contact_detail_content">
+                                    <h4>Mail Us</h4>
+                                    <a href="mailto:sales@incshipping.com">sales@incshipping.com</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 contact_detail animate fadeInUp">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                                <div class="contact_detail_content">
+                                    <h4>Location</h4>
+                                    <a href="contact.html">Office M29, Freight gate 4 Dubai
+                                        Airport Freezone Dubai, UAE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div style="padding: 0;" class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 ">
+                <div class="contact_dubai_logos">
+                    <img src="img/emirates-png-150x150.png.png" alt="">
+                    <img src="img/2020png-150x150.png.png" alt="">
+                </div>
+            </div>
+        </div>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8582.044649328185!2d55.36092295274745!3d25.26031366102371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d0126c02d07%3A0xb59a86433d239bd8!2sINC%20Express%20Shipping%20LLC!5e0!3m2!1sen!2sin!4v1717224716083!5m2!1sen!2sin"
+            width="100%" height="300vh" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <footer>
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="footer_logo_container">
+                    <img onclick="window.location.href='index.html'" src="img/inc_nav_logo.png" alt="">
+                    <p>INC Express Shipping LLC, being one of the dedicated logistics, warehousing and shipping company
+                        in Dubai</p>
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_quick_links">
+                        <div class="footer_link_heading">
+                            <h4>QUICK LINKS</h4>
+                        </div>
+                        <div class="footer_links">
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About Us</a>
+                            <a href="services.html">Services</a>
+                            <a href="">Blogs</a>
+                            <a href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_quick_links">
+                        <div class="footer_link_heading">
+                            <h4>OUR SERVICES</h4>
+                        </div>
+                        <div class="footer_links">
+                            <a href="air-freight.html">Air Freight</a>
+                            <a href="sea-freight.html">Sea Freight</a>
+                            <a href="road-freight.html">Road Freight</a>
+                            <a href="customs-clearance.html">Customs Clearance</a>
+                            <a href="temprature-controlled-cargo.html">Temp. Controlled Cargo</a>
+                            <a href="warehousing.html">Warehousing</a>
+                            <a href="cross-trade.html">Cross Trade</a>
+                            <a href="project-cargo.html">Project Cargo</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_quick_links">
+                        <div class="footer_link_heading">
+                            <h4>ADDRESS</h4>
+                        </div>
+                        <div class="footer_links">
+                            <a href="">Office M29, Freight gate 4 Dubai
+                                Airport Freezone Dubai, UAE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 footer_social_line">
+                <div class="white_horizontal_line"></div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12">
+                <div class="footer_sociall_icons">
+                    <a target="_blank" href="https://www.facebook.com/incshipping"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/incexpressshipping/"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a target="_blank" href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a target="_blank" href=""><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 footer_copyright">
+                <p>© 2024 INC Express Shipping LLC. All Rights Reserved. <a href="">Privacy Policy</a> | <a
+                        href="">Terms of Service</a></p>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_copyright">
+                <p>Designed and Developed by: <a target="_blank" href="https://illforddigital.com/">Illford Digital</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+
+
+    <script src="js/main.js"></script>
+    <script src="js/animate.js"></script>
+</body>
+
+</html>
