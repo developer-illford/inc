@@ -112,7 +112,7 @@
                         <h6>We'll be glad to help</h6>
                         <h3>Leave a message</h3>
 
-                        <form action="">
+                        <form action="send_email.php" method="post">
                             <div class="cpif">
                                 <input type="text" id="name" name="name" placeholder="Your Name">
                                 <input type="text" id="companyName" name="companyName" placeholder="Company Name">
@@ -120,10 +120,9 @@
                             <div class="cpif">
                                 <input type="text" id="email" name="email" placeholder="Email">
                             </div>
-                            
                             <textarea rows="4" name="message" id="message" placeholder="Your Message"></textarea>
-                            <button>SEND</button>
-                        </form>
+                            <button type="submit">SEND</button>
+                        </form>                        
                     </div>
                 </div>
             </div>

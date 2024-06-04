@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         updateCount();
+
     };
 
     // Intersection Observer to detect when the section is in view
