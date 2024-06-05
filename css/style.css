@@ -643,6 +643,7 @@ html {
 .about_banner p {
     font-weight: 500;
     color: #000;
+    padding: 0;
 }
 
 @media (max-width: 768px) {
@@ -980,6 +981,12 @@ html {
 
 
 /* CONTACT SECTION */
+.home_contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
 .home_contact_head {
     width: 100%;
@@ -1007,6 +1014,7 @@ html {
 }
 
 .home_contact_col2 {
+    width: 100%;
     display: flex;
     justify-content: center;
 
