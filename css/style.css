@@ -1814,7 +1814,7 @@ p {
     text-align: justify;
 }
 
-.contact_bg{
+.contact_bg {
     background-image: url(../img/Vector\ 26.png);
     background-size: cover;
     /* Ensures the image covers the entire div */
@@ -1886,6 +1886,7 @@ p {
     outline: 1px solid var(--inc_color2);
     border-radius: 10px;
 }
+
 .contact_contact_form_container {
     width: 90%;
     border-radius: 1.5rem;
@@ -1893,6 +1894,323 @@ p {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *****************************                       SERVICES SUBSIDIARY PAGES CSS           ****************************/
+
+.airfreight_hero {
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/airfrieght\ banner.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.service_sub_hero {
+    padding: 20%;
+    position: relative;
+}
+
+.service_sub_hero_head {
+    width: max-content;
+    height: max-content;
+    position: absolute;
+    bottom: 1%;
+    left: 10%;
+}
+
+.service_sub_hero_head h1 {
+    font-size: 300%;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .service_sub_hero_head h1 {
+        font-size: 200%;
+    }
+}
+
+
+
+
+.service_sub_sec1 {
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.service_sub_sec1_col1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service_sub_sec1_col1 img {
+    width: 70%;
+}
+
+
+.service_sub_sec1_col2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 ;
+}
+
+
+.service_sub_sec1_strip {
+    width: 80%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.service_sub_strip_item {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.service_sub_strip_item img {
+    width: 15%;
+}
+
+.service_sub_strip_item h6 {
+    font-weight: bold;
+    font-size: 100%;
+}
+
+@media (max-width: 1000px) {
+    .about_hero_bottom_strip {
+        width: 90%;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .about_hero_bottom_strip {
+        width: 90%;
+    }
+
+    .service_sub_sec1_col1 img {
+        display: none;
+    }
+}
+
+
+
+
+.service_sub_sec1_para {
+    background-color: var(--inc_color2);
+    border-radius: 4rem;
+    width: 90%;
+    height: max-content;
+    padding: 3%;
+    margin-top: 2%;
+}
+
+.service_sub_sec1_para p {
+    padding: 0;
+    font-size: 120%;
+    color: #000;
+    text-align: justify;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .service_sub_sec1_para {
+        padding: 8%;
+    }
+}
+
+
+
+.service_sub_sec2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: max-content;
+    padding: 4%;
+}
+
+.service_sub_sec2_col {
+    margin-bottom: 1%;
+}
+
+.service_sub_sec2_card1 {
+    width: 100%;
+    height: 100%;
+
+    background-image: url(../img/Rectangle\ 457.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+    border-top-right-radius: 1.5rem;
+    border-bottom-left-radius: 2.5rem;
+    padding: 3%;
+}
+
+.service_sub_sec2_card1 h3 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.service_sub_sec2_card1 p {
+    color: #ffffff;
+    padding: 0;
+    font-size: 120%;
+}
+
+
+.service_sub_sec2_card2 {
+
+    background-image: url(../img/Rectangle\ 457.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+    border-top-left-radius: 1.5rem;
+    border-bottom-right-radius: 2.5rem;
+    padding: 3%;
+}
+
+.service_sub_sec2_card2 h3 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.service_sub_sec2_card2 p {
+    color: #ffffff;
+    padding: 0;
+    font-size: 120%;
+}
+
+
+
+
+
+
+
+.service_sub_sec3 {
+    width: 100%;
+    height: max-content;
+    position: relative;
+
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+}
+
+.service_sub_sec3 img {
+    width: 100%;
+}
+
+.service_sub_sec3_card_container {
+    width: 90% !important;
+    height: max-content;
+    margin: 0 !important;
+    padding: 5%;
+
+    height: max-content;
+    position: absolute;
+    top: 0;
+
+}
+
+.service_sub_sec3_col {
+    margin-bottom: 2%;
+}
+
+.service_sub_sec3_card {
+    width: 100%;
+    height: 100%;
+}
+
+.service_sub_sec3_card_path {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(10% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%, 0% 20%);
+    background-color: #ffffff;
+    padding: 8%;
+    border-radius: 0.5rem;
+}
+
+.service_sub_sec3_card_path h3 {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.service_sub_sec3_card_path p {
+    text-align: justify;
+    padding: 0;
+}
+
+@media (max-width: 1300px) {
+    .service_sub_sec3 img {
+        display: none;
+    }
+
+    .service_sub_sec3_card_container {
+        position: relative;
+        width: 100% !important;
+        height: max-content;
+        margin: 0 !important;
+        padding: 5%;
+        height: max-content;
+        top: 0;
+
+        border-radius: 2rem;
+
+        background-image: url(../img/bg445.png);
+        background-size: cover;
+        /* Ensures the image covers the entire div */
+        background-position: center;
+        /* Centers the image */
+        background-repeat: no-repeat;
+        /* Prevents the image from repeating */
+        overflow: hidden;
+    }
+}
 
 
 
