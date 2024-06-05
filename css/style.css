@@ -1444,7 +1444,7 @@ footer {
         text-align: left;
         line-height: 150%;
         text-align: center;
-        background-color: #ffffff86;
+        background-color: #ffffff00;
 
     }
 }
@@ -1462,6 +1462,9 @@ footer {
 .about_sec1 {
     padding-top: 6%;
     padding-bottom: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .about_sec1_col1 {
@@ -1490,6 +1493,7 @@ footer {
 .about_sec1_col2_txt p {
     text-align: justify;
     line-height: 200%;
+    padding: 0;
 }
 
 
@@ -1499,6 +1503,9 @@ footer {
 
 .about_sec2 {
     padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .about_sec2_col {
@@ -1580,6 +1587,9 @@ p {
 .why_us {
     width: 100%;
     height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .why_us_wraper {
@@ -1820,6 +1830,14 @@ p {
 .contact_text p {
     width: 60%;
     text-align: justify;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .contact_text p {
+        width: 100%;
+        text-align: justify;
+    }
 }
 
 .contact_bg {
