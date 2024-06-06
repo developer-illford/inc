@@ -1773,6 +1773,7 @@ p {
 @media (max-width: 768px) {
     .service_card p {
         text-align: center;
+        display: none;
     }
 
     .service_card_contentWrap img {
@@ -2045,6 +2046,10 @@ p {
     }
     .service_sub_sec1_strip {
         width: 100%;
+    }
+    .service_sub_strip_item h6 {
+        font-weight: bold;
+        font-size: 80%;
     }
 }
 
