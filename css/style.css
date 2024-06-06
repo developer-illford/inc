@@ -1581,7 +1581,12 @@ p {
 
 
 
-
+.why_us_text{
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 2%;
+    font-size: 300%;
+}
 
 
 .why_us {
