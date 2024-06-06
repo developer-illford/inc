@@ -2179,6 +2179,12 @@ p {
 
 }
 
+.service_sub_sec3_card_container h3{
+    color: #fff;
+    font-weight: 500;
+    font-size: 200%;
+}
+
 .service_sub_sec3_col {
     margin-bottom: 2%;
 }
@@ -2202,6 +2208,7 @@ p {
     text-align: center;
     margin-top: 5%;
     margin-bottom: 10%;
+    color: #000;
 }
 
 .service_sub_sec3_card_path p {
@@ -2296,7 +2303,7 @@ p {
         overflow: hidden;
     }
     .cont_bg_8{
-        background-image: url(../img/bg445.png);
+        background-image: url(../img/Vector\ 69.png);
         background-size: cover;
         /* Ensures the image covers the entire div */
         background-position: center;
@@ -2306,7 +2313,7 @@ p {
         overflow: hidden;
     }
     .cont_bg_9{
-        background-image: url(../img/bg445.png);
+        background-image: url(../img/Vector\ 48.png);
         background-size: cover;
         /* Ensures the image covers the entire div */
         background-position: center;
@@ -2316,7 +2323,7 @@ p {
         overflow: hidden;
     }
     .cont_bg_10{
-        background-image: url(../img/bg445.png);
+        background-image: url(../img/Vector\ 49.png);
         background-size: cover;
         /* Ensures the image covers the entire div */
         background-position: center;
@@ -2470,6 +2477,104 @@ p {
     height: max-content;
 
     background-image: url(../img/corporate\ courier\ banner.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.far_east_shipment_hero {
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/far\ east\ shipment\ banner.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.healthcare_hero {
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/healthcare_hero\ banner.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.warehousing_hero {
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/Warehousing\ banner.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.projectCargo_hero {
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/projectcargo\ banner.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.far_east_shipment_hero {
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/far\ east\ shipment\ banner.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.far_east_shipment_hero {
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/far\ east\ shipment\ banner.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.far_east_shipment_hero {
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/far\ east\ shipment\ banner.png);
     background-size: cover;
     /* Ensures the image covers the entire div */
     background-position: center;
