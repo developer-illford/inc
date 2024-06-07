@@ -13,31 +13,43 @@ function hamburgerToggle() {
 
 
 
+
+
+
+// ***********************************************************************
+// Function for typing animation in home page
+// ***********************************************************************
 document.addEventListener('DOMContentLoaded', () => {
-    const element = document.getElementById('typed-text');
-    const text = "Welcome <br>To INC Shipping LLC";
-    let index = 0;
+    const elements = document.querySelectorAll('.typed-text');
     const speed = 100; // Adjust typing speed here
 
-    const typeText = () => {
-        if (index < text.length) {
-            if (text[index] === '<' && text.substring(index, index + 4) === '<br>') {
-                element.innerHTML += '<br>';
-                index += 4;
-            } else {
+    elements.forEach(element => {
+        const text = element.getAttribute('data-text');
+        let index = 0;
+
+        const typeText = () => {
+            if (index < text.length) {
                 element.innerHTML += text[index];
                 index++;
+                setTimeout(typeText, speed);
             }
-            setTimeout(typeText, speed);
-        }
-    };
+        };
 
-    element.innerHTML = ''; // Clear existing text
-    typeText();
+        element.innerHTML = ''; // Clear existing text
+        typeText();
+    });
 });
 
 
 
+
+
+
+
+
+// ***********************************************************************
+// counter
+// ***********************************************************************
 document.addEventListener('DOMContentLoaded', () => {
     const counters = document.querySelectorAll('.count');
     const achivementsSection = document.querySelector('.home_achivements');

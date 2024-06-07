@@ -416,12 +416,17 @@ html {
     line-height: 150%;
 }
 
-.hero-content h1 {
+.hero-content h2 {
     font-size: 4rem;
     font-weight: bold;
     margin-bottom: 10px;
     color: var(--brown_text);
     line-height: 150%;
+}
+.hero-content h1{
+    padding: 0;
+    font-size: 180%;
+    color: #000;
 }
 
 .hero-content p {
@@ -429,6 +434,7 @@ html {
     margin-bottom: 20px;
     color: var(--brown_text);
     line-height: 150%;
+    padding: 0;
 
 }
 
@@ -492,7 +498,7 @@ html {
         padding-left: 10vh;
     }
 
-    .hero-content h1 {
+    .hero-content h2 {
         font-size: 3rem;
     }
 
@@ -507,7 +513,7 @@ html {
         padding-left: 5vh;
     }
 
-    .hero-content h1 {
+    .hero-content h2 {
         font-size: 2rem;
     }
 
@@ -528,7 +534,7 @@ html {
         padding-left: 5vh;
     }
 
-    .hero-content h1 {
+    .hero-content h2 {
         font-size: 3rem;
     }
 
@@ -553,7 +559,7 @@ html {
 }
 
 @media (max-width: 520px) {
-    .hero-content h1 {
+    .hero-content h2 {
         font-size: 2rem;
     }
 
@@ -571,7 +577,7 @@ html {
 }
 
 @media (max-width: 350px) {
-    .hero-content h1 {
+    .hero-content h2 {
         font-size: 1.5rem;
     }
 
