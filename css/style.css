@@ -2345,7 +2345,7 @@ p {
         overflow: hidden;
     }
     .cont_bg_11{
-        background-image: url(../img/bg445.png);
+        background-image: url(../img/Vector\ 33.png);
         background-size: cover;
         /* Ensures the image covers the entire div */
         background-position: center;
@@ -2355,7 +2355,7 @@ p {
         overflow: hidden;
     }
     .cont_bg_12{
-        background-image: url(../img/bg445.png);
+        background-image: url(../img/Vector\ 43.png);
         background-size: cover;
         /* Ensures the image covers the entire div */
         background-position: center;
@@ -2365,7 +2365,7 @@ p {
         overflow: hidden;
     }
     .cont_bg_13{
-        background-image: url(../img/bg445.png);
+        background-image: url(../img/Vector\ 40.png);
         background-size: cover;
         /* Ensures the image covers the entire div */
         background-position: center;
@@ -2375,7 +2375,7 @@ p {
         overflow: hidden;
     }
     .cont_bg_14{
-        background-image: url(../img/bg445.png);
+        background-image: url(../img/Vector\ 50.png);
         background-size: cover;
         /* Ensures the image covers the entire div */
         background-position: center;
@@ -2554,11 +2554,11 @@ p {
     overflow: hidden;
 }
 
-.far_east_shipment_hero {
+.channel_partner_hero {
     width: 100%;
     height: max-content;
 
-    background-image: url(../img/far\ east\ shipment\ banner.png);
+    background-image: url(../img/channel\ partner\ banner.png);
     background-size: cover;
     /* Ensures the image covers the entire div */
     background-position: center;
@@ -2568,11 +2568,11 @@ p {
     overflow: hidden;
 }
 
-.far_east_shipment_hero {
+.customs_clearence_hero {
     width: 100%;
     height: max-content;
 
-    background-image: url(../img/far\ east\ shipment\ banner.png);
+    background-image: url(../img/Group\ 386.png);
     background-size: cover;
     /* Ensures the image covers the entire div */
     background-position: center;
@@ -2582,11 +2582,11 @@ p {
     overflow: hidden;
 }
 
-.far_east_shipment_hero {
+.dangerous_goods_hero {
     width: 100%;
     height: max-content;
 
-    background-image: url(../img/far\ east\ shipment\ banner.png);
+    background-image: url(../img/dangerous\ goods\ banner.png);
     background-size: cover;
     /* Ensures the image covers the entire div */
     background-position: center;
@@ -2596,11 +2596,11 @@ p {
     overflow: hidden;
 }
 
-.far_east_shipment_hero {
+.pharma_shipment_hero {
     width: 100%;
     height: max-content;
 
-    background-image: url(../img/far\ east\ shipment\ banner.png);
+    background-image: url(../img/pharma\ shipment\ banner.png);
     background-size: cover;
     /* Ensures the image covers the entire div */
     background-position: center;
