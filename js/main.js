@@ -13,6 +13,25 @@ function hamburgerToggle() {
 
 
 
+// ***********************************************************************
+// Hamburger menu Service toggler
+// ***********************************************************************
+document.addEventListener('DOMContentLoaded', function () {
+    var servicesLink = document.getElementById('services_link');
+    var servicesDropdown = document.getElementById('services_dropdown');
+
+    servicesLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default anchor click behavior
+        if (servicesDropdown.style.display === 'block') {
+            servicesDropdown.style.display = 'none';
+        } else {
+            servicesDropdown.style.display = 'block';
+        }
+    });
+});
+
+
+
 
 
 

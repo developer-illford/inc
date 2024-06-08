@@ -102,14 +102,14 @@ html {
     height: max-content;
     background-image: url(../img/Rectangle\ 409.webp);
     background-size: cover;
-    /* Ensures the image covers the entire div */
     background-position: center;
-    /* Centers the image */
     background-repeat: no-repeat;
-    /* Prevents the image from repeating */
     overflow: hidden;
     padding: 2%;
     display: none;
+    position: absolute;
+    z-index: 10;
+    border-radius: 0.8rem;
 }
 
 .hamburger_mobile_menu a {
@@ -117,6 +117,16 @@ html {
     text-decoration: none;
     font-size: 150%;
     font-weight: 500;
+}
+
+.mobile_services_dropdown_container {
+    display: none;
+    padding-left: 10px; /* Indent dropdown items */
+}
+
+.mobile_services_dropdown_container a {
+    font-size: 130%;
+    font-weight: 400;
 }
 
 @media (max-width: 920px) {
@@ -165,6 +175,25 @@ html {
 
 
 /* navigation bar */
+.services_dropdown_container {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    z-index: 99999;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+/* Show the services dropdown on hover */
+.nav_services:hover .services_dropdown_container {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+
+
 .nav_navbar_col {
     padding: 0;
 }
@@ -178,20 +207,24 @@ html {
 
     background-image: url(../img/Rectangle\ 409.webp);
     background-size: cover;
-    /* Ensures the image covers the entire div */
     background-position: center;
-    /* Centers the image */
     background-repeat: no-repeat;
-    /* Prevents the image from repeating */
     overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 5px 6px 20px 0px #000000;
+}
+
+.nav_main_menu_wrap {
+    width: 100%;
+    height: max-content;
 
     display: flex;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 5px 6px 20px 0px #000000;
-    ;
-    ;
-
 }
 
 .nav_item {
@@ -214,11 +247,8 @@ html {
 .nav_active {
     background-image: url(../img/Rectangle\ 430.webp);
     background-size: cover;
-    /* Ensures the image covers the entire div */
     background-position: center;
-    /* Centers the image */
     background-repeat: no-repeat;
-    /* Prevents the image from repeating */
     overflow: hidden;
     color: #000 !important;
 }
@@ -227,6 +257,40 @@ html {
     text-decoration: none;
     color: #000 !important;
 }
+
+.services_dropdown {
+    width: 60%;
+    float: right;
+    border-radius: 1rem;
+    padding: 2%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-image: url(../img/Rectangle\ 409.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.services_dropdown_items_box {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.services_dropdown_items_box a {
+    margin-bottom: 3%;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    font-size: 90%;
+}
+
+
+
 
 
 
@@ -310,7 +374,8 @@ html {
     color: var(--brown_text);
     line-height: 150%;
 }
-.hero-content h1{
+
+.hero-content h1 {
     padding: 0;
     font-size: 180%;
     color: #000;
@@ -349,7 +414,7 @@ html {
     position: absolute;
     top: -100vh;
     /* Start above the viewport */
-    right: 20px;
+    right: 30px;
     animation: drop 2s forwards, swing 2s 1s infinite alternate ease-in-out;
     z-index: -1;
 }
@@ -874,7 +939,7 @@ html {
 
 
 /* CONTACT SECTION */
-.home_contact{
+.home_contact {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1474,7 +1539,7 @@ p {
 
 
 
-.why_us_text{
+.why_us_text {
     text-align: center;
     font-weight: 600;
     padding-bottom: 2%;
@@ -1937,9 +2002,11 @@ p {
     .service_sub_sec1_col1 img {
         display: none;
     }
+
     .service_sub_sec1_strip {
         width: 100%;
     }
+
     .service_sub_strip_item h6 {
         font-weight: bold;
         font-size: 80%;
@@ -1977,6 +2044,7 @@ p {
     .service_sub_sec1_para {
         padding: 8%;
     }
+
     .service_sub_sec1_para p {
         font-size: 90%;
     }
@@ -2051,10 +2119,12 @@ p {
     padding: 0;
     font-size: 120%;
 }
+
 @media (max-width: 768px) {
     .service_sub_sec2_card1 p {
         font-size: 80%;
     }
+
     .service_sub_sec2_card2 p {
         font-size: 80%;
     }
@@ -2092,7 +2162,7 @@ p {
 
 }
 
-.service_sub_sec3_card_container h3{
+.service_sub_sec3_card_container h3 {
     color: #fff;
     font-weight: 500;
     font-size: 200%;
@@ -2138,7 +2208,7 @@ p {
         margin-bottom: 2%;
         font-size: 120%;
     }
-    
+
     .service_sub_sec3_card_path p {
         font-size: 80%;
     }
@@ -2154,7 +2224,7 @@ p {
         border-radius: 2rem;
     }
 
-    .cont_bg_1{
+    .cont_bg_1 {
         background-image: url(../img/bg445.webp);
         background-size: cover;
         /* Ensures the image covers the entire div */
@@ -2164,7 +2234,8 @@ p {
         /* Prevents the image from repeating */
         overflow: hidden;
     }
-    .cont_bg_2{
+
+    .cont_bg_2 {
         background-image: url(../img/Vector\ 45.webp);
         background-size: cover;
         /* Ensures the image covers the entire div */
@@ -2174,7 +2245,8 @@ p {
         /* Prevents the image from repeating */
         overflow: hidden;
     }
-    .cont_bg_3{
+
+    .cont_bg_3 {
         background-image: url(../img/Vector\ 44.webp);
         background-size: cover;
         /* Ensures the image covers the entire div */
@@ -2184,7 +2256,8 @@ p {
         /* Prevents the image from repeating */
         overflow: hidden;
     }
-    .cont_bg_4{
+
+    .cont_bg_4 {
         background-image: url(../img/Vector\ 46.webp);
         background-size: cover;
         /* Ensures the image covers the entire div */
@@ -2194,7 +2267,8 @@ p {
         /* Prevents the image from repeating */
         overflow: hidden;
     }
-    .cont_bg_5{
+
+    .cont_bg_5 {
         background-image: url(../img/Vector\ 47.webp);
         background-size: cover;
         /* Ensures the image covers the entire div */
@@ -2204,7 +2278,8 @@ p {
         /* Prevents the image from repeating */
         overflow: hidden;
     }
-    .cont_bg_6{
+
+    .cont_bg_6 {
         background-image: url(../img/Vector\ 73.webp);
         background-size: cover;
         /* Ensures the image covers the entire div */
@@ -2214,7 +2289,8 @@ p {
         /* Prevents the image from repeating */
         overflow: hidden;
     }
-    .cont_bg_7{
+
+    .cont_bg_7 {
         background-image: url(../img/Vector\ 62.webp);
         background-size: cover;
         /* Ensures the image covers the entire div */
@@ -2224,7 +2300,8 @@ p {
         /* Prevents the image from repeating */
         overflow: hidden;
     }
-    .cont_bg_8{
+
+    .cont_bg_8 {
         background-image: url(../img/Vector\ 69.webp);
         background-size: cover;
         /* Ensures the image covers the entire div */
@@ -2234,7 +2311,8 @@ p {
         /* Prevents the image from repeating */
         overflow: hidden;
     }
-    .cont_bg_9{
+
+    .cont_bg_9 {
         background-image: url(../img/Vector\ 48.webp);
         background-size: cover;
         /* Ensures the image covers the entire div */
@@ -2244,7 +2322,8 @@ p {
         /* Prevents the image from repeating */
         overflow: hidden;
     }
-    .cont_bg_10{
+
+    .cont_bg_10 {
         background-image: url(../img/Vector\ 49.webp);
         background-size: cover;
         /* Ensures the image covers the entire div */
@@ -2254,7 +2333,8 @@ p {
         /* Prevents the image from repeating */
         overflow: hidden;
     }
-    .cont_bg_11{
+
+    .cont_bg_11 {
         background-image: url(../img/Vector\ 33.webp);
         background-size: cover;
         /* Ensures the image covers the entire div */
@@ -2264,7 +2344,8 @@ p {
         /* Prevents the image from repeating */
         overflow: hidden;
     }
-    .cont_bg_12{
+
+    .cont_bg_12 {
         background-image: url(../img/Vector\ 43.webp);
         background-size: cover;
         /* Ensures the image covers the entire div */
@@ -2274,7 +2355,8 @@ p {
         /* Prevents the image from repeating */
         overflow: hidden;
     }
-    .cont_bg_13{
+
+    .cont_bg_13 {
         background-image: url(../img/Vector\ 40.webp);
         background-size: cover;
         /* Ensures the image covers the entire div */
@@ -2284,7 +2366,8 @@ p {
         /* Prevents the image from repeating */
         overflow: hidden;
     }
-    .cont_bg_14{
+
+    .cont_bg_14 {
         background-image: url(../img/Vector\ 50.webp);
         background-size: cover;
         /* Ensures the image covers the entire div */
@@ -2528,7 +2611,7 @@ p {
 
 
 * {
-    /* border: 1px solid red; */
+    border: 1px solid red;
     font-family: "Poppins", sans-serif;
 
 }
