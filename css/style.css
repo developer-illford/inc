@@ -540,6 +540,7 @@ body {
 
     .container-image img {
         width: 80%;
+        float: right;
         /* Adjust size as needed */
         display: block;
         margin: 0 auto;
@@ -2668,7 +2669,7 @@ p {
 
 
 * {
-    /* border: 1px solid red; */
+    border: 1px solid red;
     font-family: "Poppins", sans-serif;
 
 }

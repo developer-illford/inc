@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Recipient email address
-    $recipient = "manastom670@gmail.com";
+    $recipient = "sales@incshipping.com";
 
     // Email subject
     $subject = "New Form Submission from $name";
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_body .= "Message: $message\n";
 
     // Headers for the email
-    $headers = "From: manastom670@gmail.com\r\n";
+    $headers = "From: sales@incshipping.com\r\n";
     $headers .= "Reply-To: $email\r\n";
 
     // Send email to recipient
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Send confirmation email to sender
         $confirmation_subject = "Thank you for your submission";
         $confirmation_body = "Dear $name,\n\nThank you for contacting us. We have received your submission and will get back to you shortly.\n\nBest regards,\nINC Shipping LLC";
-        $confirmation_headers = "From: manastom670@gmail.com\r\n";
+        $confirmation_headers = "From: sales@incshipping.com\r\n";
 
         mail($email, $confirmation_subject, $confirmation_body, $confirmation_headers);
 
