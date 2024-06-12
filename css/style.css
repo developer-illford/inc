@@ -2672,7 +2672,7 @@ p {
 
 
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     font-family: "Poppins", sans-serif;
 
 }
