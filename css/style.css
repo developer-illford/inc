@@ -519,6 +519,12 @@ body {
 }
 
 @media (max-width: 768px) {
+    .nav_logo_col img {
+        width: 60%;
+        height: auto;
+        padding: 5px;
+        margin-left: 10px;
+    }
     .hero_content_wrap {
         background-color: #ffffff04;
         width: 100%;
@@ -2672,7 +2678,7 @@ p {
 
 
 * {
-    /* border: 1px solid red; */
+    border: 1px solid red;
     font-family: "Poppins", sans-serif;
 
 }
