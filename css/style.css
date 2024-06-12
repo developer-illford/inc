@@ -514,7 +514,7 @@ body {
     }
 
     .hero-content .quote-button {
-        margin-top: 5VH;
+        margin-top: 5vh;
     }
 }
 
@@ -522,7 +522,7 @@ body {
     .hero_content_wrap {
         background-color: #ffffff9a;
         width: 100%;
-        padding-top: 10vh;
+        padding-top: 18vh;
         padding-left: 5vh;
     }
 
@@ -536,6 +536,7 @@ body {
 
     .container-image {
         width: 100%;
+
     }
 
     .container-image img {
@@ -544,6 +545,8 @@ body {
         /* Adjust size as needed */
         display: block;
         margin: 0 auto;
+        padding: 0;
+
     }
 
     .hero-content .quote-button {
