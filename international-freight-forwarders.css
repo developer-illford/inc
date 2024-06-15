@@ -136,7 +136,7 @@ body {
     justify-content: center;
     padding: 10%;
 
-    background-image: url(./img/Group\ 401.png);
+    background-image: url(./img/Group\ 401.webp);
     background-size: cover;
     /* Ensures the image covers the entire div */
     background-position: center;
@@ -148,7 +148,7 @@ body {
 }
 
 .view_more_Circle:hover {
-    background-image: url(./img/Group\ 402.png);
+    background-image: url(./img/Group\ 402.webp);
 }
 
 
@@ -378,7 +378,7 @@ body {
     justify-content: center;
     padding: 10%;
 
-    background-image: url(./img/get_touch01.png);
+    background-image: url(./img/get_touch01.webp);
     background-size: cover;
     /* Ensures the image covers the entire div */
     background-position: center;
@@ -390,7 +390,7 @@ body {
 }
 
 .get_in_touch_Circle:hover {
-    background-image: url(./img/get_touch02.png);
+    background-image: url(./img/get_touch02.webp);
 }
 
 
@@ -570,7 +570,7 @@ body {
     width: 100%;
     height: max-content;
 
-    background-image: url(./img/Group\ 379\ bg.png);
+    background-image: url(./img/Group\ 379\ bg.webp);
     background-size: cover;
     /* Ensures the image covers the entire div */
     background-position: center;
@@ -692,7 +692,7 @@ body {
 }
 
 .sec6_testimonial_container {
-    background-image: url(./img/ad_testimonial_bg.png);
+    background-image: url(./img/ad_testimonial_bg.webp);
     background-size: cover;
     /* Ensures the image covers the entire div */
     background-position: center;
@@ -794,7 +794,7 @@ body {
     height: max-content;
     position: relative;
 
-    background-image: url(./img/ad_form_bg.png);
+    background-image: url(./img/ad_form_bg.webp);
     background-size: cover;
     /* Ensures the image covers the entire div */
     background-position: center;
