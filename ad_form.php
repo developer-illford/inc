@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recipient email address
     $to = "manastom670@gmail.com";
     // Subject of the email
-    $subject = "Form Submission from $fname $lname";
+    $subject = "Form Submission from Advertisement$fname $lname";
 
     // Email body content
     $body = "First Name: $fname\n";
@@ -29,11 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Sending email
     if (mail($to, $subject, $body, $headers)) {
-        echo "Email successfully sent to $to";
+        echo "<script type='text/javascript'>alert('Email successfully sent to $to'); window.location.href = 'international-freight-forwarders.html';</script>";
     } else {
-        echo "Email sending failed...";
+        echo "<script type='text/javascript'>alert('Failed to send email...'); window.location.href = 'international-freight-forwarders.html';</script>";
     }
 } else {
-    echo "Invalid request method.";
+    echo "<script type='text/javascript'>alert('Invalid request method.'); window.location.href = 'international-freight-forwarders.html';</script>";
 }
 ?>

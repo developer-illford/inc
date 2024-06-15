@@ -81,7 +81,8 @@
                     <div class="sec1_input_container">
                         <textarea required rows="6" name="message" id="message" placeholder="Message"></textarea>
                     </div>
-                    <button type="submit">
+                    <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v"></div>
+                    <button type="submit" onclick="return validateForm()">
                         SUBMIT <i class="fa-solid fa-truck-arrow-right"></i>
                     </button>
                 </form>
@@ -476,7 +477,7 @@
                         <textarea required rows="6" name="message" id="message" placeholder="Message"></textarea>
                     </div>
                     <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v"></div>
-                    <button type="submit">
+                    <button type="submit" onclick="return validateForm()">
                         SUBMIT &nbsp; &nbsp; <i class="fa-solid fa-truck-arrow-right"></i>
                     </button>
                 </form>
