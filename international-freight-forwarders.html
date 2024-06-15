@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -65,19 +67,19 @@
                 <h4>GET A QUICK QUOTE</h4>
                 <form action="ad_form.php" method="post">
                     <div class="sec1_input_container">
-                        <input id="fname" name="fname" type="text" placeholder="First Name">
-                        <input id="lname" name="lname" type="text" placeholder="Last Name">
+                        <input required id="fname" name="fname" type="text" placeholder="First Name">
+                        <input required id="lname" name="lname" type="text" placeholder="Last Name">
                     </div>
                     <div class="sec1_input_container">
-                        <input id="email" name="email" type="email" placeholder="Email">
-                        <input id="phone" name="phone" type="tel" placeholder="Phone">
+                        <input required id="email" name="email" type="email" placeholder="Email">
+                        <input required id="phone" name="phone" type="tel" placeholder="Phone">
                     </div>
                     <div class="sec1_input_container">
-                        <input id="dept_city" name="dept_city" type="text" placeholder="City of Deparature">
-                        <input id="arr_city" name="arr_city" type="text" placeholder="Delivery City">
+                        <input required id="dept_city" name="dept_city" type="text" placeholder="City of Deparature">
+                        <input required id="arr_city" name="arr_city" type="text" placeholder="Delivery City">
                     </div>
                     <div class="sec1_input_container">
-                        <textarea rows="6" name="message" id="message" placeholder="Message"></textarea>
+                        <textarea required rows="6" name="message" id="message" placeholder="Message"></textarea>
                     </div>
                     <button type="submit">
                         SUBMIT <i class="fa-solid fa-truck-arrow-right"></i>
@@ -459,20 +461,21 @@
                 <h2>Contact Us</h2>
                 <form action="ad_form.php" method="post">
                     <div class="sec7_input_container">
-                        <input id="fname" name="fname" type="text" placeholder="First Name">
-                        <input id="lname" name="lname" type="text" placeholder="Last Name">
+                        <input required id="fname" name="fname" type="text" placeholder="First Name">
+                        <input required id="lname" name="lname" type="text" placeholder="Last Name">
                     </div>
                     <div class="sec7_input_container">
-                        <input id="email" name="email" type="email" placeholder="Email">
-                        <input id="phone" name="phone" type="tel" placeholder="Phone">
+                        <input required id="email" name="email" type="email" placeholder="Email">
+                        <input required id="phone" name="phone" type="tel" placeholder="Phone">
                     </div>
                     <div class="sec7_input_container">
-                        <input id="dept_city" name="dept_city" type="text" placeholder="City of Deparature">
-                        <input id="arr_city" name="arr_city" type="text" placeholder="Delivery City">
+                        <input required id="dept_city" name="dept_city" type="text" placeholder="City of Deparature">
+                        <input required id="arr_city" name="arr_city" type="text" placeholder="Delivery City">
                     </div>
                     <div class="sec7_input_container">
-                        <textarea rows="6" name="message" id="message" placeholder="Message"></textarea>
+                        <textarea required rows="6" name="message" id="message" placeholder="Message"></textarea>
                     </div>
+                    <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v"></div>
                     <button type="submit">
                         SUBMIT &nbsp; &nbsp; <i class="fa-solid fa-truck-arrow-right"></i>
                     </button>
@@ -654,6 +657,28 @@
 
         // Set interval to update testimonial every 2 seconds
         setInterval(updateTestimonial, 4000);
+    </script>
+
+
+
+
+
+
+
+
+
+    <!-- Scripts -->
+    <script>
+        function validateForm() {
+            var response = grecaptcha.getResponse();
+            if (response.length === 0) {
+                // reCAPTCHA not verified
+                alert("Please verify that you're not a robot.");
+                return false;
+            }
+            // reCAPTCHA verified, continue with form submission
+            return true;
+        }
     </script>
 
 
