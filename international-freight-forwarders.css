@@ -57,13 +57,13 @@ body {
     margin-top: 5%;
 }
 
-.header_contact_button{
+.header_contact_button {
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
-.header_contact_button button{
+.header_contact_button button {
     float: right;
     margin-right: 2%;
     background-color: #00000000;
@@ -874,13 +874,14 @@ body {
     margin-left: 1%;
 }
 
-.sec7_social_links{
-    display: flex ;
+.sec7_social_links {
+    display: flex;
     align-items: baseline;
     justify-content: end;
     color: var(--text_white);
 }
-.sec7_social_links a{
+
+.sec7_social_links a {
     text-decoration: none;
     color: var(--text_white);
     margin-right: 2%;
@@ -910,12 +911,12 @@ body {
 
 .footer_col1 p {
     color: var(--text_white);
-    width: 50%;
+    width: 100%;
     text-align: justify;
 }
 
 .footer_col1 img {
-    width: 30%;
+    width: 60%;
 }
 
 .footer_col2 {
@@ -955,16 +956,39 @@ body {
     text-decoration: none;
 }
 
+.footer_col3 {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-bottom: 1px solid var(--theme_semiwhite);
+}
+
+.footer_col3 h6 {
+    color: var(--text_white);
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.footer_col3 a {
+    color: var(--text_white);
+    text-decoration: none;
+}
+
+.footer_col3 p {
+    color: var(--text_white);
+}
+
 @media (max-width: 768px) {
     .footer_col1 p {
         color: var(--text_white);
         width: 100%;
         text-align: justify;
     }
+
     .footer_map_container {
         height: 80%;
         width: 100%;
     }
+
     .footer_attribute {
         float: left;
     }
@@ -993,15 +1017,15 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 99999;
-  }
-  
-  @keyframes pulsing {
-    to {
-      box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
-    }
-  }
+}
 
-  .contact_icon {
+@keyframes pulsing {
+    to {
+        box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+}
+
+.contact_icon {
     background-color: #42db87;
     color: #fff;
     width: 60px;
@@ -1024,15 +1048,15 @@ body {
     font-family: sans-serif;
     text-decoration: none !important;
     transition: all 300ms ease-in-out;
-  }
-  
-  
-  .text_icon {
+}
+
+
+.text_icon {
     margin-top: 8px;
     color: #000000;
     font-size: 13px;
-  }
-  
+}
+
 
 
 
@@ -1046,7 +1070,7 @@ body {
 
 
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 /* background: rgba(255, 255, 255, 0.466); */
