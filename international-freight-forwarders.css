@@ -57,6 +57,23 @@ body {
     margin-top: 5%;
 }
 
+.header_contact_button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header_contact_button button{
+    float: right;
+    margin-right: 2%;
+    background-color: #00000000;
+    color: var(--text_white);
+    padding: 1% 2% 1% 2%;
+    border: 2px solid var(--theme_yellow);
+    border-radius: 2rem;
+    outline: none;
+}
+
 
 
 
@@ -962,10 +979,74 @@ body {
 
 
 
+/* whatsapp */
+
+
+.floating_btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+  }
+  
+  @keyframes pulsing {
+    to {
+      box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+  }
+
+  .contact_icon {
+    background-color: #42db87;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translatey(0px);
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 0 0 #42db87;
+    -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    font-weight: normal;
+    font-family: sans-serif;
+    text-decoration: none !important;
+    transition: all 300ms ease-in-out;
+  }
+  
+  
+  .text_icon {
+    margin-top: 8px;
+    color: #000000;
+    font-size: 13px;
+  }
+  
+
+
+
+
+
+
+
+
+
+
 
 
 * {
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 
 /* background: rgba(255, 255, 255, 0.466); */
