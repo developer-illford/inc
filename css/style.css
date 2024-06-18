@@ -52,21 +52,21 @@ body {
 ::-webkit-scrollbar {
     width: 8px;
     padding: 5px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px rgba(128, 128, 128, 0);
     border-radius: 10px;
-  }
+}
 
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: var(--inc_color2);
     border-radius: 10px;
-  }
-  
+}
+
 
 
 
@@ -525,6 +525,7 @@ body {
         padding: 5px;
         margin-left: 10px;
     }
+
     .hero_content_wrap {
         background-color: #ffffff04;
         width: 100%;
@@ -2729,7 +2730,7 @@ p {
 
 /************************************* orbit dots animation *********************************/
 ul.solarsystem {
-    
+
     position: relative;
     width: 100%;
     height: 200vh;
@@ -3044,4 +3045,67 @@ ul.solarsystem li.pluto {
     to {
         -webkit-transform: rotate(360deg)
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ********************* privacy policy || terms and conditions *********************** */
+
+.privacy_policy {
+    width: 100%;
+    height: max-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.privacy_policy_container {
+    width: 90%;
+    border-radius: 1rem;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 2%;
+    border: 5px solid var(--inc_color2);
+}
+
+.privacy_policy_container p {
+    padding: 0;
+}
+
+
+.terms_conditions {
+    width: 100%;
+    height: max-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.terms_conditions_container {
+    width: 90%;
+    border-radius: 1rem;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 2%;
+    border: 5px solid var(--inc_color2);
+}
+
+.terms_conditions_container p {
+    padding: 0;
 }
