@@ -3088,6 +3088,33 @@ ul.solarsystem li.pluto {
 }
 
 
+.p_p_hero {
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/privacy\ policy.webp);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.t_c_hero{
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/terms\ and\ conditions.webp);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
 .terms_conditions {
     width: 100%;
     height: max-content;
