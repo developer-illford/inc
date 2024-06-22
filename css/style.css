@@ -402,7 +402,7 @@ body {
         display: none;
     }
 
-    .header_contact_button{
+    .header_contact_button {
         display: none;
     }
 
@@ -2694,6 +2694,20 @@ p {
     overflow: hidden;
 }
 
+.thankyou_hero {
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/Group\ 410\ t.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
 
 
 
@@ -3125,7 +3139,7 @@ ul.solarsystem li.pluto {
     overflow: hidden;
 }
 
-.t_c_hero{
+.t_c_hero {
     width: 100%;
     height: max-content;
 
@@ -3138,6 +3152,7 @@ ul.solarsystem li.pluto {
     /* Prevents the image from repeating */
     overflow: hidden;
 }
+
 .terms_conditions {
     width: 100%;
     height: max-content;
@@ -3190,15 +3205,15 @@ ul.solarsystem li.pluto {
     align-items: center;
     justify-content: center;
     z-index: 99999;
-  }
-  
-  @keyframes pulsing {
-    to {
-      box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
-    }
-  }
+}
 
-  .contact_icon {
+@keyframes pulsing {
+    to {
+        box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+}
+
+.contact_icon {
     background-color: #42db87;
     color: #fff;
     width: 60px;
@@ -3221,15 +3236,14 @@ ul.solarsystem li.pluto {
     font-family: sans-serif;
     text-decoration: none !important;
     transition: all 300ms ease-in-out;
-  }
-  
-  
-  .text_icon {
+}
+
+
+.text_icon {
     margin-top: 8px;
     color: #000000;
     font-size: 13px;
-  }
-  
+}
 
 
 
@@ -3239,6 +3253,92 @@ ul.solarsystem li.pluto {
 
 
 
-  *{
+
+
+
+
+
+
+
+.thankyou_box_container {
+    width: 100%;
+    height: max-content;
+}
+
+.thankyou_box {
+    background-color: var(--inc_color2);
+    border-radius: 2rem;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 3% !important;
+    padding-right: 3% !important;
+}
+
+.thankyou_box p {
+    padding: 0;
+}
+
+.thankyou_box h3 {
+    padding: 0;
+    font-weight: bold;
+}
+
+.thankyou_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thankyou_img img {
+    width: 30%;
+    margin-top: 1%;
+}
+
+.thankyou_why_choose {
+    width: 100%;
+    height: max-content;
+    padding-left: 2%;
+}
+
+.thankyou_next_steps_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.thankyou_next_steps_item img {
+    width: 50%;
+    margin: 5%;
+}
+
+.thankyou_next_steps_item h6 {
+    font-weight: bold;
+}
+
+.thankyou_next_steps_item p {
+    width: 60%;
+    padding: 0;
+}
+
+.home_contact_image h5 {
+    font-weight: bold;
+    width: 60%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
     /* border: 1px solid red; */
-  }
+}
