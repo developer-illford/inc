@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send the email to the recipient
     if (mail($to, $subject, $email_content, $headers)) {
-        echo "<script type='text/javascript'>alert('Thank you! Your message has been sent.'); window.location.href = 'contact.html';</script>";
+        echo "<script type='text/javascript'> window.location.href = 'thankyou.html';</script>";
 
         // Send a confirmation email to the sender
         $confirm_subject = "Thank you for contacting us";
@@ -47,8 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Send the confirmation email
         if (mail($email, $confirm_subject, $confirm_message, $confirm_headers)) {
-            echo "<script type='text/javascript'>alert(' A confirmation email has been sent to your email address.'); window.location.href = 'contact.html';</script>
-            ";
+            echo "<script type='text/javascript'> window.location.href = 'thankyou.html';</script>";
         } else {
             echo "<script type='text/javascript'>alert('However, we could not send a confirmation email to your address.'); window.location.href = 'contact.html';</script>";
         }
