@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recipient email address
     $to = "sales@incshipping.com";
     // Subject of the email
-    $subject = "Form Submission from Advertisement$fname $lname";
+    $subject = "Form Submission from Ad Page - $fname $lname";
 
     // Email body content
     $body = "First Name: $fname\n";
