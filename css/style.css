@@ -3193,7 +3193,40 @@ ul.solarsystem li.pluto {
 }
 
 
+.cookies_float {
+    display: block;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 60%;
+    height: 140px;
+    border: 2px solid var(--inc_color2);
+    border-radius: 1rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 99999;
+}
 
+.cookies_float p {
+    padding: 0;
+    width: 70%;
+}
+
+.coookie_buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.coookie_buttons button {
+    margin: 4%;
+    padding: 10px 20px;
+    border: 2px solid var(--inc_color2);
+    background-color: #fff;
+    font-weight: bold;
+    border-radius: 2rem;
+}
 
 
 
