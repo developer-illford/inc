@@ -457,6 +457,15 @@ body {
     flex-direction: column;
 }
 
+.sec4 button {
+    padding: 1% 2%;
+    border-radius: 2rem;
+    border: 8px solid var(--theme_yellow);
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+}
+
 .sec4_wrap {
     width: 70%;
     height: max-content;
@@ -476,6 +485,7 @@ body {
     color: var(--text_white);
     text-align: justify;
 }
+
 
 .service_card_container {
     width: 100%;
@@ -503,6 +513,7 @@ body {
     margin: 0 1rem;
     text-align: center;
     transition: 0.5s ease;
+    height: 500px !important;
 }
 
 .service_card:hover {
