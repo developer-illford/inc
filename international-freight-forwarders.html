@@ -151,16 +151,24 @@
                 <h4>GET A QUICK QUOTE</h4>
                 <form action="ad_form.php" method="post">
                     <div class="sec1_input_container">
-                        <input required id="fname" name="fname" type="text" placeholder="First Name">
-                        <input required id="lname" name="lname" type="text" placeholder="Last Name">
+                        <input required id="fname" name="fname" type="text" placeholder="Your Name">
+                        <input required id="cname" name="cname" type="text" placeholder="Name of your Company">
                     </div>
                     <div class="sec1_input_container">
                         <input required id="email" name="email" type="email" placeholder="Email">
                         <input required id="phone" name="phone" type="tel" placeholder="Phone">
                     </div>
                     <div class="sec1_input_container">
-                        <input required id="dept_city" name="dept_city" type="text" placeholder="City of Deparature">
-                        <input required id="arr_city" name="arr_city" type="text" placeholder="Delivery City">
+                        <select name="shippingInquiryType" id="shippingInquiryType">
+                            <option value="">Shipping Inquiry Type:</option>
+                            <option value="">General Inquiry</option>
+                            <option value="">Rate Quote</option>
+                            <option value="">Shipment Tracking</option>
+                            <option value="">Customs Assistance</option>
+                            <option value="">Damage or Loss Claim</option>
+                            <option value="">Billing and Payment</option>
+                            <option value="">Other</option>
+                        </select>
                     </div>
                     <div class="sec1_input_container">
                         <textarea required rows="6" name="message" id="message" placeholder="Message"></textarea>
@@ -549,16 +557,24 @@
                 <h2>Contact Us</h2>
                 <form action="ad_form.php" method="post">
                     <div class="sec7_input_container">
-                        <input required id="fname" name="fname" type="text" placeholder="First Name">
-                        <input required id="lname" name="lname" type="text" placeholder="Last Name">
+                        <input required id="fname" name="fname" type="text" placeholder="Your Name">
+                        <input required id="cname" name="cname" type="text" placeholder="Name of your Company">
                     </div>
                     <div class="sec7_input_container">
                         <input required id="email" name="email" type="email" placeholder="Email">
                         <input required id="phone" name="phone" type="tel" placeholder="Phone">
                     </div>
                     <div class="sec7_input_container">
-                        <input required id="dept_city" name="dept_city" type="text" placeholder="City of Deparature">
-                        <input required id="arr_city" name="arr_city" type="text" placeholder="Delivery City">
+                        <select name="shippingInquiryType" id="shippingInquiryType">
+                            <option value="">Shipping Inquiry Type:</option>
+                            <option value="">General Inquiry</option>
+                            <option value="">Rate Quote</option>
+                            <option value="">Shipment Tracking</option>
+                            <option value="">Customs Assistance</option>
+                            <option value="">Damage or Loss Claim</option>
+                            <option value="">Billing and Payment</option>
+                            <option value="">Other</option>
+                        </select>
                     </div>
                     <div class="sec7_input_container">
                         <textarea required rows="6" name="message" id="message" placeholder="Message"></textarea>

@@ -201,6 +201,15 @@ body {
     outline: none;
 }
 
+.sec1_input_container select {
+    width: 100%;
+    margin: 1%;
+    border-radius: 1rem;
+    padding: 3%;
+    border: none;
+    outline: none;
+}
+
 .sec1_input_container textarea {
     width: 100%;
     margin: 1%;
@@ -855,6 +864,15 @@ body {
 }
 
 .sec7_input_container input {
+    width: 100%;
+    margin: 1%;
+    border-radius: 1rem;
+    padding: 3%;
+    border: none;
+    outline: none;
+}
+
+.sec7_input_container select {
     width: 100%;
     margin: 1%;
     border-radius: 1rem;
