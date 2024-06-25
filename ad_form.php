@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($fname) && !empty($cname) && !empty($email) && !empty($phone) && !empty($message)) {
         // Email configuration
         $to = "recipient@example.com"; // Replace with your email address
-        $subject = "New Form Submission";
+        $subject = "INC SHIPPING - From Ad Page - New form submission from $fname . ";
         
         // Email content
         $email_content = "Name: $fname\n";
