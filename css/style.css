@@ -3177,8 +3177,20 @@ ul.solarsystem li.pluto {
 
 
 
+.cookie_policy {
+    padding: 5%;
+}
 
+.cookie_policy p {
+    padding: 0%;
+}
 
+.cookie_policy_container {
+    padding: 2%;
+    border: 5px solid var(--inc_color2);
+    border-radius: 1rem;
+
+}
 
 
 
