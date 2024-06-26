@@ -7,11 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = filter_var(trim($_POST['phone']), FILTER_SANITIZE_STRING);
     $shippingInquiryType = filter_var(trim($_POST['shippingInquiryType']), FILTER_SANITIZE_STRING);
     $message = filter_var(trim($_POST['message']), FILTER_SANITIZE_STRING);
-
+    echo "<script type='text/javascript'> console.log('entered');</script>";
     // Check if required fields are not empty
     if (!empty($fname) && !empty($cname) && !empty($email) && !empty($phone) && !empty($message)) {
         // Email configuration
-        $to = "recipient@example.com"; // Replace with your email address
+        $to = "manastom670@gmail.com"; // Replace with your email address
         $subject = "INC SHIPPING - From Ad Page - New form submission from $fname . ";
         
         // Email content
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Redirect to a thank you page or display a success message
             echo "<script type='text/javascript'> window.location.href = 'thankyou.html';</script>";
         } else {
-            echo "<script type='text/javascript'>alert('Oops! Something went wrong, and we could not send your message.');</script>"
+            echo "<script type='text/javascript'>alert('Oops! Something went wrong, and we could not send your message.');</script>";
         }
     } else {
         echo "<script type='text/javascript'>alert('Please fill in all required fields.');</script>";
