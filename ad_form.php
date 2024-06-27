@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if required fields are not empty
     if (!empty($fname) && !empty($cname) && !empty($email) && !empty($phone) && !empty($message)) {
         // Email configuration
-        $to = "manastom670@gmail.com"; // Replace with your email address
+        $to = "sales@incshipping.com"; // Replace with your email address
         $subject = "INC SHIPPING - From Ad Page - New form submission from $fname . ";
         
         // Email content

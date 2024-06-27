@@ -149,7 +149,7 @@
         <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 sec1_col2">
             <div class="sec1_form_container">
                 <h4>GET A QUICK QUOTE</h4>
-                <form action="ad_form.php" method="post">
+                <form action="ad_form.php" method="post" onsubmit="return validateForm('form1', recaptcha1)">
                     <div class="sec1_input_container">
                         <input required id="fname" name="fname" type="text" placeholder="Your Name">
                         <input required id="cname" name="cname" type="text" placeholder="Name of your Company">
@@ -160,21 +160,22 @@
                     </div>
                     <div class="sec1_input_container">
                         <select name="shippingInquiryType" id="shippingInquiryType">
-                            <option value="">Shipping Inquiry Type:</option>
-                            <option value="">General Inquiry</option>
-                            <option value="">Rate Quote</option>
-                            <option value="">Shipment Tracking</option>
-                            <option value="">Customs Assistance</option>
-                            <option value="">Damage or Loss Claim</option>
-                            <option value="">Billing and Payment</option>
-                            <option value="">Other</option>
+                            <option value="" disabled selected>Shipping Inquiry Type:</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Rate Quote">Rate Quote</option>
+                            <option value="Shipment Tracking">Shipment Tracking</option>
+                            <option value="Customs Assistance">Customs Assistance</option>
+                            <option value="Damage or Loss Claim">Damage or Loss Claim</option>
+                            <option value="Billing and Payment">Billing and Payment</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <div class="sec1_input_container">
                         <textarea required rows="6" name="message" id="message" placeholder="Message"></textarea>
                     </div>
-                    <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v"></div>
-                    <button type="submit" onclick="return validateForm()">
+                    <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v" id="recaptcha1">
+                    </div>
+                    <button type="submit">
                         SUBMIT <i class="fa-solid fa-truck-arrow-right"></i>
                     </button>
                 </form>
@@ -555,7 +556,7 @@
             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-0 col-0 sec7_col1"></div>
             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 sec7_col2" id="contact_form">
                 <h2>Contact Us</h2>
-                <form action="ad_form.php" method="post">
+                <form action="ad_form.php" method="post" onsubmit="return validateForm('form2', recaptcha2)">
                     <div class="sec7_input_container">
                         <input required id="fname" name="fname" type="text" placeholder="Your Name">
                         <input required id="cname" name="cname" type="text" placeholder="Name of your Company">
@@ -566,21 +567,22 @@
                     </div>
                     <div class="sec7_input_container">
                         <select name="shippingInquiryType" id="shippingInquiryType">
-                            <option value="">Shipping Inquiry Type:</option>
-                            <option value="">General Inquiry</option>
-                            <option value="">Rate Quote</option>
-                            <option value="">Shipment Tracking</option>
-                            <option value="">Customs Assistance</option>
-                            <option value="">Damage or Loss Claim</option>
-                            <option value="">Billing and Payment</option>
-                            <option value="">Other</option>
+                            <option value="" disabled selected>Shipping Inquiry Type:</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Rate Quote">Rate Quote</option>
+                            <option value="Shipment Tracking">Shipment Tracking</option>
+                            <option value="Customs Assistance">Customs Assistance</option>
+                            <option value="Damage or Loss Claim">Damage or Loss Claim</option>
+                            <option value="Billing and Payment">Billing and Payment</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <div class="sec7_input_container">
                         <textarea required rows="6" name="message" id="message" placeholder="Message"></textarea>
                     </div>
-                    <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v"></div>
-                    <button type="submit" onclick="return validateForm()">
+                    <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v" id="recaptcha2">
+                    </div>
+                    <button type="submit">
                         SUBMIT &nbsp; &nbsp; <i class="fa-solid fa-truck-arrow-right"></i>
                     </button>
                 </form>
@@ -796,12 +798,22 @@
 
 
 
-
+    <script>
+        var recaptcha1, recaptcha2;
+        var onloadCallback = function () {
+            recaptcha1 = grecaptcha.render('recaptcha1', {
+                'sitekey': '6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v'
+            });
+            recaptcha2 = grecaptcha.render('recaptcha2', {
+                'sitekey': '6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v'
+            });
+        };
+    </script>
 
     <!-- Scripts -->
     <script>
-        function validateForm() {
-            var response = grecaptcha.getResponse();
+        function validateForm(formId, recaptchaId) {
+            var response = grecaptcha.getResponse(recaptchaId);
             if (response.length === 0) {
                 // reCAPTCHA not verified
                 alert("Please verify that you're not a robot.");
