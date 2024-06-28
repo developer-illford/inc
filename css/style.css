@@ -3175,6 +3175,9 @@ ul.solarsystem li.pluto {
     padding: 0;
 }
 
+.terms_conditions_container a {
+    text-decoration: none;
+}
 
 
 .cookie_policy {
@@ -3226,6 +3229,23 @@ ul.solarsystem li.pluto {
     background-color: #fff;
     font-weight: bold;
     border-radius: 2rem;
+}
+
+
+
+
+.sitemap_hero {
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/terms\ and\ conditions.webp);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
 }
 
 
