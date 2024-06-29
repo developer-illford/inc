@@ -226,6 +226,7 @@ body {
     top: 100%;
     left: 0;
     transition: opacity 1s ease, visibility 1s ease;
+    
 }
 
 /* Show the services dropdown on hover */
@@ -3238,7 +3239,7 @@ ul.solarsystem li.pluto {
     width: 100%;
     height: max-content;
 
-    background-image: url(../img/sitemaphero.jpg);
+    background-image: url(../img/sitemaphero.webp);
     background-size: cover;
     /* Ensures the image covers the entire div */
     background-position: center;
@@ -3248,7 +3249,23 @@ ul.solarsystem li.pluto {
     overflow: hidden;
 }
 
+.sitemap_container {
+    width: 90%;
+    border-radius: 1rem;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 2%;
+    border: 5px solid var(--inc_color2);
+}
 
+.sitemap_container p {
+    padding: 0;
+}
+
+.sitemap_container a {
+    text-decoration: none;
+    color: #A67923;
+}
 
 
 
