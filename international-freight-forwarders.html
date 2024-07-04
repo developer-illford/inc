@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/jpg" href="favicon.jpeg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INC</title>
     <link rel="stylesheet" href="international-freight-forwarders.css">
 
     <!-- bootstrap -->
@@ -13,6 +13,7 @@
 
     <!-- Font Awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://kit.fontawesome.com/6c53136549.js" crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,8 +30,84 @@
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-    <meta name="robots" content="noindex, nofollow" />
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16617021949">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-16617021949');
+    </script>
+
+
+
+    <!-- Primary Meta Tags -->
+    <title>International Cargo Services Dubai, UAE | International Freight Forwarders</title>
+    <meta name="description" content="Efficient logistics and transportation company in Dubai, UAE, specializing in
+        multi-modal transport, warehousing, inventory management, timely deliveries, and real-time shipment tracking.
+        International Cargo Services." />
+    <meta name="keywords"
+        content="Cross Trade Service Company in Dubai, Corporate Courier Service in Dubai, Medical equipment Shipping Services in Dubai, Sea Freight Services in Dubai, Customs Clearance Services in Dubai, Warehousing Company in Dubai / UAE, Best Courier Channel Partners In Dubai, Hazardous goods shipping services in Dubai, Pharmaceutical shipping service in Dubai, Air freight company in Dubai, Freight forwarding Dubai" />
+    <meta name="language" content="english" />
+    <meta name="content-language" content="english" />
+    <meta name="rating" content="General" />
+    <meta name="robots" content="follow,index" />
+    <link rel="canonical" href="https://incshipping.com/international-freight-forwarders" />
+    <meta name="DC.title" content="International Cargo Services Dubai, UAE | International Freight Forwarders" />
+    <meta name="geo.region" content="AE" />
+    <meta name="geo.placename" content="Atmar" />
+    <meta name="geo.position" content="25.3;55.4" />
+    <meta name="ICBM" content="25.3, 55.4" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="International Cargo Services Dubai, UAE | International Freight Forwarders" />
+    <meta property="og:site_name" content="INC Express Shipping L.L.C" />
+    <meta property="og:url" content="https://incshipping.com/international-freight-forwarders">
+    <meta property="og:description"
+        content="Efficient logistics and transportation company in Dubai, UAE, specializing in multi-modal transport, warehousing, inventory management, timely deliveries, and real-time shipment tracking. International Cargo Services.">
+    <meta property="og:type" content=website>
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://incshipping.com/international-freight-forwarders" />
+    <meta property="twitter:title"
+        content="International Cargo Services Dubai, UAE | International Freight Forwarders" />
+    <meta property="twitter:description"
+        content="Efficient logistics and transportation company in Dubai, UAE, specializing in multi-modal transport, warehousing, inventory management, timely deliveries, and real-time shipment tracking. International Cargo Services." />
+    <meta property="twitter:image" content="" />
+
+
+
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KXGHLLB3');</script>
+    <!-- End Google Tag Manager -->
+
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1Q6BVGDES"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Y1Q6BVGDES');
+    </script>
 </head>
+
 
 <body>
     <header>
@@ -38,6 +115,11 @@
             <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 header_logo"></div>
             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-4 header_logo">
                 <img src="img/inc_nav_logo.webp" alt="">
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-7 col-7 header_contact_button">
+                <button onclick="window.location.href='tel:+971503524424'">
+                    +971 503524424
+                </button>
             </div>
         </div>
     </header>
@@ -67,25 +149,44 @@
         <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 sec1_col2">
             <div class="sec1_form_container">
                 <h4>GET A QUICK QUOTE</h4>
-                <form action="ad_form.php" method="post">
+                <form action="ad_form.php" method="post" onsubmit="return validateForm('form1', recaptcha1)">
                     <div class="sec1_input_container">
+<<<<<<< HEAD
                         <input required id="sec1_fname" name="fname" type="text" placeholder="First Name">
                         <input required id="sec1_lname" name="lname" type="text" placeholder="Last Name">
+=======
+                        <input required id="fname" name="fname" type="text" placeholder="Your Name">
+                        <input required id="cname" name="cname" type="text" placeholder="Name of your Company">
+>>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
                     </div>
                     <div class="sec1_input_container">
                         <input required id="sec1_email" name="email" type="email" placeholder="Email">
                         <input required id="sec1_phone" name="phone" type="tel" placeholder="Phone">
                     </div>
                     <div class="sec1_input_container">
+<<<<<<< HEAD
                         <input required id="sec1_dept_city" name="dept_city" type="text"
                             placeholder="City of Departure">
                         <input required id="sec1_arr_city" name="arr_city" type="text" placeholder="Delivery City">
+=======
+                        <select name="shippingInquiryType" id="shippingInquiryType">
+                            <option value="" disabled selected>Shipping Inquiry Type:</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Rate Quote">Rate Quote</option>
+                            <option value="Shipment Tracking">Shipment Tracking</option>
+                            <option value="Customs Assistance">Customs Assistance</option>
+                            <option value="Damage or Loss Claim">Damage or Loss Claim</option>
+                            <option value="Billing and Payment">Billing and Payment</option>
+                            <option value="Other">Other</option>
+                        </select>
+>>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
                     </div>
                     <div class="sec1_input_container">
                         <textarea required rows="6" name="message" id="sec1_message" placeholder="Message"></textarea>
                     </div>
-                    <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v"></div>
-                    <button type="submit" onclick="return validateForm()">
+                    <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v" id="recaptcha1">
+                    </div>
+                    <button type="submit">
                         SUBMIT <i class="fa-solid fa-truck-arrow-right"></i>
                     </button>
                 </form>
@@ -330,6 +431,9 @@
                 </div>
             </div>
         </div>
+        <button onclick="window.location.href='#sec7'">
+            Get a Quote
+        </button>
     </section>
 
 
@@ -458,30 +562,54 @@
         </div>
     </section>
 
-    <section class="sec7">
+    <section class="sec7" id="sec7">
         <div class="row">
             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-0 col-0 sec7_col1"></div>
             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 sec7_col2" id="contact_form">
                 <h2>Contact Us</h2>
-                <form action="ad_form.php" method="post">
+                <form action="ad_form.php" method="post" onsubmit="return validateForm('form2', recaptcha2)">
                     <div class="sec7_input_container">
+<<<<<<< HEAD
                         <input required id="sec7_fname" name="fname" type="text" placeholder="First Name">
                         <input required id="sec7_lname" name="cname" type="text" placeholder="Last Name">
+=======
+                        <input required id="fname" name="fname" type="text" placeholder="Your Name">
+                        <input required id="cname" name="cname" type="text" placeholder="Name of your Company">
+>>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
                     </div>
                     <div class="sec7_input_container">
                         <input required id="sec7_email" name="email" type="email" placeholder="Email">
                         <input required id="sec7_phone" name="phone" type="tel" placeholder="Phone">
                     </div>
                     <div class="sec7_input_container">
+<<<<<<< HEAD
                         <input required id="sec7_dept_city" name="dept_city" type="text"
                             placeholder="City of Departure">
                         <input required id="sec7_arr_city" name="arr_city" type="text" placeholder="Delivery City">
+=======
+                        <select name="shippingInquiryType" id="shippingInquiryType">
+                            <option value="" disabled selected>Shipping Inquiry Type:</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Rate Quote">Rate Quote</option>
+                            <option value="Shipment Tracking">Shipment Tracking</option>
+                            <option value="Customs Assistance">Customs Assistance</option>
+                            <option value="Damage or Loss Claim">Damage or Loss Claim</option>
+                            <option value="Billing and Payment">Billing and Payment</option>
+                            <option value="Other">Other</option>
+                        </select>
+>>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
                     </div>
                     <div class="sec7_input_container">
                         <textarea required rows="6" name="message" id="sec7_message" placeholder="Message"></textarea>
                     </div>
+<<<<<<< HEAD
                     <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v"></div>
                     <button type="submit" onclick="return validateForm2()">
+=======
+                    <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v" id="recaptcha2">
+                    </div>
+                    <button type="submit">
+>>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
                         SUBMIT &nbsp; &nbsp; <i class="fa-solid fa-truck-arrow-right"></i>
                     </button>
                 </form>
@@ -501,12 +629,21 @@
     <footer>
         <div class="footer_wrap">
             <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 footer_col1">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 footer_col1">
                     <p>
                         INC Express Shipping LLC excels its name as the best freight forwarding company in Dubai, with
                         an extensive approach in more than 20 countries
                     </p>
                     <img src="img/inc_nav_logo.webp" alt="">
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 footer_col3">
+                    <h6>Call Us</h6>
+                    <a href="tel:+97143233480">+971 43233480</a><br>
+                    <a href="tel:+971503524424">+971 503524424</a>
+                    <h6>Mail Us</h6>
+                    <a href="mailto:sales@incshipping.com">sales@incshipping.com</a>
+                    <h6>Location</h6>
+                    <p>Office M29, Freight gate 4 Dubai Airport Freezone Dubai, UAE</p>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 footer_col2">
                     <div class="footer_map_container">
@@ -519,9 +656,9 @@
             </div>
             <p class="footer_copyright">
                 © 2024 INC Express Shipping LLC. All Rights Reserved.
-                <a target="_blank" href="">Privacy Policy</a>
+                <a target="_blank" href="privacy-policy.html">Privacy Policy</a>
                 |
-                <a target="_blank" href="">Terms of Service</a>
+                <a target="_blank" href="terms-and-conditions.html">Terms of Service</a>
             </p>
             <p class="footer_attribute">
                 Designed and Developed by:
@@ -529,6 +666,24 @@
             </p>
         </div>
     </footer>
+
+
+
+
+
+
+    <div class="floating_btn">
+        <a target="_blank" href="https://wa.me/+971503524424" style="text-decoration: none;">
+            <div class="contact_icon">
+                <i class="fa fa-whatsapp my-float"></i>
+            </div>
+        </a>
+        <p class="text_icon">Talk to us?</p>
+    </div>
+
+
+
+
 
 
 
@@ -571,7 +726,7 @@
                 arrows: true,
                 responsive: [
                     {
-                        breakpoint: 1024,
+                        breakpoint: 1500,
                         settings: {
                             slidesToShow: 3,
                             slidesToScroll: 3,
@@ -580,14 +735,14 @@
                         }
                     },
                     {
-                        breakpoint: 600,
+                        breakpoint: 1300,
                         settings: {
                             slidesToShow: 2,
                             slidesToScroll: 2
                         }
                     },
                     {
-                        breakpoint: 480,
+                        breakpoint: 800,
                         settings: {
                             slidesToShow: 1,
                             slidesToScroll: 1
@@ -669,12 +824,22 @@
 
 
 
-
+    <script>
+        var recaptcha1, recaptcha2;
+        var onloadCallback = function () {
+            recaptcha1 = grecaptcha.render('recaptcha1', {
+                'sitekey': '6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v'
+            });
+            recaptcha2 = grecaptcha.render('recaptcha2', {
+                'sitekey': '6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v'
+            });
+        };
+    </script>
 
     <!-- Scripts -->
     <script>
-        function validateForm() {
-            var response = grecaptcha.getResponse();
+        function validateForm(formId, recaptchaId) {
+            var response = grecaptcha.getResponse(recaptchaId);
             if (response.length === 0) {
                 // reCAPTCHA not verified
                 alert("Please verify that you're not a robot.");
@@ -704,6 +869,17 @@
 
 
 
+
+
+
+
+
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXGHLLB3" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
 
 </body>

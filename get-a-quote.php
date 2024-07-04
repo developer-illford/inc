@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 
     if (!$email) {
-        echo "<script type='text/javascript'>alert('Invalid email address.'); window.location.href = 'index.html';</script>";
+        echo "<script type='text/javascript'> window.location.href = 'thankyou.html';</script>";
         exit;
     }
 
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         mail($email, $confirmation_subject, $confirmation_body, $confirmation_headers);
 
-        echo "<script type='text/javascript'>alert('Your message has been sent successfully.'); window.location.href = 'index.html';</script>";
+        echo "<script type='text/javascript'> window.location.href = 'thankyou.html';</script>";
     } else {
         echo "<script type='text/javascript'>alert('There was a problem sending your message. Please try again later.'); window.location.href = 'index.html';</script>";
     }

@@ -52,21 +52,21 @@ body {
 ::-webkit-scrollbar {
     width: 8px;
     padding: 5px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px rgba(128, 128, 128, 0);
     border-radius: 10px;
-  }
+}
 
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: var(--inc_color2);
     border-radius: 10px;
-  }
-  
+}
+
 
 
 
@@ -226,6 +226,7 @@ body {
     top: 100%;
     left: 0;
     transition: opacity 1s ease, visibility 1s ease;
+    
 }
 
 /* Show the services dropdown on hover */
@@ -334,6 +335,26 @@ body {
 
 
 
+.header_contact_button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header_contact_button button {
+    float: right;
+    margin-right: 2%;
+    background-color: #ffffff;
+    color: #000;
+    padding: 2% 5% 2% 5%;
+    border: 4px solid var(--inc_color2);
+    border-radius: 2rem;
+    outline: none;
+}
+
+
+
+
 
 
 /* social media icons */
@@ -382,6 +403,9 @@ body {
         display: none;
     }
 
+    .header_contact_button {
+        display: none;
+    }
 
 }
 
@@ -525,6 +549,7 @@ body {
         padding: 5px;
         margin-left: 10px;
     }
+
     .hero_content_wrap {
         background-color: #ffffff04;
         width: 100%;
@@ -2670,6 +2695,20 @@ p {
     overflow: hidden;
 }
 
+.thankyou_hero {
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/Group\ 410\ t.png);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
 
 
 
@@ -2729,7 +2768,7 @@ p {
 
 /************************************* orbit dots animation *********************************/
 ul.solarsystem {
-    
+
     position: relative;
     width: 100%;
     height: 200vh;
@@ -3044,4 +3083,344 @@ ul.solarsystem li.pluto {
     to {
         -webkit-transform: rotate(360deg)
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ********************* privacy policy || terms and conditions *********************** */
+
+.privacy_policy {
+    width: 100%;
+    height: max-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.privacy_policy_container {
+    width: 90%;
+    border-radius: 1rem;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 2%;
+    border: 5px solid var(--inc_color2);
+}
+
+.privacy_policy_container p {
+    padding: 0;
+}
+
+
+.p_p_hero {
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/privacy\ policy.webp);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.t_c_hero {
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/terms\ and\ conditions.webp);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.terms_conditions {
+    width: 100%;
+    height: max-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.terms_conditions_container {
+    width: 90%;
+    border-radius: 1rem;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 2%;
+    border: 5px solid var(--inc_color2);
+}
+
+.terms_conditions_container p {
+    padding: 0;
+}
+
+.terms_conditions_container a {
+    text-decoration: none;
+}
+
+
+.cookie_policy {
+    padding: 5%;
+}
+
+.cookie_policy p {
+    padding: 0%;
+}
+
+.cookie_policy_container {
+    padding: 2%;
+    border: 5px solid var(--inc_color2);
+    border-radius: 1rem;
+
+}
+
+
+.cookies_float {
+    display: block;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 60%;
+    height: 140px;
+    border: 2px solid var(--inc_color2);
+    border-radius: 1rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 99999;
+}
+
+.cookies_float p {
+    padding: 0;
+    width: 70%;
+}
+
+.coookie_buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.coookie_buttons button {
+    margin: 4%;
+    padding: 10px 20px;
+    border: 2px solid var(--inc_color2);
+    background-color: #fff;
+    font-weight: bold;
+    border-radius: 2rem;
+}
+
+
+
+
+.sitemap_hero {
+    width: 100%;
+    height: max-content;
+
+    background-image: url(../img/sitemaphero.webp);
+    background-size: cover;
+    /* Ensures the image covers the entire div */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.sitemap_container {
+    width: 90%;
+    border-radius: 1rem;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 2%;
+    border: 5px solid var(--inc_color2);
+}
+
+.sitemap_container p {
+    padding: 0;
+}
+
+.sitemap_container a {
+    text-decoration: none;
+    color: #A67923;
+}
+
+
+
+
+
+
+
+/* whatsapp */
+
+
+.floating_btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+@keyframes pulsing {
+    to {
+        box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+}
+
+.contact_icon {
+    background-color: #42db87;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translatey(0px);
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 0 0 #42db87;
+    -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    font-weight: normal;
+    font-family: sans-serif;
+    text-decoration: none !important;
+    transition: all 300ms ease-in-out;
+}
+
+
+.text_icon {
+    margin-top: 8px;
+    color: #000000;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.thankyou_box_container {
+    width: 100%;
+    height: max-content;
+}
+
+.thankyou_box {
+    background-color: var(--inc_color2);
+    border-radius: 2rem;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 3% !important;
+    padding-right: 3% !important;
+}
+
+.thankyou_box p {
+    padding: 0;
+}
+
+.thankyou_box h3 {
+    padding: 0;
+    font-weight: bold;
+}
+
+.thankyou_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thankyou_img img {
+    width: 30%;
+    margin-top: 1%;
+}
+
+.thankyou_why_choose {
+    width: 100%;
+    height: max-content;
+    padding-left: 2%;
+}
+
+.thankyou_next_steps_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.thankyou_next_steps_item img {
+    width: 50%;
+    margin: 5%;
+}
+
+.thankyou_next_steps_item h6 {
+    font-weight: bold;
+}
+
+.thankyou_next_steps_item p {
+    width: 60%;
+    padding: 0;
+}
+
+.home_contact_image h5 {
+    font-weight: bold;
+    width: 60%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+    /* border: 1px solid red; */
 }

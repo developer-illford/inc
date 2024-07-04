@@ -57,6 +57,23 @@ body {
     margin-top: 5%;
 }
 
+.header_contact_button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header_contact_button button {
+    float: right;
+    margin-right: 2%;
+    background-color: #00000000;
+    color: var(--text_white);
+    padding: 1% 2% 1% 2%;
+    border: 2px solid var(--theme_yellow);
+    border-radius: 2rem;
+    outline: none;
+}
+
 
 
 
@@ -176,6 +193,15 @@ body {
 }
 
 .sec1_input_container input {
+    width: 100%;
+    margin: 1%;
+    border-radius: 1rem;
+    padding: 3%;
+    border: none;
+    outline: none;
+}
+
+.sec1_input_container select {
     width: 100%;
     margin: 1%;
     border-radius: 1rem;
@@ -440,6 +466,15 @@ body {
     flex-direction: column;
 }
 
+.sec4 button {
+    padding: 1% 2%;
+    border-radius: 2rem;
+    border: 8px solid var(--theme_yellow);
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+}
+
 .sec4_wrap {
     width: 70%;
     height: max-content;
@@ -459,6 +494,7 @@ body {
     color: var(--text_white);
     text-align: justify;
 }
+
 
 .service_card_container {
     width: 100%;
@@ -486,6 +522,7 @@ body {
     margin: 0 1rem;
     text-align: center;
     transition: 0.5s ease;
+    height: 500px !important;
 }
 
 .service_card:hover {
@@ -835,6 +872,15 @@ body {
     outline: none;
 }
 
+.sec7_input_container select {
+    width: 100%;
+    margin: 1%;
+    border-radius: 1rem;
+    padding: 3%;
+    border: none;
+    outline: none;
+}
+
 .sec7_input_container textarea {
     width: 100%;
     margin: 1%;
@@ -857,13 +903,14 @@ body {
     margin-left: 1%;
 }
 
-.sec7_social_links{
-    display: flex ;
+.sec7_social_links {
+    display: flex;
     align-items: baseline;
     justify-content: end;
     color: var(--text_white);
 }
-.sec7_social_links a{
+
+.sec7_social_links a {
     text-decoration: none;
     color: var(--text_white);
     margin-right: 2%;
@@ -893,12 +940,12 @@ body {
 
 .footer_col1 p {
     color: var(--text_white);
-    width: 50%;
+    width: 100%;
     text-align: justify;
 }
 
 .footer_col1 img {
-    width: 30%;
+    width: 60%;
 }
 
 .footer_col2 {
@@ -938,20 +985,107 @@ body {
     text-decoration: none;
 }
 
+.footer_col3 {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-bottom: 1px solid var(--theme_semiwhite);
+}
+
+.footer_col3 h6 {
+    color: var(--text_white);
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.footer_col3 a {
+    color: var(--text_white);
+    text-decoration: none;
+}
+
+.footer_col3 p {
+    color: var(--text_white);
+}
+
 @media (max-width: 768px) {
     .footer_col1 p {
         color: var(--text_white);
         width: 100%;
         text-align: justify;
     }
+
     .footer_map_container {
         height: 80%;
         width: 100%;
     }
+
     .footer_attribute {
         float: left;
     }
 }
+
+
+
+
+
+
+
+
+
+
+/* whatsapp */
+
+
+.floating_btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+@keyframes pulsing {
+    to {
+        box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+}
+
+.contact_icon {
+    background-color: #42db87;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translatey(0px);
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 0 0 #42db87;
+    -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    font-weight: normal;
+    font-family: sans-serif;
+    text-decoration: none !important;
+    transition: all 300ms ease-in-out;
+}
+
+
+.text_icon {
+    margin-top: 8px;
+    color: #000000;
+    font-size: 13px;
+}
+
 
 
 
