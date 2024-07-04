@@ -1,39 +1,43 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize input data to prevent XSS and other issues
-    $fname = htmlspecialchars($_POST['fname']);
-    $lname = htmlspecialchars($_POST['lname']);
-    $email = htmlspecialchars($_POST['email']);
-    $phone = htmlspecialchars($_POST['phone']);
-    $dept_city = htmlspecialchars($_POST['dept_city']);
-    $arr_city = htmlspecialchars($_POST['arr_city']);
-    $message = htmlspecialchars($_POST['message']);
+    // Sanitize and validate input data
+    $fname = filter_var(trim($_POST['fname']), FILTER_SANITIZE_STRING);
+    $cname = filter_var(trim($_POST['cname']), FILTER_SANITIZE_STRING);
+    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+    $phone = filter_var(trim($_POST['phone']), FILTER_SANITIZE_STRING);
+    $shippingInquiryType = filter_var(trim($_POST['shippingInquiryType']), FILTER_SANITIZE_STRING);
+    $message = filter_var(trim($_POST['message']), FILTER_SANITIZE_STRING);
+    echo "<script type='text/javascript'> console.log('entered');</script>";
+    // Check if required fields are not empty
+    if (!empty($fname) && !empty($cname) && !empty($email) && !empty($phone) && !empty($message)) {
+        // Email configuration
+        $to = "sales@incshipping.com"; // Replace with your email address
+        $subject = "INC SHIPPING - From Ad Page - New form submission from $fname . ";
+        
+        // Email content
+        $email_content = "Name: $fname\n";
+        $email_content .= "Company Name: $cname\n";
+        $email_content .= "Email: $email\n";
+        $email_content .= "Phone: $phone\n";
+        $email_content .= "Shipping Inquiry Type: $shippingInquiryType\n";
+        $email_content .= "Message:\n$message\n";
+        
+        // Email headers
+        $headers = "From: $email\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        $headers .= "Bcc: dm.illforddigital@gmail.com\r\n"; // Add the Bcc recipient here
 
-    // Recipient email address
-    $to = "manastom670@gmail.com";
-    // Subject of the email
-    $subject = "Form Submission from Advertisement$fname $lname";
-
-    // Email body content
-    $body = "First Name: $fname\n";
-    $body .= "Last Name: $lname\n";
-    $body .= "Email: $email\n";
-    $body .= "Phone: $phone\n";
-    $body .= "City of Departure: $dept_city\n";
-    $body .= "Delivery City: $arr_city\n";
-    $body .= "Message:\n$message\n";
-
-    // Email headers
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-
-    // Sending email
-    if (mail($to, $subject, $body, $headers)) {
-        echo "<script type='text/javascript'>alert('Email successfully sent to $to'); window.location.href = 'international-freight-forwarders.html';</script>";
+        // Send the email
+        if (mail($to, $subject, $email_content, $headers)) {
+            // Redirect to a thank you page or display a success message
+            echo "<script type='text/javascript'> window.location.href = 'thankyou.html';</script>";
+        } else {
+            echo "<script type='text/javascript'>alert('Oops! Something went wrong, and we could not send your message.');</script>";
+        }
     } else {
-        echo "<script type='text/javascript'>alert('Failed to send email...'); window.location.href = 'international-freight-forwarders.html';</script>";
+        echo "<script type='text/javascript'>alert('Please fill in all required fields.');</script>";
     }
 } else {
-    echo "<script type='text/javascript'>alert('Invalid request method.'); window.location.href = 'international-freight-forwarders.html';</script>";
+    echo "<script type='text/javascript'>alert('Invalid request method.');</script>";
 }
 ?>

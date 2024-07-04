@@ -69,19 +69,20 @@
                 <h4>GET A QUICK QUOTE</h4>
                 <form action="ad_form.php" method="post">
                     <div class="sec1_input_container">
-                        <input required id="fname" name="fname" type="text" placeholder="First Name">
-                        <input required id="lname" name="lname" type="text" placeholder="Last Name">
+                        <input required id="sec1_fname" name="fname" type="text" placeholder="First Name">
+                        <input required id="sec1_lname" name="lname" type="text" placeholder="Last Name">
                     </div>
                     <div class="sec1_input_container">
-                        <input required id="email" name="email" type="email" placeholder="Email">
-                        <input required id="phone" name="phone" type="tel" placeholder="Phone">
+                        <input required id="sec1_email" name="email" type="email" placeholder="Email">
+                        <input required id="sec1_phone" name="phone" type="tel" placeholder="Phone">
                     </div>
                     <div class="sec1_input_container">
-                        <input required id="dept_city" name="dept_city" type="text" placeholder="City of Deparature">
-                        <input required id="arr_city" name="arr_city" type="text" placeholder="Delivery City">
+                        <input required id="sec1_dept_city" name="dept_city" type="text"
+                            placeholder="City of Departure">
+                        <input required id="sec1_arr_city" name="arr_city" type="text" placeholder="Delivery City">
                     </div>
                     <div class="sec1_input_container">
-                        <textarea required rows="6" name="message" id="message" placeholder="Message"></textarea>
+                        <textarea required rows="6" name="message" id="sec1_message" placeholder="Message"></textarea>
                     </div>
                     <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v"></div>
                     <button type="submit" onclick="return validateForm()">
@@ -464,22 +465,23 @@
                 <h2>Contact Us</h2>
                 <form action="ad_form.php" method="post">
                     <div class="sec7_input_container">
-                        <input required id="fname" name="fname" type="text" placeholder="First Name">
-                        <input required id="lname" name="lname" type="text" placeholder="Last Name">
+                        <input required id="sec7_fname" name="fname" type="text" placeholder="First Name">
+                        <input required id="sec7_lname" name="cname" type="text" placeholder="Last Name">
                     </div>
                     <div class="sec7_input_container">
-                        <input required id="email" name="email" type="email" placeholder="Email">
-                        <input required id="phone" name="phone" type="tel" placeholder="Phone">
+                        <input required id="sec7_email" name="email" type="email" placeholder="Email">
+                        <input required id="sec7_phone" name="phone" type="tel" placeholder="Phone">
                     </div>
                     <div class="sec7_input_container">
-                        <input required id="dept_city" name="dept_city" type="text" placeholder="City of Deparature">
-                        <input required id="arr_city" name="arr_city" type="text" placeholder="Delivery City">
+                        <input required id="sec7_dept_city" name="dept_city" type="text"
+                            placeholder="City of Departure">
+                        <input required id="sec7_arr_city" name="arr_city" type="text" placeholder="Delivery City">
                     </div>
                     <div class="sec7_input_container">
-                        <textarea required rows="6" name="message" id="message" placeholder="Message"></textarea>
+                        <textarea required rows="6" name="message" id="sec7_message" placeholder="Message"></textarea>
                     </div>
                     <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v"></div>
-                    <button type="submit" onclick="return validateForm()">
+                    <button type="submit" onclick="return validateForm2()">
                         SUBMIT &nbsp; &nbsp; <i class="fa-solid fa-truck-arrow-right"></i>
                     </button>
                 </form>
@@ -493,7 +495,6 @@
                         class="fa-brands fa-instagram"></i></a>
                 <a target="_blank" href=""><i class="fa-brands fa-youtube"></i></a>
             </div>
-
         </div>
     </section>
 
@@ -673,6 +674,18 @@
     <!-- Scripts -->
     <script>
         function validateForm() {
+            var response = grecaptcha.getResponse();
+            if (response.length === 0) {
+                // reCAPTCHA not verified
+                alert("Please verify that you're not a robot.");
+                return false;
+            }
+            // reCAPTCHA verified, continue with form submission
+            return true;
+        }
+    </script>
+    <script>
+        function validateForm2() {
             var response = grecaptcha.getResponse();
             if (response.length === 0) {
                 // reCAPTCHA not verified
