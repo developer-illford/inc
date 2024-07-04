@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -10,160 +9,91 @@
 
 <url>
   <loc>https://incshipping.com/</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:51+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:57+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://incshipping.com/about</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:47+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:56+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/services</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T10:06:39+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:58+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/air-freight</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:48+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:56+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/sea-freight</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:54+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:58+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/road-freight</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:53+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:58+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/customs-clearance</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:50+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:57+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/temprature-controlled-cargo</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:56+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:58+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/warehousing</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:56+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:58+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/cross-trade</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:50+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:57+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/project-cargo</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:53+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:58+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/corporate-courier</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:49+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:57+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/channel-partner</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:48+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:56+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/shipment-to-far-east</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:55+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:58+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/dangerous-goods</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:50+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:57+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/healthcare</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:51+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:57+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/pharma-shipment-handling</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:52+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:57+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/contact</loc>
-<<<<<<< HEAD
   <lastmod>2024-06-29T06:40:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -185,24 +115,7 @@
 <url>
   <loc>https://incshipping.com/cookies-policy</loc>
   <lastmod>2024-06-29T06:40:49+00:00</lastmod>
-=======
-  <lastmod>2024-06-24T12:10:56+00:00</lastmod>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
   <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://incshipping.com/privacy-policy</loc>
-  <lastmod>2024-06-24T12:10:57+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://incshipping.com/terms-and-conditions</loc>
-  <lastmod>2024-06-24T12:10:58+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://incshipping.com/international-freight-forwarders</loc>
-  <lastmod>2024-06-25T05:19:22+00:00</lastmod>
 </url>
 
 

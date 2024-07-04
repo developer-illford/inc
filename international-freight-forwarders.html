@@ -29,6 +29,7 @@
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 
 
 
@@ -151,24 +152,14 @@
                 <h4>GET A QUICK QUOTE</h4>
                 <form action="ad_form.php" method="post" onsubmit="return validateForm('form1', recaptcha1)">
                     <div class="sec1_input_container">
-<<<<<<< HEAD
-                        <input required id="sec1_fname" name="fname" type="text" placeholder="First Name">
-                        <input required id="sec1_lname" name="lname" type="text" placeholder="Last Name">
-=======
                         <input required id="fname" name="fname" type="text" placeholder="Your Name">
                         <input required id="cname" name="cname" type="text" placeholder="Name of your Company">
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
                     </div>
                     <div class="sec1_input_container">
-                        <input required id="sec1_email" name="email" type="email" placeholder="Email">
-                        <input required id="sec1_phone" name="phone" type="tel" placeholder="Phone">
+                        <input required id="email" name="email" type="email" placeholder="Email">
+                        <input required id="phone" name="phone" type="tel" placeholder="Phone">
                     </div>
                     <div class="sec1_input_container">
-<<<<<<< HEAD
-                        <input required id="sec1_dept_city" name="dept_city" type="text"
-                            placeholder="City of Departure">
-                        <input required id="sec1_arr_city" name="arr_city" type="text" placeholder="Delivery City">
-=======
                         <select name="shippingInquiryType" id="shippingInquiryType">
                             <option value="" disabled selected>Shipping Inquiry Type:</option>
                             <option value="General Inquiry">General Inquiry</option>
@@ -179,10 +170,9 @@
                             <option value="Billing and Payment">Billing and Payment</option>
                             <option value="Other">Other</option>
                         </select>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
                     </div>
                     <div class="sec1_input_container">
-                        <textarea required rows="6" name="message" id="sec1_message" placeholder="Message"></textarea>
+                        <textarea required rows="6" name="message" id="message" placeholder="Message"></textarea>
                     </div>
                     <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v" id="recaptcha1">
                     </div>
@@ -567,26 +557,16 @@
             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-0 col-0 sec7_col1"></div>
             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 sec7_col2" id="contact_form">
                 <h2>Contact Us</h2>
-                <form action="ad_form.php" method="post" onsubmit="return validateForm('form2', recaptcha2)">
+                <form action="ad_form.php" method="post" >
                     <div class="sec7_input_container">
-<<<<<<< HEAD
-                        <input required id="sec7_fname" name="fname" type="text" placeholder="First Name">
-                        <input required id="sec7_lname" name="cname" type="text" placeholder="Last Name">
-=======
                         <input required id="fname" name="fname" type="text" placeholder="Your Name">
                         <input required id="cname" name="cname" type="text" placeholder="Name of your Company">
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
                     </div>
                     <div class="sec7_input_container">
-                        <input required id="sec7_email" name="email" type="email" placeholder="Email">
-                        <input required id="sec7_phone" name="phone" type="tel" placeholder="Phone">
+                        <input required id="email" name="email" type="email" placeholder="Email">
+                        <input required id="phone" name="phone" type="tel" placeholder="Phone">
                     </div>
                     <div class="sec7_input_container">
-<<<<<<< HEAD
-                        <input required id="sec7_dept_city" name="dept_city" type="text"
-                            placeholder="City of Departure">
-                        <input required id="sec7_arr_city" name="arr_city" type="text" placeholder="Delivery City">
-=======
                         <select name="shippingInquiryType" id="shippingInquiryType">
                             <option value="" disabled selected>Shipping Inquiry Type:</option>
                             <option value="General Inquiry">General Inquiry</option>
@@ -597,19 +577,11 @@
                             <option value="Billing and Payment">Billing and Payment</option>
                             <option value="Other">Other</option>
                         </select>
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
                     </div>
                     <div class="sec7_input_container">
-                        <textarea required rows="6" name="message" id="sec7_message" placeholder="Message"></textarea>
-                    </div>
-<<<<<<< HEAD
-                    <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v"></div>
-                    <button type="submit" onclick="return validateForm2()">
-=======
-                    <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v" id="recaptcha2">
+                        <textarea required rows="6" name="message" id="message" placeholder="Message"></textarea>
                     </div>
                     <button type="submit">
->>>>>>> 02cdd46b3cbe06dfeb35600b989995990484e2d0
                         SUBMIT &nbsp; &nbsp; <i class="fa-solid fa-truck-arrow-right"></i>
                     </button>
                 </form>
@@ -623,6 +595,7 @@
                         class="fa-brands fa-instagram"></i></a>
                 <a target="_blank" href=""><i class="fa-brands fa-youtube"></i></a>
             </div>
+
         </div>
     </section>
 
@@ -840,18 +813,7 @@
     <script>
         function validateForm(formId, recaptchaId) {
             var response = grecaptcha.getResponse(recaptchaId);
-            if (response.length === 0) {
-                // reCAPTCHA not verified
-                alert("Please verify that you're not a robot.");
-                return false;
-            }
-            // reCAPTCHA verified, continue with form submission
-            return true;
-        }
-    </script>
-    <script>
-        function validateForm2() {
-            var response = grecaptcha.getResponse();
+
             if (response.length === 0) {
                 // reCAPTCHA not verified
                 alert("Please verify that you're not a robot.");
