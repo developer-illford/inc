@@ -3411,6 +3411,22 @@ ul.solarsystem li.pluto {
 
 
 
+.fasion_text_card{
+    border: 5px solid var(--inc_color1);
+    margin-left: 3%;
+    margin-top: 2% !important;
+    width: 94% !important;
+    background-color: #ffffffb6;
+    border-radius: 10px;
+    padding: 1%;
+}
+.fasion_text_card p{
+    padding: 0;
+    text-align: justify;
+    color: #000;
+    font-weight: 500;
+}
+
 
 
 
@@ -3424,3 +3440,7 @@ ul.solarsystem li.pluto {
 * {
     /* border: 1px solid red; */
 }
+
+
+
+
