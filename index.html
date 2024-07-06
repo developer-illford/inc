@@ -12,8 +12,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Font Awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <script src="https://kit.fontawesome.com/6c53136549.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/fontawesom6.1.1.css">
+    <script src="js/fontawesome6c53136549.js" crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -278,7 +278,9 @@
             <div class="about_sticker_text_item col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <h4>Reliability</h4>
                 <p>
-                    INC Express Shipping LLC, the Best Logistics and Shipping Company in Dubai, UAE, offers outstandingly responsible services, ensuring clients rely on our exclusive offerings with complete confidence and satisfaction.
+                    INC Express Shipping LLC, the Best Logistics and Shipping Company in Dubai, UAE, offers
+                    outstandingly responsible services, ensuring clients rely on our exclusive offerings with complete
+                    confidence and satisfaction.
                 </p>
             </div>
             <div class="about_sticker_text_item col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -396,11 +398,12 @@
 
 
     <section class="home_video">
-        <iframe width="100%" height="auto"
+        <!-- <iframe width="100%" height="auto"
             src="https://www.youtube.com/embed/WLZlVP7M_tc?autoplay=1&loop=1&mute=1&controls=0&playlist=WLZlVP7M_tc"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+        <video style="height: auto; width: 100%;" autoplay muted src="vedios/INC Youtube Video final (1).mp4"></video>
     </section>
 
 
@@ -490,7 +493,8 @@
                 <div class="footer_logo_container">
                     <img onclick="window.location.href='index.html'" src="img/inc_nav_logo.webp"
                         alt="INC Shipping Logo Design">
-                    <p>INC Express Shipping LLC is one of the dedicated logistics, warehousing, and Best Logistics and Shipping Company in Dubai, UAE.</p>
+                    <p>INC Express Shipping LLC is one of the dedicated logistics, warehousing, and Best Logistics and
+                        Shipping Company in Dubai, UAE.</p>
                 </div>
             </div>
             <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
@@ -577,7 +581,7 @@
         <p class="text_icon">Talk to us?</p>
     </div>
 
-    <div class="cookies_float">
+    <div id="cookies_float" class="cookies_float">
         <p>This page places and reads third party cookies on your browser that are used for non-essential purposes
             including targeting of ads. <a href="cookies-policy.html">Learn more.</a> Through these cookies, <a
                 href="">Twitter</a>, <a href="">Facebook</a> , and <a href="">Linkedin</a> collect
@@ -592,6 +596,18 @@
             });">Decline</button>
         </div>
     </div>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            var scrollPosition = window.scrollY + window.innerHeight;
+            var documentHeight = document.documentElement.scrollHeight;
+
+            // Check if user is 100px from the bottom
+            if (scrollPosition >= documentHeight - 100) {
+                document.getElementById('cookies_float').style.display = 'block';
+            }
+        });
+    </script>
 
 
 
