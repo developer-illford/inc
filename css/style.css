@@ -3198,7 +3198,6 @@ ul.solarsystem li.pluto {
 
 
 .cookies_float {
-    display: block;
     position: fixed;
     bottom: 30px;
     left: 30px;
@@ -3207,7 +3206,7 @@ ul.solarsystem li.pluto {
     border: 2px solid var(--inc_color2);
     border-radius: 1rem;
     background-color: #fff;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-around;
     z-index: 99999;
@@ -3438,7 +3437,7 @@ ul.solarsystem li.pluto {
 
 
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 

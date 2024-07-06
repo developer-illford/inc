@@ -429,7 +429,33 @@
         <p class="text_icon">Talk to us?</p>
     </div>
 
+    <div id="cookies_float" class="cookies_float">
+        <p>This page places and reads third party cookies on your browser that are used for non-essential purposes
+            including targeting of ads. <a href="cookies-policy.html">Learn more.</a> Through these cookies, <a
+                href="">Twitter</a>, <a href="">Facebook</a> , and <a href="">Linkedin</a> collect
+            personal data about you for their own purposes.
+        </p>
+        <div class="coookie_buttons">
+            <button onclick="document.querySelectorAll('.cookies_float').forEach(element => {
+                element.style.display = 'none';
+            });">Accept</button>
+            <button onclick="document.querySelectorAll('.cookies_float').forEach(element => {
+                element.style.display = 'none';
+            });">Decline</button>
+        </div>
+    </div>
 
+    <script>
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.scrollY + window.innerHeight;
+            var documentHeight = document.documentElement.scrollHeight;
+            
+            // Check if user is 100px from the bottom
+            if (scrollPosition >= documentHeight - 100) {
+                document.getElementById('cookies_float').style.display = 'flex';
+            }
+        });
+    </script>
 
 
 
