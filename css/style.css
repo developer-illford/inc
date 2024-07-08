@@ -3202,7 +3202,7 @@ ul.solarsystem li.pluto {
     bottom: 30px;
     left: 30px;
     width: 60%;
-    height: 140px;
+    height: max-content;
     border: 2px solid var(--inc_color2);
     border-radius: 1rem;
     background-color: #fff;
@@ -3210,7 +3210,9 @@ ul.solarsystem li.pluto {
     align-items: center;
     justify-content: space-around;
     z-index: 99999;
+    padding: 1%;
 }
+
 
 .cookies_float p {
     padding: 0;
@@ -3229,6 +3231,25 @@ ul.solarsystem li.pluto {
     background-color: #fff;
     font-weight: bold;
     border-radius: 2rem;
+}
+
+@media (max-width: 768px) {
+    .cookies_float {
+        flex-direction: column;
+    }
+    .cookies_float p {
+        padding: 0;
+        width: 90%;
+    }
+    .coookie_buttons {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 450px) {
+    .coookie_buttons {
+        flex-direction: column;
+    }
 }
 
 
