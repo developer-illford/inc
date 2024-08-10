@@ -64,20 +64,23 @@
     <meta name="geo.position" content="25.3;55.4" />
     <meta name="ICBM" content="25.3, 55.4" />
 
-   
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://incshipping.com/international-freight-forwarders" />
-<meta property="og:title" content="International Cargo Services Dubai, UAE | International Freight Forwarders" />
-<meta property="og:description" content="Efficient logistics and transportation company in Dubai, UAE, specializing in multi-modal transport, warehousing, inventory management, timely deliveries, and real-time shipment tracking. International Cargo Services." />
-<meta property="og:image" content="https://incshipping.com/img/Group%20404.webp" />
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://incshipping.com/international-freight-forwarders" />
-<meta property="twitter:title" content="International Cargo Services Dubai, UAE | International Freight Forwarders" />
-<meta property="twitter:description" content="Efficient logistics and transportation company in Dubai, UAE, specializing in multi-modal transport, warehousing, inventory management, timely deliveries, and real-time shipment tracking. International Cargo Services." />
-<meta property="twitter:image" content="https://incshipping.com/img/Group%20404.webp" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://incshipping.com/international-freight-forwarders" />
+    <meta property="og:title" content="International Cargo Services Dubai, UAE | International Freight Forwarders" />
+    <meta property="og:description"
+        content="Efficient logistics and transportation company in Dubai, UAE, specializing in multi-modal transport, warehousing, inventory management, timely deliveries, and real-time shipment tracking. International Cargo Services." />
+    <meta property="og:image" content="https://incshipping.com/img/Group%20404.webp" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://incshipping.com/international-freight-forwarders" />
+    <meta property="twitter:title"
+        content="International Cargo Services Dubai, UAE | International Freight Forwarders" />
+    <meta property="twitter:description"
+        content="Efficient logistics and transportation company in Dubai, UAE, specializing in multi-modal transport, warehousing, inventory management, timely deliveries, and real-time shipment tracking. International Cargo Services." />
+    <meta property="twitter:image" content="https://incshipping.com/img/Group%20404.webp" />
 
 
 
@@ -159,7 +162,7 @@
                         <input required id="phone" name="phone" type="tel" placeholder="Phone">
                     </div>
                     <div class="sec1_input_container">
-                        <select name="shippingInquiryType" id="shippingInquiryType">
+                        <select name="shippingInquiryType" id="shippingInquiryType" required>
                             <option value="" disabled selected>Shipping Inquiry Type:</option>
                             <option value="General Inquiry">General Inquiry</option>
                             <option value="Rate Quote">Rate Quote</option>
@@ -173,8 +176,9 @@
                     <div class="sec1_input_container">
                         <textarea required rows="6" name="message" id="message" placeholder="Message"></textarea>
                     </div>
-                    <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v" id="recaptcha1">
-                    </div>
+                    <div class="g-recaptcha" data-sitekey="6LcDdvkpAAAAAElhDBLJ9M1YUHS5HrPh2pNd7k_v" id="recaptcha1"></div>
+                    <!-- Honeypot Field -->
+                    <input type="text" id="honeypot" name="honeypot" style="display:none;">
                     <button type="submit">
                         SUBMIT <i class="fa-solid fa-truck-arrow-right"></i>
                     </button>
@@ -556,17 +560,17 @@
             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-0 col-0 sec7_col1"></div>
             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 sec7_col2" id="contact_form">
                 <h2>Contact Us</h2>
-                <form action="ad_form.php" method="post">
+                <form action="ad_form.php" method="post" onsubmit="return validateSecondForm()">
                     <div class="sec7_input_container">
-                        <input required id="fname" name="fname" type="text" placeholder="Your Name">
-                        <input required id="cname" name="cname" type="text" placeholder="Name of your Company">
+                        <input required id="fname2" name="fname" type="text" placeholder="Your Name">
+                        <input required id="cname2" name="cname" type="text" placeholder="Name of your Company">
                     </div>
                     <div class="sec7_input_container">
-                        <input required id="email" name="email" type="email" placeholder="Email">
-                        <input required id="phone" name="phone" type="tel" placeholder="Phone">
+                        <input required id="email2" name="email" type="email" placeholder="Email">
+                        <input required id="phone2" name="phone" type="tel" placeholder="Phone">
                     </div>
                     <div class="sec7_input_container">
-                        <select name="shippingInquiryType" id="shippingInquiryType">
+                        <select name="shippingInquiryType" id="shippingInquiryType2" required>
                             <option value="" disabled selected>Shipping Inquiry Type:</option>
                             <option value="General Inquiry">General Inquiry</option>
                             <option value="Rate Quote">Rate Quote</option>
@@ -578,8 +582,10 @@
                         </select>
                     </div>
                     <div class="sec7_input_container">
-                        <textarea required rows="6" name="message" id="message" placeholder="Message"></textarea>
+                        <textarea required rows="6" name="message" id="message2" placeholder="Message"></textarea>
                     </div>
+                    <!-- Honeypot Field -->
+                    <input type="text" id="honeypot2" name="honeypot" style="display:none;">
                     <button type="submit">
                         SUBMIT &nbsp; &nbsp; <i class="fa-solid fa-truck-arrow-right"></i>
                     </button>
@@ -826,6 +832,22 @@
 
     <!-- Scripts -->
     <script>
+        // script to validate first form
+        function validateEmail(email) {
+            var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function validatePhoneNumber(phone) {
+            var re = /^[0-9]{10,15}$/; // Adjust regex according to your country code and format
+            return re.test(String(phone));
+        }
+
+        function validateName(name) {
+            var re = /^[a-zA-Z\s]+$/;
+            return re.test(String(name).trim());
+        }
+
         function validateForm(formId, recaptchaId) {
             var response = grecaptcha.getResponse(recaptchaId);
 
@@ -834,7 +856,89 @@
                 alert("Please verify that you're not a robot.");
                 return false;
             }
-            // reCAPTCHA verified, continue with form submission
+
+            // Email validation
+            var email = document.getElementById("email").value;
+            if (!validateEmail(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            // Phone number validation
+            var phone = document.getElementById("phone").value;
+            if (!validatePhoneNumber(phone)) {
+                alert("Please enter a valid phone number.");
+                return false;
+            }
+
+            // Name validation
+            var name = document.getElementById("fname").value;
+            if (!validateName(name)) {
+                alert("Please enter a valid name.");
+                return false;
+            }
+
+            // Honeypot field check
+            var honeypot = document.getElementById("honeypot").value;
+            if (honeypot) {
+                alert("Spam detected!");
+                return false;
+            }
+
+            // Other validations can be added here
+
+            return true;
+        }
+    </script>
+
+    <script>
+        // script to validate second form 
+        function validateEmail(email) {
+            var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function validatePhoneNumber(phone) {
+            var re = /^[0-9]{10,15}$/; // Adjust regex according to your country code and format
+            return re.test(String(phone));
+        }
+
+        function validateName(name) {
+            var re = /^[a-zA-Z\s]+$/;
+            return re.test(String(name).trim());
+        }
+
+        function validateSecondForm() {
+            // Email validation
+            var email = document.getElementById("email2").value;
+            if (!validateEmail(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            // Phone number validation
+            var phone = document.getElementById("phone2").value;
+            if (!validatePhoneNumber(phone)) {
+                alert("Please enter a valid phone number.");
+                return false;
+            }
+
+            // Name validation
+            var name = document.getElementById("fname2").value;
+            if (!validateName(name)) {
+                alert("Please enter a valid name.");
+                return false;
+            }
+
+            // Honeypot field check
+            var honeypot = document.getElementById("honeypot2").value;
+            if (honeypot) {
+                alert("Spam detected!");
+                return false;
+            }
+
+            // Other validations can be added here
+
             return true;
         }
     </script>
@@ -865,19 +969,24 @@
         _linkedin_partner_id = "6399548";
         window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
         window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-        </script><script type="text/javascript">
-        (function(l) {
-        if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
-        window.lintrk.q=[]}
-        var s = document.getElementsByTagName("script")[0];
-        var b = document.createElement("script");
-        b.type = "text/javascript";b.async = true;
-        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-        s.parentNode.insertBefore(b, s);})(window.lintrk);
-        </script>
-        <noscript>
-        <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=6399548&fmt=gif" />
-        </noscript>
+    </script>
+    <script type="text/javascript">
+        (function (l) {
+            if (!l) {
+                window.lintrk = function (a, b) { window.lintrk.q.push([a, b]) };
+                window.lintrk.q = []
+            }
+            var s = document.getElementsByTagName("script")[0];
+            var b = document.createElement("script");
+            b.type = "text/javascript"; b.async = true;
+            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+            s.parentNode.insertBefore(b, s);
+        })(window.lintrk);
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none;" alt=""
+            src="https://px.ads.linkedin.com/collect/?pid=6399548&fmt=gif" />
+    </noscript>
 </body>
 
 </html>

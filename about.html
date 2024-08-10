@@ -54,18 +54,20 @@
     <meta name="ICBM" content="25.3, 55.4" />
 
     <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://incshipping.com/about" />
-<meta property="og:title" content="Shipping Services in Dubai | About INC SHIPPING" />
-<meta property="og:description" content="INC Express Shipping LLC, a leading provider of Logistics, Warehousing, and Shipping Services in Dubai, offers exclusive services with exceptional quality." />
-<meta property="og:image" content="https://incshipping.com/img/Group%20310.webp" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://incshipping.com/about" />
+    <meta property="og:title" content="Shipping Services in Dubai | About INC SHIPPING" />
+    <meta property="og:description"
+        content="INC Express Shipping LLC, a leading provider of Logistics, Warehousing, and Shipping Services in Dubai, offers exclusive services with exceptional quality." />
+    <meta property="og:image" content="https://incshipping.com/img/Group%20310.webp" />
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://incshipping.com/about" />
-<meta property="twitter:title" content="Shipping Services in Dubai | About INC SHIPPING" />
-<meta property="twitter:description" content="INC Express Shipping LLC, a leading provider of Logistics, Warehousing, and Shipping Services in Dubai, offers exclusive services with exceptional quality." />
-<meta property="twitter:image" content="https://incshipping.com/img/Group%20310.webp" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://incshipping.com/about" />
+    <meta property="twitter:title" content="Shipping Services in Dubai | About INC SHIPPING" />
+    <meta property="twitter:description"
+        content="INC Express Shipping LLC, a leading provider of Logistics, Warehousing, and Shipping Services in Dubai, offers exclusive services with exceptional quality." />
+    <meta property="twitter:image" content="https://incshipping.com/img/Group%20310.webp" />
 
 
 
@@ -92,6 +94,7 @@
 
         gtag('config', 'G-Y1Q6BVGDES');
     </script>
+
 </head>
 
 <body>
@@ -448,11 +451,12 @@
     </section>
 
     <section class="home_video">
-        <iframe width="100%" height="auto"
+        <!-- <iframe width="100%" height="auto"
             src="https://www.youtube.com/embed/WLZlVP7M_tc?autoplay=1&loop=1&mute=1&controls=0&playlist=WLZlVP7M_tc"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+            <video style="height: auto; width: 100%;" autoplay muted src="vedios/INC Youtube Video final (1).mp4"></video>
     </section>
 
 
@@ -471,20 +475,27 @@
                     <div class="contact_form">
                         <h2>Get a Free Quote</h2>
                         <p>Kindly, fill out the form given below and we will contact you.</p>
-                        <form action="get-a-quote.php" method="post">
+                        <form action="get-a-quote.php" method="post" onsubmit="return validateForm()">
                             <div class="cfif">
-                                <input type="text" id="companyName" name="companyName" placeholder="Company Name">
-                                <input type="text" id="name" name="name" placeholder="Your Name">
+                                <input required type="text" id="companyName" name="companyName" placeholder="Company Name">
+                                <input required type="text" id="name" name="name" placeholder="Your Name">
                             </div>
+
                             <div class="cfif">
-                                <input type="text" id="phone" name="phone" placeholder="Contact Number">
-                                <input type="text" id="email" name="email" placeholder="Email">
+                                <input required type="text" id="phone" name="phone" placeholder="Contact Number">
+                                <input required type="email" id="email" name="email" placeholder="Email">
                             </div>
+
                             <div class="cfif">
-                                <input type="text" id="deptCity" name="deptCity" placeholder="City of Departure">
-                                <input type="text" id="delCity" name="delCity" placeholder="Delivery City">
+                                <input required type="text" id="deptCity" name="deptCity" placeholder="City of Departure">
+                                <input required type="text" id="delCity" name="delCity" placeholder="Delivery City">
+                                <input name="hiddenId" id="hiddenId" type="text" value="about page" style="display: none;">
+                                <!-- Honeypot Field -->
+                                <input type="text" id="honeypot" name="honeypot" style="display:none;">
                             </div>
-                            <textarea rows="4" name="message" id="message" placeholder="Your Message"></textarea>
+                            
+                            <textarea required rows="4" name="message" id="message" placeholder="Your Message"></textarea>
+                            <div style="margin-bottom: 2%;" class="g-recaptcha" data-sitekey="6LfMexkqAAAAAILbATmFx3YxLhMN7yH1Was1ijou"></div>
                             <button type="submit">SEND</button>
                         </form>
 
@@ -715,19 +726,86 @@
         _linkedin_partner_id = "6399548";
         window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
         window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-        </script><script type="text/javascript">
-        (function(l) {
-        if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
-        window.lintrk.q=[]}
-        var s = document.getElementsByTagName("script")[0];
-        var b = document.createElement("script");
-        b.type = "text/javascript";b.async = true;
-        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-        s.parentNode.insertBefore(b, s);})(window.lintrk);
-        </script>
-        <noscript>
-        <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=6399548&fmt=gif" />
-        </noscript>
+    </script>
+    <script type="text/javascript">
+        (function (l) {
+            if (!l) {
+                window.lintrk = function (a, b) { window.lintrk.q.push([a, b]) };
+                window.lintrk.q = []
+            }
+            var s = document.getElementsByTagName("script")[0];
+            var b = document.createElement("script");
+            b.type = "text/javascript"; b.async = true;
+            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+            s.parentNode.insertBefore(b, s);
+        })(window.lintrk);
+    </script>
+
+
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        function validateEmail(email) {
+            var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+    
+        function validatePhoneNumber(phone) {
+            var re = /^[0-9]{10,15}$/; // Adjust regex according to your country code and format
+            return re.test(String(phone));
+        }
+    
+        function validateName(name) {
+            var re = /^[a-zA-Z\s]+$/;
+            return re.test(String(name).trim());
+        }
+    
+        function validateForm() {
+            // reCAPTCHA check
+            var response = grecaptcha.getResponse();
+            if (response.length === 0) {
+                alert("Please verify that you're not a robot.");
+                return false;
+            }
+    
+            // Email validation
+            var email = document.getElementById("email").value;
+            if (!validateEmail(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+    
+            // Phone number validation
+            var phone = document.getElementById("phone").value;
+            if (!validatePhoneNumber(phone)) {
+                alert("Please enter a valid phone number.");
+                return false;
+            }
+    
+            // Name validation
+            var name = document.getElementById("name").value;
+            if (!validateName(name)) {
+                alert("Please enter a valid name.");
+                return false;
+            }
+    
+            // Honeypot field check
+            var honeypot = document.getElementById("honeypot").value;
+            if (honeypot) {
+                alert("Spam detected!");
+                return false;
+            }
+    
+            // Other validations can be added here
+    
+            return true;
+        }
+    </script>
+
+    <noscript>
+        <img height="1" width="1" style="display:none;" alt=""
+            src="https://px.ads.linkedin.com/collect/?pid=6399548&fmt=gif" />
+    </noscript>
 </body>
 
 </html>

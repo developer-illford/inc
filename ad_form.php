@@ -7,25 +7,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = filter_var(trim($_POST['phone']), FILTER_SANITIZE_STRING);
     $shippingInquiryType = filter_var(trim($_POST['shippingInquiryType']), FILTER_SANITIZE_STRING);
     $message = filter_var(trim($_POST['message']), FILTER_SANITIZE_STRING);
-    echo "<script type='text/javascript'> console.log('entered');</script>";
+
     // Check if required fields are not empty
     if (!empty($fname) && !empty($cname) && !empty($email) && !empty($phone) && !empty($message)) {
-        // Email configuration
-        $to = "sales@incshipping.com"; // Replace with your email address
-        $subject = "INC SHIPPING - From Ad Page - New form submission from $fname . ";
-        
-        // Email content
-        $email_content = "Name: $fname\n";
-        $email_content .= "Company Name: $cname\n";
-        $email_content .= "Email: $email\n";
-        $email_content .= "Phone: $phone\n";
-        $email_content .= "Shipping Inquiry Type: $shippingInquiryType\n";
-        $email_content .= "Message:\n$message\n";
-        
+    // Recipient email address
+    $recipient = "sales@incshipping.com";
+    $bcc = "dm.illforddigital@gmail.com, edb@illforddigital.com";
+ 
+        $subject = "INC SHIPPING - From Ad Page - New form submission from $fname.";
+
+        // Email content with HTML styling
+        $email_content = "<html><body>";
+        $email_content .= "<h2>New Form Submission</h2>";
+        $email_content .= "<p><strong>Name:</strong> $fname</p>";
+        $email_content .= "<p><strong>Company Name:</strong> $cname</p>";
+        $email_content .= "<p><strong>Email:</strong> $email</p>";
+        $email_content .= "<p><strong>Phone:</strong> $phone</p>";
+        $email_content .= "<p><strong>Shipping Inquiry Type:</strong> $shippingInquiryType</p>";
+        $email_content .= "<p><strong>Message:</strong><br>$message</p>";
+        $email_content .= "</body></html>";
+
         // Email headers
         $headers = "From: $email\r\n";
         $headers .= "Reply-To: $email\r\n";
-        $headers .= "Bcc: dm.illforddigital@gmail.com\r\n"; // Add the Bcc recipient here
+        $headers .= "BCC: $bcc\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
         // Send the email
         if (mail($to, $subject, $email_content, $headers)) {

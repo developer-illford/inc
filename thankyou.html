@@ -22,7 +22,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Jomhuria&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-        <meta name="robots" content="nofollow,noindex" />
+    <meta name="robots" content="nofollow,noindex" />
 
 
     <!-- Google tag (gtag.js) -->
@@ -83,7 +83,8 @@
         <header class="header">
             <div style="margin: 0;" class="row">
                 <div style="padding: 0;" class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 nav_logo_col">
-                    <img onclick="window.location.href='index.html'" src="img/inc_nav_logo.webp" alt="INC Shipping Logo Design">
+                    <img onclick="window.location.href='index.html'" src="img/inc_nav_logo.webp"
+                        alt="INC Shipping Logo Design">
                 </div>
 
                 <!-- NAVBAR FOR DESKTOP -->
@@ -267,7 +268,8 @@
         </div>
     </section>
 
-    <img style="margin-bottom: 4%; width: 100%;" src="img/Vector 57.webp" alt=" Road Freight Forwarding Services in Dubai">
+    <img style="margin-bottom: 4%; width: 100%;" src="img/Vector 57.webp"
+        alt=" Road Freight Forwarding Services in Dubai">
 
     <div style="padding-bottom: 50px;" class="contact_bg row">
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-0 col-0 home_contact_col1 animate fadeRight">
@@ -283,15 +285,17 @@
                     <h6>We'll be glad to help</h6>
                     <h3>Leave a message</h3>
 
-                    <form action="contact.php" method="post">
+                    <form action="contact.php" method="post" onsubmit="return validateForm()">
                         <div class="cpif">
-                            <input type="text" id="name" name="name" placeholder="Your Name">
-                            <input type="text" id="companyName" name="companyName" placeholder="Company Name">
+                            <input required type="text" id="name" name="name" placeholder="Your Name">
+                            <input required type="text" id="companyName" name="companyName" placeholder="Company Name">
                         </div>
                         <div class="cpif">
-                            <input type="text" id="email" name="email" placeholder="Email">
+                            <input required type="text" id="email" name="email" placeholder="Email">
                         </div>
                         <textarea rows="4" name="message" id="message" placeholder="Your Message"></textarea>
+                        <div style="margin-bottom: 2%;" class="g-recaptcha"
+                            data-sitekey="6LfMexkqAAAAAILbATmFx3YxLhMN7yH1Was1ijou"></div>
                         <button type="submit">SEND</button>
                     </form>
                 </div>
@@ -357,7 +361,8 @@
         <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                 <div class="footer_logo_container">
-                    <img onclick="window.location.href='index.html'" src="img/inc_nav_logo.webp" alt="INC Shipping Logo Design">
+                    <img onclick="window.location.href='index.html'" src="img/inc_nav_logo.webp"
+                        alt="INC Shipping Logo Design">
                     <p>INC Express Shipping LLC, being one of the dedicated logistics, warehousing and shipping company
                         in Dubai</p>
                 </div>
@@ -422,7 +427,8 @@
         <div class="row">
             <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 footer_copyright">
                 <p>© 2024 INC Express Shipping LLC. All Rights Reserved. <a href="privacy-policy.html">Privacy
-                        Policy</a> | <a href="terms-and-conditions.html">Terms of Service</a> | <a href="sitemap.html">Sitemap</a></p>
+                        Policy</a> | <a href="terms-and-conditions.html">Terms of Service</a> | <a
+                        href="sitemap.html">Sitemap</a></p>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_copyright">
                 <p>Designed and Developed by: <a target="_blank" href="https://illforddigital.com/">Illford Digital</a>
@@ -512,19 +518,40 @@
         _linkedin_partner_id = "6399548";
         window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
         window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-        </script><script type="text/javascript">
-        (function(l) {
-        if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
-        window.lintrk.q=[]}
-        var s = document.getElementsByTagName("script")[0];
-        var b = document.createElement("script");
-        b.type = "text/javascript";b.async = true;
-        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-        s.parentNode.insertBefore(b, s);})(window.lintrk);
-        </script>
-        <noscript>
-        <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=6399548&fmt=gif" />
-        </noscript>
+    </script>
+    <script type="text/javascript">
+        (function (l) {
+            if (!l) {
+                window.lintrk = function (a, b) { window.lintrk.q.push([a, b]) };
+                window.lintrk.q = []
+            }
+            var s = document.getElementsByTagName("script")[0];
+            var b = document.createElement("script");
+            b.type = "text/javascript"; b.async = true;
+            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+            s.parentNode.insertBefore(b, s);
+        })(window.lintrk);
+    </script>
+
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        function validateForm() {
+            var response = grecaptcha.getResponse();
+            if (response.length === 0) {
+                // reCAPTCHA not verified
+                alert("Please verify that you're not a robot.");
+                return false;
+            }
+            // reCAPTCHA verified, continue with form submission
+            return true;
+        }
+    </script>
+
+    <noscript>
+        <img height="1" width="1" style="display:none;" alt=""
+            src="https://px.ads.linkedin.com/collect/?pid=6399548&fmt=gif" />
+    </noscript>
 </body>
 
 </html>
