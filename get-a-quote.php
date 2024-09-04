@@ -1,5 +1,19 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Your reCAPTCHA secret key
+    $secretKey = "6LfMexkqAAAAACO73KZwp44Sb9itb6M-zsji6q7p";
+    // reCAPTCHA response from the form submission
+    $recaptchaResponse = $_POST['g-recaptcha-response'];
+    // Verifying the reCAPTCHA response
+    $verifyResponse = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secretKey}&response={$recaptchaResponse}");
+    $responseData = json_decode($verifyResponse);
+
+    if (!$responseData->success) {
+        // If reCAPTCHA verification fails, redirect back with an error message
+        echo "<script type='text/javascript'>alert('reCAPTCHA verification failed. Please try again.'); window.location.href = 'index.html';</script>";
+        exit;
+    }
+
     // Sanitize and validate input data
     $companyName = filter_var($_POST['companyName'], FILTER_SANITIZE_STRING);
     $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);

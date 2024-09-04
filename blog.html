@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLI Blog Home</title>
+    <link rel="stylesheet" href="blog/blog.css" />
+    <link rel="stylesheet" href="blog/stylesheet.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://kit.fontawesome.com/6c53136549.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div style="margin: 0;" class="row">
+            <div style="padding: 0;" class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-5 nav_logo_col">
+                <img onclick="window.location.href='index.html'" src="img/inc_nav_logo.webp"
+                    alt="INC Shipping Logo Design">
+            </div>
+
+            <!-- NAVBAR FOR DESKTOP -->
+            <div style="padding: 0;"
+                class="col-xl-6 col-lg-6 col-md-6 col-sm-0 col-xs-0 nav_navbar_col animate fadeInDown">
+                <div class="navbar_container">
+                    <div class="nav_main_menu_wrap">
+                        <div class="nav_item ">
+                            <a href="index.html">Home</a>
+                        </div>
+                        <div class="nav_item">
+                            <a href="about.html">About Us</a>
+                        </div>
+                        <div class="nav_item nav_services">
+                            <a href="services.html">Services <i class="fa-solid fa-chevron-down"></i></a>
+                            <div class="services_dropdown_container">
+                                <div class="services_dropdown">
+                                    <div class="services_dropdown_items_box">
+                                        <a href="air-freight.html"><i class="fa-solid fa-caret-right"></i> Air
+                                            Freight</a>
+                                        <a href="sea-freight.html"><i class="fa-solid fa-caret-right"></i> Sea
+                                            Freight</a>
+                                        <a href="road-freight.html"><i class="fa-solid fa-caret-right"></i> Road
+                                            Freight</a>
+                                        <a href="customs-clearance.html"><i class="fa-solid fa-caret-right"></i>
+                                            Customs Clearance</a>
+                                        <a href="temprature-controlled-cargo.html"><i
+                                                class="fa-solid fa-caret-right"></i> Temp. Controlled Cargo</a>
+                                        <a href="warehousing.html"><i class="fa-solid fa-caret-right"></i>
+                                            Warehousing</a>
+                                        <a href="cross-trade.html"><i class="fa-solid fa-caret-right"></i>
+                                            Cross-Trade</a>
+                                    </div>
+                                    <div class="services_dropdown_items_box">
+                                        <a href="project-cargo.html"><i class="fa-solid fa-caret-right"></i> Project
+                                            Cargo</a>
+                                        <a href="corporate-courier.html"><i class="fa-solid fa-caret-right"></i>
+                                            Corporate Courier</a>
+                                        <a href="channel-partner.html"><i class="fa-solid fa-caret-right"></i>
+                                            Channel Partner</a>
+                                        <a href="shipment-to-far-east.html"><i class="fa-solid fa-caret-right"></i>
+                                            Far East Shipping</a>
+                                        <a href="dangerous-goods.html"><i class="fa-solid fa-caret-right"></i>
+                                            Dangerous Goods</a>
+                                        <a href="healthcare.html"><i class="fa-solid fa-caret-right"></i> Healthcare
+                                            Instruments Shipping</a>
+                                        <a href="pharma-shipment-handling.html"><i class="fa-solid fa-caret-right"></i>
+                                            Pharma Shipment Handling</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav_item nav_active">
+                            <a href="blog.html">Blogs</a>
+                        </div>
+                        <div class="nav_item">
+                            <a href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="padding: 0;" class="col-xl-2 col-lg-2 col-md-2 col-sm-0 col-0 header_contact_button">
+                <button onclick="window.location.href='tel:+971503524424'">
+                    <i class="fa-solid fa-phone"></i> +971 503524424
+                </button>
+            </div>
+            <div style="padding: 0;" class="col-xl-1 col-lg-1 col-md-1 col-sm-0 col-0 nav_social_col">
+                <div class="nav_social_container">
+                    <a target="_blank" href="https://www.instagram.com/incexpressshipping/"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.facebook.com/incshipping"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/company/inc-express-shipping-l-l-c/"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="hamburger">
+            <button onclick="hamburgerToggle()" class="hamburger_button">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- MOBILE MENU -->
+
+        <div class="hamburger_mobile_menu" id="hamburger_mobile_menu">
+            <a href="index.html">Home</a> <br>
+            <a href="about.html">About Us</a> <br>
+            <div class="mobile_services_dropdown">
+                <a href="#" id="services_link">Services <i class="fa-solid fa-chevron-down"></i></a> <br>
+                <div class="mobile_services_dropdown_container" id="services_dropdown">
+                    <a href="air-freight.html"><i class="fa-solid fa-caret-right"></i> Air
+                        Freight</a><br>
+                    <a href="sea-freight.html"><i class="fa-solid fa-caret-right"></i> Sea
+                        Freight</a><br>
+                    <a href="road-freight.html"><i class="fa-solid fa-caret-right"></i> Road
+                        Freight</a><br>
+                    <a href="customs-clearance.html"><i class="fa-solid fa-caret-right"></i>
+                        Customs Clearance</a><br>
+                    <a href="temprature-controlled-cargo.html"><i class="fa-solid fa-caret-right"></i> Temp.
+                        Controlled Cargo</a><br>
+                    <a href="warehousing.html"><i class="fa-solid fa-caret-right"></i>
+                        Warehousing</a><br>
+                    <a href="cross-trade.html"><i class="fa-solid fa-caret-right"></i>
+                        Cross-Trade</a><br>
+                    <a href="project-cargo.html"><i class="fa-solid fa-caret-right"></i> Project
+                        Cargo</a><br>
+                    <a href="corporate-courier.html"><i class="fa-solid fa-caret-right"></i>
+                        Corporate Courier</a><br>
+                    <a href="channel-partner.html"><i class="fa-solid fa-caret-right"></i>
+                        Channel Partner</a><br>
+                    <a href="shipment-to-far-east.html"><i class="fa-solid fa-caret-right"></i>
+                        Far East Shipping</a><br>
+                    <a href="dangerous-goods.html"><i class="fa-solid fa-caret-right"></i>
+                        Dangerous Goods</a><br>
+                    <a href="healthcare.html"><i class="fa-solid fa-caret-right"></i> Healthcare
+                        Instruments Shipping</a><br>
+                    <a href="pharma-shipment-handling.html"><i class="fa-solid fa-caret-right"></i> Pharma Shipment
+                        Handling</a><br>
+                </div>
+            </div>
+            <a href="#">Blogs</a> <br>
+            <a href="contact.html">Contact Us</a> <br><br>
+            <a href="tel:+971503524424"> &nbsp; &nbsp;<i class="fa-solid fa-phone"></i>+971 503524424</a> <br>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 id="blog-home-title">Blog Posts</h1>
+        <div class="row hashtagposts" id="blog-posts-container">
+            <!-- Post previews will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="footer_logo_container">
+                    <img onclick="window.location.href='index.html'" src="img/inc_nav_logo.webp"
+                        alt="INC Shipping Logo Design">
+                    <p>INC Express Shipping LLC is one of the dedicated logistics, warehousing, and Best Logistics and
+                        Shipping Company in Dubai, UAE.</p>
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_quick_links">
+                        <div class="footer_link_heading">
+                            <h4>QUICK LINKS</h4>
+                        </div>
+                        <div class="footer_links">
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About Us</a>
+                            <a href="services.html">Services</a>
+                            <a
+                                href="the-ultimate-guide-to-choosing-the-best-freight-forwarding-company-in-dubai-for-effortless-global-shipping.html">Blogs</a>
+                            <a href="contact.html">Contact Us</a>
+                            <a href="international-freight-forwarders.html">International Freight Forwarders</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_quick_links">
+                        <div class="footer_link_heading">
+                            <h4>OUR SERVICES</h4>
+                        </div>
+                        <div class="footer_links">
+                            <a href="air-freight.html">Air Freight</a>
+                            <a href="sea-freight.html">Sea Freight</a>
+                            <a href="road-freight.html">Road Freight</a>
+                            <a href="customs-clearance.html">Customs Clearance</a>
+                            <a href="temprature-controlled-cargo.html">Temp. Controlled Cargo</a>
+                            <a href="warehousing.html">Warehousing</a>
+                            <a href="cross-trade.html">Cross Trade</a>
+                            <a href="project-cargo.html">Project Cargo</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_quick_links">
+                        <div class="footer_link_heading">
+                            <h4>ADDRESS</h4>
+                        </div>
+                        <div class="footer_links">
+                            <a href="">Office M29, Freight gate 4 Dubai
+                                Airport Freezone Dubai, UAE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 footer_social_line">
+                <div class="white_horizontal_line"></div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12">
+                <div class="footer_sociall_icons">
+                    <a target="_blank" href="https://www.facebook.com/incshipping"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/incexpressshipping/"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a target="_blank" href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a target="_blank" href=""><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 footer_copyright">
+                <p>© 2024 INC Express Shipping LLC. All Rights Reserved. <a href="privacy-policy.html">Privacy
+                        Policy</a> | <a href="terms-and-conditions.html">Terms of Service</a> | <a
+                        href="sitemap.html">Sitemap</a></p>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_copyright">
+                <p>Designed and Developed by: <a target="_blank" href="https://illforddigital.com/">Illford Digital</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <div class="floating_btn">
+        <a target="_blank" href="https://wa.me/+971503524424" style="text-decoration: none;">
+            <div class="contact_icon">
+                <i class="fa fa-whatsapp my-float"></i>
+            </div>
+        </a>
+        <p class="text_icon">Talk to us?</p>
+    </div>
+    <script src="js/main.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script>
+        // Function to display all posts on the blog home page
+        function displayAllPosts(data) {
+            const container = document.getElementById('blog-posts-container');
+            container.innerHTML = ''; // Clear previous content
+
+            Object.keys(data).forEach(timestamp => {
+                const post = data[timestamp];
+                console.log(post.visibility);
+                if (post.visibility === 'public') {
+                    // Create post preview card using existing structure and classes
+                    const postCard = document.createElement('div');
+                    postCard.classList.add('col-xl-4', 'col-lg-4', 'col-md-4', 'col-sm-6', 'col-12', 'hashtagpostcontainer');
+                    postCard.innerHTML = `
+                    <div class="hashtagpostcard">
+                        <img src="${post.featuredImage}" alt="Featured Image">
+                        <h5>${post.title}</h5>
+                        <p>${post.firstLine}</p>
+                        <a href="${post.url}">Read more</a>
+                    </div>
+                `;
+                    container.appendChild(postCard);
+                }
+
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('blog/timestamp.json')
+                .then(response => response.json())
+                .then(data => displayAllPosts(data))
+                .catch(error => console.error('Error loading blog data:', error));
+        });
+    </script>
+</body>
+
+</html>
