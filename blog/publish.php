@@ -1,4 +1,11 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+
 // Increase maximum execution time and memory limit if needed
 ini_set('max_execution_time', '300');
 ini_set('memory_limit', '512M');
@@ -101,7 +108,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (move_uploaded_file($_FILES["featuredImage"]["tmp_name"], $targetFile)) {
             $featuredImage = $targetFile;
         } else {
-            die("Error: Unable to upload image.");
+            echo"<script type='text/javascript'>alert('Invalid request method.');</script>";
+            // die("Error: Unable to upload image.");
         }
     } else {
         // If no new image is uploaded and this is an edit, retain the existing image
@@ -111,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $timestampData = json_decode(file_get_contents($timestampFilePath), true);
                 foreach ($timestampData as $timestamp => $data) {
                     if ($data['slug'] === $slug) {
-                        $featuredImage = str_replace($rootPath, '', $data['featuredImage']);
+                        $featuredImage = str_replace($data['featuredImage']);
                         break;
                     }
                 }
@@ -121,7 +129,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // If the featured image is still empty, ensure it's not accidentally cleared
     if (empty($featuredImage)) {
-        die("Error: Featured image is missing.");
+        $timestampFilePath = __DIR__ . '/timestamp.json';
+            if (file_exists($timestampFilePath)) {
+                $timestampData = json_decode(file_get_contents($timestampFilePath), true);
+                foreach ($timestampData as $timestamp => $data) {
+                    if ($data['slug'] === $slug) {
+                        $featuredImage = str_replace($rootPath, '', $data['featuredImage']);
+                        break;
+                    }
+                }
+            }
     }
 
     // User-defined global variables
@@ -240,10 +257,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+
     // Add new post data under current timestamp
     $timestampData[$CurrentDateTime] = [
         "title" => $title,
-        "featuredImage" => $featuredImageUrl,
+        "featuredImage" => $featuredImage,
         "url" => $canonicalUrl,
         "firstLine" => $firstLine,
         "content" => $content,
@@ -255,6 +273,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         "visibility" => $visibility,
         "category" => $category // Include category in timestamp.json
     ];
+
 
     // Write the updated data back to timestamp.json
     if (file_put_contents($timestampFilePath, json_encode($timestampData, JSON_PRETTY_PRINT)) === false) {
@@ -584,7 +603,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </header>
 
     <div class="row base_container">
-        <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 base_container_col1">
+        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12 base_container_col1">
             <div class="container">
                 <img src="$featuredImage" class="featured-image" alt="Featured Image">
                 <h1 class="post-title">$title</h1>
@@ -594,7 +613,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <p class="post-categories">Category: $categoryLinks</p>
             </div>
         </div>
-        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12 base_container_col2">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 base_container_col2">
             <h3>Recent posts:</h3>
                 <div class="recentpost_card">
                     <h5><!--title of the latest post title of the latest post--> </h5>
