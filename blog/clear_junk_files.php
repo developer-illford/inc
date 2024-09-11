@@ -15,7 +15,7 @@ if (file_exists($timestampFilePath)) {
     foreach ($timestampData as $timestamp => $data) {
         if (isset($data['featuredImage'])) {
             // Extract the image filename from the full URL and add it to the usedImages array
-            $imagePath = str_replace('https://demo.illforddigital.com/blog/', '', $data['featuredImage']);
+            $imagePath = str_replace('https://incshipping.com/blog/', '', $data['featuredImage']);
             $usedImages[] = basename($imagePath);
         }
     }
