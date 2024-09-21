@@ -87,9 +87,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $seoTitle = htmlspecialchars($_POST['seoTitle']);
     $slug = htmlspecialchars($_POST['slug']);
     $metaDescription = htmlspecialchars($_POST['metaDescription']);
+    $canonicalUrl = isset($_POST['canonicalUrl']) && !empty($_POST['canonicalUrl']) ? htmlspecialchars($_POST['canonicalUrl']) : $rootPath . $slug ;
+    $headScripts = $_POST['headSrcipts'];
+    $bodyScripts = $_POST['bodySrcipts'];
+    $structuredDataInput = $_POST['structuredData'];
     $tags = $_POST['tags'];
     $visibility = $_POST['visibility'];
     $category = htmlspecialchars($_POST['category']); // New category field
+    // New geo-location fields
+    $geoRegion = htmlspecialchars($_POST['geoRegion']);
+    $geoPlacename = htmlspecialchars($_POST['geoPlacename']);
+    $geoPosition = htmlspecialchars($_POST['geoPosition']);
+    $ICBM = htmlspecialchars($_POST['ICBM']);
 
     // Extract the first line from the content
     $plainTextContent = strip_tags($content);
@@ -168,7 +177,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $siteMap = 'https://incshipping.com/sitemap.html';
 
     // Processed variables
-    $canonicalUrl = $rootPath . $slug . '.html';
+    // $canonicalUrl = $rootPath . $slug . '.html';
     $CurrentDateTime = date('c');
     $featuredImageUrl = $rootPath . $featuredImage;
     $logoImageUrl = $rootPath . $publisherLogo;
@@ -178,13 +187,158 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $termsAndConditionUrl = $domainName . $termsAndCondition;
     $siteMapUrl = $domainName . $siteMap;
     $categoryLinks = '<a href="categories.html?category=' . urlencode($category) . '">' . htmlspecialchars($category) . '</a>';
+    $structuredDataInput = isset($_POST['structuredData']) ? $_POST['structuredData'] : ''; // Check if the field is set
+    if (!empty($structuredDataInput)) {
+        // If the structuredDataInput is not empty, use the user's input
+        $structuredData = $structuredDataInput;
+    } else {
+        $structuredData = '
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "$openGraphType",
+                        "@id": "$canonicalUrl/#$openGraphType",
+                        "isPartOf": {
+                            "@id": "$canonicalUrl/"
+                        },
+                        "author": {
+                            "name": "$publisherName",
+                            "@id": "$blogHomeUrl"
+                        },
+                        "headline": "$title",
+                        "datePublished": "$CurrentDateTime",
+                        "mainEntityOfPage": {
+                            "@id": "$canonicalUrl/"
+                        },
+                        "wordCount": 365,
+                        "commentCount": 0,
+                        "publisher": {
+                            "@id": "$blogHomeUrl"
+                        },
+                        "image": {
+                            "@id": "$canonicalUrl/#primaryimage"
+                        },
+                        "thumbnailUrl": "$featuredImageUrl",
+                        "keywords": [
+                            $formattedTagsString
+                        ],
+                        "articleSection": [
+                            "Blog"
+                        ],
+                        "inLanguage": "$language"
+                    },
+                    {
+                        "@type": "WebPage",
+                        "@id": "$canonicalUrl/",
+                        "url": "$canonicalUrl/",
+                        "name": "$seoTitle",
+                        "isPartOf": {
+                            "@id": "$blogHomeUrl"
+                        },
+                        "primaryImageOfPage": {
+                            "@id": "$canonicalUrl/#primaryimage"
+                        },
+                        "image": {
+                            "@id": "$canonicalUrl/#primaryimage"
+                        },
+                        "thumbnailUrl": "$featuredImageUrl",
+                        "datePublished": "$CurrentDateTime",
+                        "description": "$metaDescription.",
+                        "breadcrumb": {
+                            "@id": "$canonicalUrl/#breadcrumb"
+                        },
+                        "inLanguage": "$language",
+                        "potentialAction": [
+                            {
+                                "@type": "ReadAction",
+                                "target": [
+                                    "$canonicalUrl/"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "ImageObject",
+                        "inLanguage": "$language",
+                        "@id": "$canonicalUrl/#primaryimage",
+                        "url": "$featuredImageUrl",
+                        "contentUrl": "$featuredImageUrl",
+                        "caption": "$title"
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "$canonicalUrl/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "$blogHomeUrl"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "$title"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "$blogHomeUrl/#website",
+                        "url": "$blogHomeUrl/",
+                        "name": "$publisherName",
+                        "description": "$publisherTagline",
+                        "publisher": {
+                            "@id": "$blogHomeUrl/#organization"
+                        },
+                        "inLanguage": "$language"
+                    },
+                    {
+                        "@type": "Organization",
+                        "@id": "$blogHomeUrl/#organization",
+                        "name": "$publisherName",
+                        "alternateName": "$publisherName",
+                        "url": "$blogHomeUrl",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "inLanguage": "$language",
+                            "@id": "$blogHomeUrl",
+                            "url": "$logoImageUrl",
+                            "contentUrl": "$logoImageUrl",
+                            "caption": "$publisherName"
+                        },
+                        "image": {
+                            "@id": "$blogHomeUrl"
+                        },
+                        "sameAs": [
+                            "$facebookProfileLink",
+                            "$threadsProfileLink",
+                            "$instagramProfileLink",
+                            "$linkedinProfileLink"
+                        ]
+                    },
+                    {
+                        "@type": "Person",
+                        "@id": "$blogHomeUrl",
+                        "name": "$publisherName"
+                    }
+                ]
+            }
+            </script>
+        ';
+    }
 
+
+    
     // Read the existing tags.json file
     $tagsFilePath = __DIR__ . "/tags.json";
     $tagsData = file_exists($tagsFilePath) ? json_decode(file_get_contents($tagsFilePath), true) : ["hashtags" => []];
 
     // Process each tag and update the tags.json structure
     $tagsArray = explode(',', $tags);
+    
     $formattedTagsForJson = array_map(function($tag) {
         $tag = trim($tag);
         if (strpos($tag, '#') !== 0) {
@@ -233,7 +387,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check if this post already exists in timestamp.json (by slug or URL)
     $existingTimestamp = null;
     foreach ($timestampData as $timestamp => $data) {
-        if ($data['url'] === $canonicalUrl) {
+        if ($data['slug'] === $slug) {
             $existingTimestamp = $timestamp;
             break;
         }
@@ -257,8 +411,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+// Capture the robotsMeta value from the form submission
+$robotsMeta = isset($_POST['robotsMetaInput']) ? $_POST['robotsMetaInput'] : 'index, follow';
 
-    // Add new post data under current timestamp
+    $geoRegion = htmlspecialchars($_POST['geoRegion']);
+    $geoPlacename = htmlspecialchars($_POST['geoPlacename']);
+    $geoPosition = htmlspecialchars($_POST['geoPosition']);
+    $ICBM = htmlspecialchars($_POST['ICBM']);
+    
     $timestampData[$CurrentDateTime] = [
         "title" => $title,
         "featuredImage" => $featuredImage,
@@ -271,9 +431,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         "metaDescription" => $metaDescription,
         "tags" => $tags,
         "visibility" => $visibility,
-        "category" => $category // Include category in timestamp.json
+        "category" => $category,
+        "robotsMeta" => $robotsMeta, // Ensure this is saved
+        "geoRegion" => $geoRegion,
+        "geoPlacename" => $geoPlacename,
+        "geoPosition" => $geoPosition,
+        "ICBM" => $ICBM,
+        "canonicalUrl" => $canonicalUrl, // Save canonical URL in timestamp.json
+        "headScripts" => $headScripts,   // New key for head scripts
+        "bodyScripts" => $bodyScripts,    // New key for body scripts
+        "structuredData" => $structuredData
     ];
-
 
     // Write the updated data back to timestamp.json
     if (file_put_contents($timestampFilePath, json_encode($timestampData, JSON_PRETTY_PRINT)) === false) {
@@ -296,6 +464,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }, $tagsArray);
         $tagLinksString = implode(', ', $tagLinks);
     
+
+        // Check if robotsMeta is present in the form submission
+        if (isset($_POST['robotsMeta'])) {
+            $robotsMeta = htmlspecialchars($_POST['robotsMeta']);
+        } else {
+            // Default to 'index, follow' if not provided
+            $robotsMeta = 'index, follow';
+        }
+        
         // Create the blog post content with updated styling and hashtag links
         $blogPostContent = <<<HTML
         <!DOCTYPE html>
@@ -303,7 +480,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="$robotsMeta" />
+        <meta name="geo.region" content="$geoRegion" />
+        <meta name="geo.placename" content="$geoPlacename" />
+        <meta name="geo.position" content="$geoPosition" />
+        <meta name="ICBM" content="$ICBM" />
         <title>$title</title>
         <link rel="shortcut icon" type="image/jpg" href="$favioconLink" />
         <meta name="description" content="$metaDescription" />
@@ -324,140 +505,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <meta name="twitter:data1" content="$publisherName" />
         <meta name="twitter:label2" content="Est. reading time" />
         <meta name="twitter:data2" content="4 minutes" />
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@graph": [
-                {
-                    "@type": "$openGraphType",
-                    "@id": "$canonicalUrl/#$openGraphType",
-                    "isPartOf": {
-                        "@id": "$canonicalUrl/"
-                    },
-                    "author": {
-                        "name": "$publisherName",
-                        "@id": "$blogHomeUrl"
-                    },
-                    "headline": "$title",
-                    "datePublished": "$CurrentDateTime",
-                    "mainEntityOfPage": {
-                        "@id": "$canonicalUrl/"
-                    },
-                    "wordCount": 365,
-                    "commentCount": 0,
-                    "publisher": {
-                        "@id": "$blogHomeUrl"
-                    },
-                    "image": {
-                        "@id": "$canonicalUrl/#primaryimage"
-                    },
-                    "thumbnailUrl": "$featuredImageUrl",
-                    "keywords": [
-                        $formattedTagsString
-                    ],
-                    "articleSection": [
-                        "Blog"
-                    ],
-                    "inLanguage": "$language"
-                },
-                {
-                    "@type": "WebPage",
-                    "@id": "$canonicalUrl/",
-                    "url": "$canonicalUrl/",
-                    "name": "$seoTitle",
-                    "isPartOf": {
-                        "@id": "$blogHomeUrl"
-                    },
-                    "primaryImageOfPage": {
-                        "@id": "$canonicalUrl/#primaryimage"
-                    },
-                    "image": {
-                        "@id": "$canonicalUrl/#primaryimage"
-                    },
-                    "thumbnailUrl": "$featuredImageUrl",
-                    "datePublished": "$CurrentDateTime",
-                    "description": "$metaDescription.",
-                    "breadcrumb": {
-                        "@id": "$canonicalUrl/#breadcrumb"
-                    },
-                    "inLanguage": "$language",
-                    "potentialAction": [
-                        {
-                            "@type": "ReadAction",
-                            "target": [
-                                "$canonicalUrl/"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "@type": "ImageObject",
-                    "inLanguage": "$language",
-                    "@id": "$canonicalUrl/#primaryimage",
-                    "url": "$featuredImageUrl",
-                    "contentUrl": "$featuredImageUrl",
-                    "caption": "$title"
-                },
-                {
-                    "@type": "BreadcrumbList",
-                    "@id": "$canonicalUrl/#breadcrumb",
-                    "itemListElement": [
-                        {
-                            "@type": "ListItem",
-                            "position": 1,
-                            "name": "Home",
-                            "item": "$blogHomeUrl"
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 2,
-                            "name": "$title"
-                        }
-                    ]
-                },
-                {
-                    "@type": "WebSite",
-                    "@id": "$blogHomeUrl/#website",
-                    "url": "$blogHomeUrl/",
-                    "name": "$publisherName",
-                    "description": "$publisherTagline",
-                    "publisher": {
-                        "@id": "$blogHomeUrl/#organization"
-                    },
-                    "inLanguage": "$language"
-                },
-                {
-                    "@type": "Organization",
-                    "@id": "$blogHomeUrl/#organization",
-                    "name": "$publisherName",
-                    "alternateName": "$publisherName",
-                    "url": "$blogHomeUrl",
-                    "logo": {
-                        "@type": "ImageObject",
-                        "inLanguage": "$language",
-                        "@id": "$blogHomeUrl",
-                        "url": "$logoImageUrl",
-                        "contentUrl": "$logoImageUrl",
-                        "caption": "$publisherName"
-                    },
-                    "image": {
-                        "@id": "$blogHomeUrl"
-                    },
-                    "sameAs": [
-                        "$facebookProfileLink",
-                        "$threadsProfileLink",
-                        "$instagramProfileLink",
-                        "$linkedinProfileLink"
-                    ]
-                },
-                {
-                    "@type": "Person",
-                    "@id": "$blogHomeUrl",
-                    "name": "$publisherName"
-                }
-            ]
-        }
-        </script>
+        $structuredData
+        $headScripts
+        
         <link rel="stylesheet" href="blog.css"/>
         <link rel="stylesheet" href="stylesheet.css"/>
         <!-- bootstrap -->
@@ -725,6 +775,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    $bodyScripts
     </body>
     </html>
 HTML;

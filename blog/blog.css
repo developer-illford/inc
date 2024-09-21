@@ -102,6 +102,14 @@ body {
     margin-top: 1%;
 }
 
+.bed_editor_area textarea {
+    width: 100%;
+    padding: 0.7%;
+    font-weight: 600;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
 .ql-editor {
     background-color: #ffff;
     min-height: 50vh !important;
@@ -402,12 +410,9 @@ li[data-list="unchecked"]::marker {
     height: 80vh;
 }
 
-
 .recentpost_card{
     margin-bottom: 20px;
 }
-
-
 
 * {
     /* border: 1px solid red; */
