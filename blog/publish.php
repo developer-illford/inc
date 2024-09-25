@@ -150,6 +150,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
     }
 
+    // Get form data
+    $category = htmlspecialchars($_POST['category']);
+
+    // Load existing categories
+    $categoriesFilePath = __DIR__ . '/categories.json';
+    if (file_exists($categoriesFilePath)) {
+        $categoriesData = json_decode(file_get_contents($categoriesFilePath), true);
+
+        // If the category doesn't exist, add it to categories.json
+        if (!in_array($category, $categoriesData['categories'])) {
+            $categoriesData['categories'][] = $category;
+            file_put_contents($categoriesFilePath, json_encode($categoriesData, JSON_PRETTY_PRINT));
+        }
+    }
+
     // User-defined global variables
     $domainName = 'https://incshipping.com/';
     $rootPath = 'https://incshipping.com/blog/';
@@ -455,7 +470,7 @@ $robotsMeta = isset($_POST['robotsMetaInput']) ? $_POST['robotsMetaInput'] : 'in
     $tagLinksString = implode(', ', $tagLinks);
 
     // Create category links
-    $categoryLinks = '<a href="categories.html?category=blog">Blog</a>, <a href="categories.html?category=case%20study">Case Study</a>';
+    // $categoryLinks = '<a href="categories.html?category=blog">Blog</a>, <a href="categories.html?category=case%20study">Case Study</a>';
 
     if ($visibility === 'public') {
         // Generate hashtag links

@@ -186,6 +186,31 @@ body {
     border-bottom: 1px solid #000;
 }
 
+.robots_card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.robots_card p {
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+}
+
+
+.geoTag_card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.geoTag_card p {
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+}
+
 .input-group {
     display: flex;
     margin-bottom: 10px;

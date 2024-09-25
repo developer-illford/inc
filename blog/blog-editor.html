@@ -76,17 +76,20 @@
                             <br>
                             <label for="">Scripts in head tag :</label>
                             <br>
-                            <textarea rows="5" name="headSrcipts" id="headSrcipts" placeholder="Paste the code snippets to be placed inside the <head> tag"></textarea>
+                            <textarea rows="5" name="headSrcipts" id="headSrcipts"
+                                placeholder="Paste the code snippets to be placed inside the <head> tag"></textarea>
                             <br>
                             <label for="">Scripts in body tag :</label>
                             <br>
-                            <textarea rows="5" name="bodySrcipts" id="bodySrcipts" placeholder="Paste the code snippets to be placed inside the <body> tag"></textarea>
+                            <textarea rows="5" name="bodySrcipts" id="bodySrcipts"
+                                placeholder="Paste the code snippets to be placed inside the <body> tag"></textarea>
                             <br>
                             <label for="">Structured data scripts :</label>
                             <br>
-                            <textarea rows="5" name="structuredData" id="structuredData" placeholder="Paste the structured data code snippets to be placed inside the <head> tag"></textarea>
-    
-                            </section>
+                            <textarea rows="5" name="structuredData" id="structuredData"
+                                placeholder="Paste the structured data code snippets to be placed inside the <head> tag"></textarea>
+
+                        </section>
                     </div>
 
                     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12">
@@ -114,43 +117,58 @@
 
                         <div class="categories_card">
                             <p>Category</p>
-                            <input type="radio" name="category" id="blog" value="blog"><label for="blog">&nbsp;
-                                Blog</label>
-                            <br>
-                            <input type="radio" name="category" id="caseStudy" value="case study"><label
-                                for="caseStudy">&nbsp; Case Study</label>
+                            <div class="input-group">
+                                <select id="category-dropdown" name="category" class="form-control">
+                                    <!-- Options will be dynamically populated from categories.json -->
+                                </select>
+                                <!-- <button type="button" id="add-category-button">Add New</button> -->
+                            </div>
+
+                            <!-- Modal to Add New Category -->
+                            <div id="addCategoryModal" style="display:none;">
+                                <label for="newCategoryInput">Enter New Category:</label>
+                                <input type="text" id="newCategoryInput" />
+                                <button type="button" id="saveCategoryButton">Save Category</button>
+                            </div>
                         </div>
 
-                        <!-- Robots Meta Dropdown -->
-                        <div class="robots-meta-card">
-                            <p>Robots Meta</p>
-                            <select id="robotsMeta" name="robotsMeta">
-                                <option value="index, follow">index, follow</option>
-                                <option value="index, nofollow">index, nofollow</option>
-                                <option value="noindex, follow">noindex, follow</option>
-                                <option value="noindex, nofollow">noindex, nofollow</option>
-                            </select>
+                        <div class="robots_card">
+                            <!-- Robots Meta Dropdown -->
+                            <div class="robots-meta-card">
+                                <p>Robots Meta</p>
+                                <select id="robotsMeta" name="robotsMeta">
+                                    <option value="index, follow">index, follow</option>
+                                    <option value="index, nofollow">index, nofollow</option>
+                                    <option value="noindex, follow">noindex, follow</option>
+                                    <option value="noindex, nofollow">noindex, nofollow</option>
+                                </select>
+                            </div>
                         </div>
 
 
-                        <!-- Hidden input for robotsMeta to ensure it's submitted -->
-                        <input type="hidden" id="robotsMetaInput" name="robotsMetaInput">
 
-                        <!-- Location input fields -->
-                        <div class="location-card">
-                            <p>Location</p>
-                            <input type="text" id="geoRegionInput" placeholder="Region Code (e.g., AE)" />
-                            <input type="text" id="geoPlacenameInput" placeholder="Placename (e.g., Atmar)" />
-                            <input type="text" id="geoLatInput" placeholder="Enter Latitude" />
-                            <input type="text" id="geoLonInput" placeholder="Enter Longitude" />
+                        <div class="geoTag_card">
+
+                            <!-- Hidden input for robotsMeta to ensure it's submitted -->
+                            <input type="hidden" id="robotsMetaInput" name="robotsMetaInput">
+
+                            <!-- Location input fields -->
+                            <div class="location-card">
+                                <p>Location</p>
+                                <input type="text" id="geoRegionInput" placeholder="Region Code (e.g., AE)" />
+                                <input type="text" id="geoPlacenameInput" placeholder="Placename (e.g., Atmar)" />
+                                <input type="text" id="geoLatInput" placeholder="Enter Latitude" />
+                                <input type="text" id="geoLonInput" placeholder="Enter Longitude" />
+                            </div>
+
+                            <!-- Hidden inputs for geo tags -->
+                            <input type="hidden" id="geoRegion" name="geoRegion" value="">
+                            <input type="hidden" id="geoPlacename" name="geoPlacename" value="">
+                            <input type="hidden" id="geoPosition" name="geoPosition" value="">
+                            <input type="hidden" id="ICBM" name="ICBM" value="">
+
+
                         </div>
-
-                        <!-- Hidden inputs for geo tags -->
-                        <input type="hidden" id="geoRegion" name="geoRegion" value="">
-                        <input type="hidden" id="geoPlacename" name="geoPlacename" value="">
-                        <input type="hidden" id="geoPosition" name="geoPosition" value="">
-                        <input type="hidden" id="ICBM" name="ICBM" value="">
-
 
                         <div class="actions_card">
                             <p>Publish</p>
@@ -215,7 +233,6 @@
         crossorigin="anonymous"></script>
     <!-- Include the Quill library -->
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
-    <script src="blog.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
@@ -273,7 +290,7 @@
                 // Ensure only one `#` is present
                 let tag = tagElement.firstChild.textContent;
                 tag = tag.replace(/^#+/, ''); // Remove all leading #
-                tag = '#' + tag.trim(); // Add a single #
+                tag = tag.trim(); // Add a single #
                 return tag;
             });
             document.getElementById('tags').value = tags.join(',');
@@ -348,6 +365,7 @@
 
                     document.getElementById('slug').value = slug;
                 });
+
                 quill.root.innerHTML = postData.content; // Populate the Quill editor
                 document.getElementById('focusKeyphrase').value = postData.focusKeyphrase;
                 document.getElementById('seoTitle').value = postData.seoTitle;
@@ -358,6 +376,7 @@
                 document.getElementById('headSrcipts').value = postData.headScripts || ''; // Load head scripts
                 document.getElementById('bodySrcipts').value = postData.bodyScripts || ''; // Load body scripts
                 document.getElementById('structuredData').value = postData.structuredData || ''; // Load structured Data
+
 
                 // Populate the featured image
                 document.getElementById('featured-image').src = postData.featuredImage;
@@ -381,12 +400,17 @@
                 });
 
                 // Populate category
-                const categoryOptions = document.getElementsByName('category');
-                categoryOptions.forEach(option => {
-                    if (option.value.toLowerCase() === postData.category.toLowerCase()) {
-                        option.checked = true;
-                    }
-                });
+
+                // if (postData.category) {
+                //     document.getElementById('category-dropdown').value = postData.category;
+                // }
+
+                // const categoryOptions = document.getElementsByName('category');
+                // categoryOptions.forEach(option => {
+                //     if (option.value.toLowerCase() === postData.category.toLowerCase()) {
+                //         option.checked = true;
+                //     }
+                // });
 
 
                 // Prepopulate robots meta dropdown based on saved value
@@ -487,6 +511,9 @@
             }
         });
     </script>
+
+    <script src="blog.js"></script>
+
     <script>
         const ImageBlot = Quill.import('formats/image');
 
@@ -570,9 +597,7 @@
             }
         });
 
-
     </script>
-
 
 </body>
 
