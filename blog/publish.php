@@ -88,9 +88,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $slug = htmlspecialchars($_POST['slug']);
     $metaDescription = htmlspecialchars($_POST['metaDescription']);
     $canonicalUrl = isset($_POST['canonicalUrl']) && !empty($_POST['canonicalUrl']) ? htmlspecialchars($_POST['canonicalUrl']) : $rootPath . $slug ;
-    $headScripts = $_POST['headSrcipts'];
+    $headScriptsInput = $_POST['headSrcipts'];
     $bodyScripts = $_POST['bodySrcipts'];
     $structuredDataInput = $_POST['structuredData'];
+    $otherHeadScripts = $_POST['otherHeadScripts'];
     $tags = $_POST['tags'];
     $visibility = $_POST['visibility'];
     $category = htmlspecialchars($_POST['category']); // New category field
@@ -99,10 +100,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $geoPlacename = htmlspecialchars($_POST['geoPlacename']);
     $geoPosition = htmlspecialchars($_POST['geoPosition']);
     $ICBM = htmlspecialchars($_POST['ICBM']);
+    // Check if a custom timestamp was provided
+    if (!empty($_POST['timestamp'])) {
+        // Use the custom timestamp provided by the user
+        $publishDateTime = date('c', strtotime($_POST['timestamp']));
+        $formattedPublishDate = date('F j, Y', strtotime($_POST['timestamp'])); // Format for display
+    } else {
+        // Use the current date and time as the default
+        $publishDateTime = date('c');
+        $formattedPublishDate = date('F j, Y'); // Default formatting
+    }
 
     // Extract the first line from the content
     $plainTextContent = strip_tags($content);
     $firstLine = substr($plainTextContent, 0, 100);
+    $wordCount = str_word_count($plainTextContent); // Calculate word count
 
     // Handle image upload
     $targetDir = "uploads/";
@@ -196,18 +208,87 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $CurrentDateTime = date('c');
     $featuredImageUrl = $rootPath . $featuredImage;
     $logoImageUrl = $rootPath . $publisherLogo;
-    $formattedPublishDate = date('F j, Y');
+    // $formattedPublishDate = date('F j, Y');
     $blogHomeUrl = $domainName . $blogHome;
     $privacyPolicyUrl = $domainName . $privacyPolicy;
     $termsAndConditionUrl = $domainName . $termsAndCondition;
     $siteMapUrl = $domainName . $siteMap;
     $categoryLinks = '<a href="categories.html?category=' . urlencode($category) . '">' . htmlspecialchars($category) . '</a>';
+    $headScriptsInput = isset($_POST['headSrcipts']) ? $_POST['headSrcipts'] : ''; // Check if the field is set
     $structuredDataInput = isset($_POST['structuredData']) ? $_POST['structuredData'] : ''; // Check if the field is set
+
+    
+
+    // Read the existing tags.json file
+    $tagsFilePath = __DIR__ . "/tags.json";
+    $tagsData = file_exists($tagsFilePath) ? json_decode(file_get_contents($tagsFilePath), true) : ["hashtags" => []];
+
+    // Process each tag and update the tags.json structure
+    $tagsArray = explode(',', $tags);
+    
+    $formattedTagsForJson = array_map(function($tag) {
+        $tag = trim($tag);
+        if (strpos($tag, '#') !== 0) {
+            $tag = '#' . $tag;
+        }
+        return $tag;
+    }, $tagsArray);
+    $formattedTagsString = implode(',', $formattedTagsForJson);
+
+
+
+
+
+    if (!empty($headScriptsInput)) {
+        // If the structuredDataInput is not empty, use the user's input
+        $headScripts = $headScriptsInput;
+    } else {
+$headScriptsTemplate = '
+        <title>$title</title>
+        <meta name="description" content="$metaDescription" />
+        <meta name="robots" content="$robotsMeta" />
+        <meta name="geo.region" content="$geoRegion" />
+        <meta name="geo.placename" content="$geoPlacename" />
+        <meta name="geo.position" content="$geoPosition" />
+        <meta name="ICBM" content="$ICBM" />
+        <link rel="shortcut icon" type="image/jpg" href="$favioconLink" />
+        <link rel="canonical" href="$canonicalUrl" />
+        <meta property="og:locale" content="$language" />
+        <meta property="og:type" content="$openGraphType" />
+        <meta property="og:title" content="$seoTitle" />
+        <meta property="og:description" content="$metaDescription" />
+        <meta property="og:url" content="$canonicalUrl" />
+        <meta property="article:publisher" content="$publisherUrl" />
+        <meta property="article:published_time" content="$CurrentDateTime" />
+        <meta name="author" content="$publisherName" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="$publisherTwitterId" />
+        <meta name="twitter:site" content="$publisherTwitterId" />
+        <meta name="twitter:label1" content="Written by" />
+        <meta name="twitter:data1" content="$publisherName" />
+        <meta name="twitter:label2" content="Est. reading time" />
+        <meta name="twitter:data2" content="4 minutes" />
+        ';
+
+                
+        // Replace the placeholders with actual PHP variables
+        $headScripts = str_replace(
+            ['$title', '$robotsMeta', '$geoRegion', '$geoPlacename', '$geoPosition', '$ICBM', '$favioconLink', '$metaDescription', '$canonicalUrl', '$language', '$openGraphType', '$seoTitle', '$metaDescription', '$canonicalUrl', '$publisherUrl', '$CurrentDateTime', '$publisherName', '$publisherTwitterId'],
+            [$title, $robotsMeta, $geoRegion, $geoPlacename, $geoPosition, $ICBM, $favioconLink, $metaDescription, $canonicalUrl, $language, $openGraphType, $seoTitle, $metaDescription, $canonicalUrl, $publisherUrl, $CurrentDateTime, $publisherName, $publisherTwitterId],
+            $headScriptsTemplate
+        );
+
+    }
+
+
+
+
     if (!empty($structuredDataInput)) {
         // If the structuredDataInput is not empty, use the user's input
         $structuredData = $structuredDataInput;
     } else {
-        $structuredData = '
+        $structuredDataTemplate = '
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
@@ -223,11 +304,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             "@id": "$blogHomeUrl"
                         },
                         "headline": "$title",
-                        "datePublished": "$CurrentDateTime",
+                        "datePublished": "$publishDateTime",
                         "mainEntityOfPage": {
                             "@id": "$canonicalUrl/"
                         },
-                        "wordCount": 365,
+                        "wordCount": "$wordCount",
                         "commentCount": 0,
                         "publisher": {
                             "@id": "$blogHomeUrl"
@@ -259,7 +340,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             "@id": "$canonicalUrl/#primaryimage"
                         },
                         "thumbnailUrl": "$featuredImageUrl",
-                        "datePublished": "$CurrentDateTime",
+                        "datePublished": "$publishDateTime",
                         "description": "$metaDescription.",
                         "breadcrumb": {
                             "@id": "$canonicalUrl/#breadcrumb"
@@ -343,25 +424,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
             </script>
         ';
+ 
+        
+        
+        // Replace the placeholders with actual PHP variables
+        $structuredData = str_replace(
+            ['$wordCount', '$openGraphType', '$canonicalUrl', '$publisherName', '$blogHomeUrl', '$title', '$publishDateTime', '$featuredImageUrl', '$formattedTagsString', '$language', '$seoTitle', '$metaDescription', '$publisherTagline', '$logoImageUrl', '$facebookProfileLink', '$threadsProfileLink', '$instagramProfileLink', '$linkedinProfileLink'],
+            [$wordCount, $openGraphType, $canonicalUrl, $publisherName, $blogHomeUrl, $title, $publishDateTime, $featuredImageUrl, $formattedTagsString, $language, $seoTitle, $metaDescription, $publisherTagline, $logoImageUrl, $facebookProfileLink, $threadsProfileLink, $instagramProfileLink, $linkedinProfileLink],
+            $structuredDataTemplate
+        );
+
     }
-
-
-    
-    // Read the existing tags.json file
-    $tagsFilePath = __DIR__ . "/tags.json";
-    $tagsData = file_exists($tagsFilePath) ? json_decode(file_get_contents($tagsFilePath), true) : ["hashtags" => []];
-
-    // Process each tag and update the tags.json structure
-    $tagsArray = explode(',', $tags);
-    
-    $formattedTagsForJson = array_map(function($tag) {
-        $tag = trim($tag);
-        if (strpos($tag, '#') !== 0) {
-            $tag = '#' . $tag;
-        }
-        return $tag;
-    }, $tagsArray);
-    $formattedTagsString = implode(',', $formattedTagsForJson);
 
     $postFileName = $slug . ".html"; // The name of the HTML file being created
     foreach ($tagsArray as $tag) {
@@ -434,7 +507,7 @@ $robotsMeta = isset($_POST['robotsMetaInput']) ? $_POST['robotsMetaInput'] : 'in
     $geoPosition = htmlspecialchars($_POST['geoPosition']);
     $ICBM = htmlspecialchars($_POST['ICBM']);
     
-    $timestampData[$CurrentDateTime] = [
+    $timestampData[$publishDateTime] = [
         "title" => $title,
         "featuredImage" => $featuredImage,
         "url" => $canonicalUrl,
@@ -454,8 +527,10 @@ $robotsMeta = isset($_POST['robotsMetaInput']) ? $_POST['robotsMetaInput'] : 'in
         "ICBM" => $ICBM,
         "canonicalUrl" => $canonicalUrl, // Save canonical URL in timestamp.json
         "headScripts" => $headScripts,   // New key for head scripts
+        "otherHeadScripts" => $otherHeadScripts,
         "bodyScripts" => $bodyScripts,    // New key for body scripts
-        "structuredData" => $structuredData
+        "structuredData" => $structuredData,
+        "timestamp" => $publishDateTime
     ];
 
     // Write the updated data back to timestamp.json
@@ -495,33 +570,10 @@ $robotsMeta = isset($_POST['robotsMetaInput']) ? $_POST['robotsMetaInput'] : 'in
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="robots" content="$robotsMeta" />
-        <meta name="geo.region" content="$geoRegion" />
-        <meta name="geo.placename" content="$geoPlacename" />
-        <meta name="geo.position" content="$geoPosition" />
-        <meta name="ICBM" content="$ICBM" />
-        <title>$title</title>
-        <link rel="shortcut icon" type="image/jpg" href="$favioconLink" />
-        <meta name="description" content="$metaDescription" />
-        <link rel="canonical" href="$canonicalUrl" />
-        <meta property="og:locale" content="$language" />
-        <meta property="og:type" content="$openGraphType" />
-        <meta property="og:title" content="$seoTitle" />
-        <meta property="og:description" content="$metaDescription" />
-        <meta property="og:url" content="$canonicalUrl" />
-        <meta property="article:publisher" content="$publisherUrl" />
-        <meta property="article:published_time" content="$CurrentDateTime" />
-        <meta name="author" content="$publisherName" />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content="$publisherTwitterId" />
-        <meta name="twitter:site" content="$publisherTwitterId" />
-        <meta name="twitter:label1" content="Written by" />
-        <meta name="twitter:data1" content="$publisherName" />
-        <meta name="twitter:label2" content="Est. reading time" />
-        <meta name="twitter:data2" content="4 minutes" />
-        $structuredData
+        
         $headScripts
+        $structuredData
+        $otherHeadScripts
         
         <link rel="stylesheet" href="blog.css"/>
         <link rel="stylesheet" href="stylesheet.css"/>
@@ -672,7 +724,7 @@ $robotsMeta = isset($_POST['robotsMetaInput']) ? $_POST['robotsMetaInput'] : 'in
             <div class="container">
                 <img src="$featuredImage" class="featured-image" alt="Featured Image">
                 <h1 class="post-title">$title</h1>
-                <p class="post-meta">By $publisherName | $formattedPublishDate</p>
+                <p class="post-meta">By $publisherName | Published on $formattedPublishDate</p>
                 <div class="post-content">$content</div>
                 <p class="post-tags">Tags: $tagLinksString</p>
                 <p class="post-categories">Category: $categoryLinks</p>

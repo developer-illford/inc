@@ -439,6 +439,12 @@ li[data-list="unchecked"]::marker {
     margin-bottom: 20px;
 }
 
+.advanced_editor_options{
+    width: 100%;
+    height: max-content;
+    display: none;
+}
+
 * {
     /* border: 1px solid red; */
 }
