@@ -184,7 +184,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $openGraphType = 'article';
     $publisherUrl = 'https://www.facebook.com/incshipping';
     $publisherName = 'INC Shipping LLC';
-    $publisherTwitterId = '@incexpressshipping';
+    $publisherTwitterId = '@twitterid';
     $publisherLogo = 'https://incshipping.com/img/inc_nav_logo.webp';
     $publisherTagline = 'INC Express Shipping LLC is one of the dedicated logistics, warehousing, and Best Logistics and Shipping Company in Dubai, UAE.';
     $favioconLink = 'https://incshipping.com/img/favicon.jpeg';

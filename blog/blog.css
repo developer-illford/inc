@@ -47,6 +47,11 @@ body {
     justify-content: flex-end;
 }
 
+.bed_menubar_col2 button{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .bed_menubar_item {
     display: flex;
     align-items: center;
