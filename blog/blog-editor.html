@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIMPLI</title>
     <link rel="stylesheet" href="blog.css">
-
+    <link rel="shortcut icon" type="image/jpg" href="../favicon.jpeg">
+    
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -36,7 +37,6 @@
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 bed_menubar_col2">
             <div class="bed_menubar_item">
-                <button onclick="window.open('https://tools.illforddigital.com/webp-converter.html', '_blank')">IMAGE COMPRESSOR <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                 <h6 id="displayUserName"></h6>
                 <h6>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-user"></i></h6>
                 <button onclick="logoutUser()"> Logout&nbsp; <i class="fa-solid fa-right-from-bracket"></i></button>
@@ -74,34 +74,30 @@
                             <input type="hidden" id="isEditing" name="isEditing" value="">
                             <br>
                             <br>
-                            <h6>Advanced options <a onclick="showAdvancedOptions()"><i
-                                        class="fa-solid fa-chevron-down"></i></a></h6>
+                            <h6>Advanced options</h6>
                             <br>
 
-                            <div class="advanced_editor_options">
-                                <label for="">Meta tags in head tag :</label>
-                                <br>
-                                <textarea rows="5" name="headSrcipts" id="headSrcipts"
-                                    placeholder="Paste the meta tag snippets to be placed inside the <head> tag"></textarea>
-                                <br>
+                            <label for="">Meta tags in head tag :</label>
+                            <br>
+                            <textarea rows="5" name="headSrcipts" id="headSrcipts"
+                                placeholder="Paste the meta tag snippets to be placed inside the <head> tag"></textarea>
+                            <br>
 
-                                <label for="">Structured data scripts :</label>
-                                <br>
-                                <textarea rows="5" name="structuredData" id="structuredData"
-                                    placeholder="Paste the structured data code snippets to be placed inside the <head> tag"></textarea>
+                            <label for="">Structured data scripts :</label>
+                            <br>
+                            <textarea rows="5" name="structuredData" id="structuredData"
+                                placeholder="Paste the structured data code snippets to be placed inside the <head> tag"></textarea>
 
-                                <label for="">Other scripts :</label>
-                                <br>
-                                <textarea rows="5" name="otherHeadScripts" id="otherHeadScripts"
-                                    placeholder="Paste other code snippets like g-tag manager, tracking codes etc, to be placed inside the <head> tag"></textarea>
+                            <label for="">Other scripts :</label>
+                            <br>
+                            <textarea rows="5" name="otherHeadScripts" id="otherHeadScripts"
+                                placeholder="Paste other code snippets like g-tag manager, tracking codes etc, to be placed inside the <head> tag"></textarea>
 
-                                <label for="">Scripts in body tag :</label>
-                                <br>
-                                <textarea rows="5" name="bodySrcipts" id="bodySrcipts"
-                                    placeholder="Paste the code snippets to be placed inside the <body> tag"></textarea>
-                                <br>
-                            </div>
-
+                            <label for="">Scripts in body tag :</label>
+                            <br>
+                            <textarea rows="5" name="bodySrcipts" id="bodySrcipts"
+                                placeholder="Paste the code snippets to be placed inside the <body> tag"></textarea>
+                            <br>
 
                         </section>
                     </div>
@@ -251,6 +247,9 @@
         };
     </script>
 
+       <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-circle-chevron-up"></i></button>
+
+
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -270,21 +269,6 @@
     <!-- Import Firebase Authentication -->
     <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
     <script src="fireconfig.js"></script> <!-- Your Firebase config file -->
-
-
-    <script>
-        function showAdvancedOptions() {
-            // Get the element with class advanced_editor_options
-            var advancedOptions = document.querySelector('.advanced_editor_options');
-
-            // Toggle the display property between 'none' and 'block'
-            if (advancedOptions.style.display === 'none' || advancedOptions.style.display === '') {
-                advancedOptions.style.display = 'block';
-            } else {
-                advancedOptions.style.display = 'none';
-            }
-        }
-    </script>
 
     <script>
 

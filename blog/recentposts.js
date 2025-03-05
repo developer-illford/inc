@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log(post.visibility);
                 
                 const postCard = `
-                    <div class="recentpost_card">
+                    <div onclick="window.location.href='${post.url}'" class="recentpost_card">
                         <h5>${post.title}</h5>
                         <img src="${post.featuredImage}" alt="">
                         <p>${post.firstLine}</p>

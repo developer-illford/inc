@@ -1,5 +1,5 @@
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
-Disallow: /thankyou-page
+Disallow: /thankyou.html
 Sitemap: https://incshipping.com/sitemap.xml

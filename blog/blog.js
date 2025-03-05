@@ -35,6 +35,29 @@ const quill = new Quill('#bed_content_editor', {
 
 
 
+// Custom Image Handler to Support PNG, JPG, and WebP
+quill.getModule('toolbar').addHandler('image', () => {
+    const input = document.createElement('input');
+    input.setAttribute('type', 'file');
+    input.setAttribute('accept', 'image/png, image/jpeg, image/webp'); // Allow WebP
+
+    input.onchange = () => {
+        const file = input.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const range = quill.getSelection(); // Get the current cursor position
+                quill.insertEmbed(range.index, 'image', event.target.result); // Insert image
+            };
+            reader.readAsDataURL(file); // Convert the file to Base64
+        }
+    };
+
+    input.click(); // Trigger the file input dialog
+});
+
+
+
 
 // ************************************************************************************
 // script to add hash tags

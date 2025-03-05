@@ -1,32 +1,59 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Set Security Headers
+    header("Content-Security-Policy: default-src 'self'; script-src 'self' https://www.google.com/recaptcha/;");
+    header("X-Frame-Options: DENY"); // Prevent Clickjacking  
+    header("X-XSS-Protection: 1; mode=block"); // Prevent reflected XSS  
+    header("X-Content-Type-Options: nosniff"); // Prevent MIME-type sniffing  
+    header("Referrer-Policy: no-referrer-when-downgrade"); // Limit referrer exposure  
+    header("Strict-Transport-Security: max-age=31536000; includeSubDomains"); // Enforce HTTPS  
+
     // Your reCAPTCHA secret key
     $secretKey = "6LfMexkqAAAAACO73KZwp44Sb9itb6M-zsji6q7p";
-    // reCAPTCHA response from the form submission
     $recaptchaResponse = $_POST['g-recaptcha-response'];
+
     // Verifying the reCAPTCHA response
     $verifyResponse = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secretKey}&response={$recaptchaResponse}");
     $responseData = json_decode($verifyResponse);
 
     if (!$responseData->success) {
-        // If reCAPTCHA verification fails, redirect back with an error message
-        echo "<script type='text/javascript'>alert('reCAPTCHA verification failed. Please try again.'); window.location.href = 'index.html';</script>";
-        exit;
+        die("reCAPTCHA verification failed.");
     }
 
-    // Sanitize and validate input data
-    $companyName = filter_var($_POST['companyName'], FILTER_SANITIZE_STRING);
-    $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
-    $phone = filter_var($_POST['phone'], FILTER_SANITIZE_STRING);
-    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-    $deptCity = filter_var($_POST['deptCity'], FILTER_SANITIZE_STRING);
-    $delCity = filter_var($_POST['delCity'], FILTER_SANITIZE_STRING);
-    $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
-    $sourcePage = $_POST['hiddenId'];
+    // Function to sanitize and validate input
+    function clean_input($input, $maxLength = 100) {
+        $input = trim($input);
+        $input = stripslashes($input);
+        $input = htmlspecialchars($input, ENT_QUOTES, 'UTF-8'); // Prevent HTML/Script Injection
+        if (strlen($input) > $maxLength) {
+            die("Error: Input exceeds allowed length.");
+        }
+        if (!preg_match("/^[a-zA-Z0-9\s.,'-]+$/u", $input)) {
+            die("Error: Invalid characters detected.");
+        }
+        return $input;
+    }
 
-    if (!$email) {
-        echo "<script type='text/javascript'> window.location.href = 'thankyou.html';</script>";
-        exit;
+    function validate_email($email) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            die("Error: Invalid email format.");
+        }
+        return htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
+    }
+
+    // Sanitize & validate input data
+    $companyName = clean_input($_POST['companyName']);
+    $name = clean_input($_POST['name']);
+    $phone = clean_input($_POST['phone'], 15); // Limit phone length
+    $email = validate_email($_POST['email']);
+    $deptCity = clean_input($_POST['deptCity']);
+    $delCity = clean_input($_POST['delCity']);
+    $message = clean_input($_POST['message'], 500); // Limit message length
+    $sourcePage = clean_input($_POST['hiddenId'], 50);
+
+    // Prevent Honeypot field submission
+    if (!empty($_POST['honeypot'])) {
+        die("Bot detected. Submission blocked.");
     }
 
     // Recipient email address
@@ -77,9 +104,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         echo "<script type='text/javascript'> window.location.href = 'thankyou.html';</script>";
     } else {
-        echo "<script type='text/javascript'>alert('There was a problem sending your message. Please try again later.'); window.location.href = 'index.html';</script>";
+        die("Error: Unable to send email. Please try again later.");
     }
 } else {
-    echo "<script type='text/javascript'>alert('Invalid request method.'); window.location.href = 'index.html';</script>";
+    die("Invalid request method.");
 }
 ?>

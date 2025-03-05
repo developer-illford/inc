@@ -4,7 +4,6 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
 <url>
@@ -106,6 +105,21 @@
   <loc>https://incshipping.com/terms-and-conditions</loc>
   <lastmod>2024-06-29T06:40:56+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://incshipping.com/best-logistics-company-in-the-usa/</loc>
+  <lastmod>2024-10-04T07:19:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://incshipping.com/best-logistics-company-in-uk/</loc>
+  <lastmod>2024-10-04T07:21:27+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+  <loc>https://incshipping.com/best-logistics-company-in-the-netherlands/</loc>
+  <lastmod>2024-10-04T07:19:51+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
   <loc>https://incshipping.com/sitemap</loc>

@@ -593,17 +593,23 @@
 
                     <form action="contact.php" method="post" onsubmit="return validateForm()">
                         <div class="cpif">
-                            <input required type="text" id="name" name="name" placeholder="Your Name">
-                            <input required type="text" id="companyName" name="companyName" placeholder="Company Name">
+                            <input required type="text" id="name" name="name" placeholder="Your Name" maxlength="100" pattern="[A-Za-z\s'-]+">
+                            <input required type="text" id="companyName" name="companyName" placeholder="Company Name" maxlength="100" pattern="[A-Za-z0-9\s.,'-]+">
                         </div>
+                    
                         <div class="cpif">
-                            <input required type="text" id="email" name="email" placeholder="Email">
+                            <input required type="email" id="email" name="email" placeholder="Email" maxlength="100">
+                            
+                            <input type="text" id="extraField" name="extraField" style="display:none;">
                         </div>
-                        <textarea rows="4" name="message" id="message" placeholder="Your Message"></textarea>
-                        <div style="margin-bottom: 2%;" class="g-recaptcha"
-                            data-sitekey="6LfMexkqAAAAAILbATmFx3YxLhMN7yH1Was1ijou"></div>
+                    
+                        <textarea required rows="4" name="message" id="message" placeholder="Your Message" maxlength="500" pattern="[A-Za-z0-9\s.,'-]+"></textarea>
+                    
+                        <div style="margin-bottom: 2%;" class="g-recaptcha" data-sitekey="6LfMexkqAAAAAILbATmFx3YxLhMN7yH1Was1ijou"></div>
+                    
                         <button type="submit">SEND</button>
                     </form>
+                    
                 </div>
             </div>
         </div>
@@ -687,6 +693,9 @@
                             <a href="https://incshipping.com/blog">Blogs</a>
                             <a href="contact.html">Contact Us</a>
                             <a href="international-freight-forwarders.html">International Freight Forwarders</a>
+                            <a href="best-logistics-company-in-uk/index.html">UK</a>
+                            <a href="best-logistics-company-in-the-usa/index.html">USA</a>
+                            <a href="best-logistics-company-in-the-netherlands/index.html">Netherlands</a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_quick_links">
@@ -701,7 +710,8 @@
                             <a href="temprature-controlled-cargo.html">Temp. Controlled Cargo</a>
                             <a href="warehousing.html">Warehousing</a>
                             <a href="cross-trade.html">Cross Trade</a>
-                            <a href="project-cargo.html">Project Cargo</a>
+                            <a href="dangerous-goods.html">Dangerous Goods</a>
+                            <a href="pharma-shipment-handling.html">Pharma Shipment Handling</a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_quick_links">
@@ -726,14 +736,14 @@
                             class="fa-brands fa-facebook"></i></a>
                     <a target="_blank" href="https://www.instagram.com/incexpressshipping/"><i
                             class="fa-brands fa-instagram"></i></a>
-                    <a target="_blank" href=""><i class="fa-brands fa-twitter"></i></a>
-                    <a target="_blank" href=""><i class="fa-brands fa-youtube"></i></a>
+                    <a target="_blank" href="https://x.com/home?lang=en"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a target="_blank" href="https://www.youtube.com/@INCshippingllc"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 footer_copyright">
-                <p>© 2024 INC Express Shipping LLC. All Rights Reserved. <a href="privacy-policy.html">Privacy
+                <p>© 2025 INC Express Shipping LLC. All Rights Reserved. <a href="privacy-policy.html">Privacy
                         Policy</a> | <a href="terms-and-conditions.html">Terms of Service</a> | <a
                         href="sitemap.html">Sitemap</a></p>
             </div>
@@ -756,7 +766,7 @@
                 <i class="fa fa-whatsapp my-float"></i>
             </div>
         </a>
-        <p class="text_icon">Talk to us?</p>
+        
     </div>
 
 
@@ -770,28 +780,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+       <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-circle-chevron-up"></i></button>
 
 
     <!-- bootstrap -->

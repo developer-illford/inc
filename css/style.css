@@ -141,16 +141,17 @@ body {
 
 .hamburger_mobile_menu {
     width: 100%;
-    height: max-content;
+    height: max-content !important;
     background-image: url(../img/Rectangle\ 409.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow: hidden;
+    /* overflow: hidden; */
     padding: 2%;
     display: none;
     position: absolute;
-    z-index: 10;
+
+    z-index: 10000;
     border-radius: 0.8rem;
 }
 
@@ -226,7 +227,7 @@ body {
     top: 100%;
     left: 0;
     transition: opacity 1s ease, visibility 1s ease;
-    
+
 }
 
 /* Show the services dropdown on hover */
@@ -545,7 +546,7 @@ body {
 
 @media (max-width: 768px) {
     .nav_logo_col img {
-        width: 60%;
+        width: 20% !important;
         height: auto;
         padding: 5px;
         margin-left: 10px;
@@ -1489,6 +1490,10 @@ footer {
         background-color: #ffffff00;
 
     }
+
+    .about_hero_content_wrap h1 {
+        font-size: 300%;
+    }
 }
 
 
@@ -1888,6 +1893,12 @@ p {
     width: 60%;
     text-align: justify;
     padding: 0;
+}
+
+@media (max-width: 921px) {
+    .contact_hero {
+        overflow: visible;
+    }
 }
 
 @media (max-width: 768px) {
@@ -2713,6 +2724,30 @@ p {
 
 
 
+@media (max-width: 768px) {
+
+    .airfreight_hero,
+    .seafreight_hero,
+    .roadfreight_hero,
+    .temp_controlled_cargo_hero,
+    .cross_trade_hero,
+    .corporate_courier_hero,
+    .far_east_shipment_hero,
+    .healthcare_hero,
+    .warehousing_hero,
+    .projectCargo_hero,
+    .channel_partner_hero,
+    .customs_clearence_hero,
+    .dangerous_goods_hero,
+    .pharma_shipment_hero,
+    .thankyou_hero {
+        overflow: visible;
+    }
+}
+
+
+
+
 
 
 
@@ -3238,10 +3273,12 @@ ul.solarsystem li.pluto {
     .cookies_float {
         flex-direction: column;
     }
+
     .cookies_float p {
         padding: 0;
         width: 90%;
     }
+
     .coookie_buttons {
         flex-direction: row;
     }
@@ -3299,7 +3336,7 @@ ul.solarsystem li.pluto {
 
 .floating_btn {
     position: fixed;
-    bottom: 30px;
+    bottom: 80px;
     right: 30px;
     width: 100px;
     height: 100px;
@@ -3432,7 +3469,7 @@ ul.solarsystem li.pluto {
 
 
 
-.fasion_text_card{
+.fasion_text_card {
     border: 5px solid var(--inc_color1);
     margin-left: 3%;
     margin-top: 2% !important;
@@ -3441,7 +3478,8 @@ ul.solarsystem li.pluto {
     border-radius: 10px;
     padding: 1%;
 }
-.fasion_text_card p{
+
+.fasion_text_card p {
     padding: 0;
     text-align: justify;
     color: #000;
@@ -3465,3 +3503,32 @@ ul.solarsystem li.pluto {
 
 
 
+
+
+
+
+
+
+
+
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+    z-index: 99999;
+    border: none;
+    outline: none;
+    background-color: #daa520;
+    color: white;
+    cursor: pointer;
+    /* padding: 15px; */
+    border-radius: 30px;
+    font-size: 25px;
+}
+
+#myBtn:hover {
+    background-color: #555;
+    /* Add a dark-grey background on hover */
+}

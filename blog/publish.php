@@ -184,7 +184,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $openGraphType = 'article';
     $publisherUrl = 'https://www.facebook.com/incshipping';
     $publisherName = 'INC Shipping LLC';
-    $publisherTwitterId = '@twitterid';
+    $publisherTwitterId = '@incexpressshipping';
     $publisherLogo = 'https://incshipping.com/img/inc_nav_logo.webp';
     $publisherTagline = 'INC Express Shipping LLC is one of the dedicated logistics, warehousing, and Best Logistics and Shipping Company in Dubai, UAE.';
     $favioconLink = 'https://incshipping.com/img/favicon.jpeg';
@@ -577,6 +577,8 @@ $robotsMeta = isset($_POST['robotsMetaInput']) ? $_POST['robotsMetaInput'] : 'in
         
         <link rel="stylesheet" href="blog.css"/>
         <link rel="stylesheet" href="stylesheet.css"/>
+        <link rel="shortcut icon" type="image/jpg" href="../favicon.jpeg">
+        
         <!-- bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -766,6 +768,9 @@ $robotsMeta = isset($_POST['robotsMetaInput']) ? $_POST['robotsMetaInput'] : 'in
                                 href="../the-ultimate-guide-to-choosing-the-best-freight-forwarding-company-in-dubai-for-effortless-global-shipping.html">Blogs</a>
                             <a href="../contact.html">Contact Us</a>
                             <a href="../international-freight-forwarders.html">International Freight Forwarders</a>
+                            <a href="https://incshipping.com/best-logistics-company-in-uk/">UK</a>
+                            <a href="https://incshipping.com/best-logistics-company-in-the-usa/">USA</a>
+                            <a href="https://incshipping.com/best-logistics-company-in-the-netherlands/">Netherlands</a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_quick_links">
@@ -780,7 +785,8 @@ $robotsMeta = isset($_POST['robotsMetaInput']) ? $_POST['robotsMetaInput'] : 'in
                             <a href="../temprature-controlled-cargo.html">Temp. Controlled Cargo</a>
                             <a href="../warehousing.html">Warehousing</a>
                             <a href="../cross-trade.html">Cross Trade</a>
-                            <a href="../project-cargo.html">Project Cargo</a>
+                                                        <a href="../dangerous-goods.html">Dangerous Goods</a>
+                            <a href="../pharma-shipment-handling.html">Pharma Shipment Handling</a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_quick_links">
@@ -805,14 +811,14 @@ $robotsMeta = isset($_POST['robotsMetaInput']) ? $_POST['robotsMetaInput'] : 'in
                             class="fa-brands fa-facebook"></i></a>
                     <a target="_blank" href="https://www.instagram.com/incexpressshipping/"><i
                             class="fa-brands fa-instagram"></i></a>
-                    <a target="_blank" href=""><i class="fa-brands fa-twitter"></i></a>
-                    <a target="_blank" href=""><i class="fa-brands fa-youtube"></i></a>
+                    <a target="_blank" href="https://x.com/home?lang=en"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a target="_blank" href="https://www.youtube.com/@INCshippingllc"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 footer_copyright">
-                <p>© 2024 INC Express Shipping LLC. All Rights Reserved. <a href="../privacy-policy.html">Privacy
+                <p>© 2025 INC Express Shipping LLC. All Rights Reserved. <a href="../privacy-policy.html">Privacy
                         Policy</a> | <a href="../terms-and-conditions.html">Terms of Service</a> | <a
                         href="../sitemap.html">Sitemap</a></p>
             </div>
@@ -828,11 +834,14 @@ $robotsMeta = isset($_POST['robotsMetaInput']) ? $_POST['robotsMetaInput'] : 'in
                 <i class="fa fa-whatsapp my-float"></i>
             </div>
         </a>
-        <p class="text_icon">Talk to us?</p>
+        
     </div>
     <script src="../js/main.js"></script>
     
     <script src="recentposts.js"></script>
+       <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-circle-chevron-up"></i></button>
+
+
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5pNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
