@@ -768,9 +768,10 @@ $robotsMeta = isset($_POST['robotsMetaInput']) ? $_POST['robotsMetaInput'] : 'in
                                 href="../the-ultimate-guide-to-choosing-the-best-freight-forwarding-company-in-dubai-for-effortless-global-shipping.html">Blogs</a>
                             <a href="../contact.html">Contact Us</a>
                             <a href="../international-freight-forwarders.html">International Freight Forwarders</a>
-                            <a href="https://incshipping.com/best-logistics-company-in-uk/">UK</a>
-                            <a href="https://incshipping.com/best-logistics-company-in-the-usa/">USA</a>
+                            <a href="https://incshipping.com/best-logistics-company-in-united-kingdom/">United Kingdom</a>
+                            <a href="https://incshipping.com/best-logistics-company-in-the-united-states-of-america/">United States</a>
                             <a href="https://incshipping.com/best-logistics-company-in-the-netherlands/">Netherlands</a>
+                            <a href="https://incshipping.com/best-logistics-company-in-united-arab-emirates/">Arab Emirates</a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_quick_links">
@@ -787,6 +788,7 @@ $robotsMeta = isset($_POST['robotsMetaInput']) ? $_POST['robotsMetaInput'] : 'in
                             <a href="../cross-trade.html">Cross Trade</a>
                                                         <a href="../dangerous-goods.html">Dangerous Goods</a>
                             <a href="../pharma-shipment-handling.html">Pharma Shipment Handling</a>
+                            <a href="../healthcare.html">Healthcare Instrument Shipping</a>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 footer_quick_links">
